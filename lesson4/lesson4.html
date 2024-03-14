@@ -33,14 +33,46 @@
     <h1>2.CONVERSION
         <p> 
             The simplest example is when we have a number, but we need to add it to some text.
+            <ol>
+                <li>CONVERSION TO STRING
+                    <p>
+                        Conversions are the easiest to understand, as they try to directly change the value to a string, and this can be done for all primitive types.
+                    </p>
+                </li>
+                <li>CONVERSION TO NUMBER
+                    <p>
+                        Conversion to a number is not as obvious as conversion to a string. It works as expected for strings that represent actual numbers, <br>
+                        like "14", "-72.134", or strings that represent numbers in scientific notation, like "2e3", or special number values like "NaN" or "Infinity".
+                        <br>
+                        However, the string can also contain numbers in hexadecimal, octal, and binary format. They must be preceded by 0x, 0o, or 0b respectively. <br>
+                        For any string that cannot be converted to a special value, NaN (not a number) is returned.
+                    </p>
+                </li>
+                <li>CONVERSION TO BOOLEAN
+                    <p>
+                        Conversions to Boolean follow simple rules, as we can only have one of two values: true or false.
+                       
+                    </p>
+                </li>
+                <li>CONVERION TO BigInt
+                    <p>
+                        In order for conversions to a BigInt to succeed, we require a Number or String representing a number as a value to be converted. 
+                        Values for conversion can be given in the default decimal form, as well as in hexadecimal, octal, or binary form. 
+                        <br>We can also use exponential notation, but only for Number arguments. 
+                    </p>
+                </li>
+                <li>IMPLICIT CONVERSION
+                    <p>
+                        Conversions can also happen automatically, and they happen all the time. <br>
+                        when we try to perform an addition when one of the arguments is a string, 
+                        JavaScript will convert the rest of the arguments to a string as well. <br>
+                        Subtraction with a string, however, doesn't make much sense, so in that case JavaScript converts everything to Numbers.
+                    </p>
+                </li>
+            </ol>
 
         </p>
     </h1>
-
-
-
-    
-
 
     <ul><footer>
         <a href="birukefekadu632@gmail.com">E-MAIL</a>
