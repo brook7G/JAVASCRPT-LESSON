@@ -1,11 +1,11 @@
 *{
-    background-color: aqua;
+    color: rgb(128, 251, 251);
 }
 
 body{
-    background-color: rgb(162, 87, 232);
+    background-color: rgb(128, 76, 176);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
-    text-align: center;
+    /* text-align: center; */
 
 }
