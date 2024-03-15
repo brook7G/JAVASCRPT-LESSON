@@ -48,6 +48,9 @@ let boolBig = Boolean(bigNumber);
 console.log(`${typeof boolBig} [${boolBig}]`);
 
 
+
+
+
                     console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>ANSWER FOR QUESTION-4:>>>>>>>");
 
                     let addString = "Biruk" + "Fekadu";
@@ -75,6 +78,56 @@ console.log(`${typeof boolBig} [${boolBig}]`);
                     let addNull = null + null;
                     console.log(`${addNull} [${typeof addNull}]`);
 
+
+
+console.log(">>>>>>>>>>>>>>>>>>>>>>>ANSWER FOR QUESTION-5:>>>>>>>>")
+let  number = 1999;
+let string ="I was born in ";
+
+let addDifferent = string + number  ;
+console.log(addDifferent);
+console.log(`${addDifferent} is: ${typeof addDifferent}`);
+
+let addDifferent2 = Boolean(true) + Number(1999);
+console.log(`${addDifferent2} is: ${typeof addDifferent2}`)
+
+let  addDifferent3 = Boolean(false) + String(" Biruk");
+console.log(`${addDifferent3} is: ${typeof addDifferent3}`);
+
+// let addDifferent4 =  Boolean(false) + BigInt(32n);
+// console.log(`${addDifferent4} is: ${typeof addDifferent4}`); can not mix BigInt with other types
+
+let addDifferent5  = Boolean(false) + undefined;
+console.log(`${addDifferent5} is: ${typeof addDifferent5}`);
+
+let addDifferent6  = Boolean(false) + null;
+console.log(`${addDifferent6} is: ${typeof addDifferent6}`);
+
+let addDifferent7  = Boolean(true) + null;
+console.log(`${addDifferent7} is: ${typeof addDifferent7}`);
+
+let addDifferent8  = String("Biruuk") + undefined;
+console.log(`${addDifferent8} is: ${typeof addDifferent8}`);
+
+let addDifferent9  = String("Biruuk") + null;
+console.log(`${addDifferent9} is: ${typeof addDifferent9}`);
+
+let addDifferent10 = String("Biruuk") +  BigInt(23n);
+console.log(`${addDifferent10} is: ${typeof addDifferent10}`);
+
+
+
+                                         console.log(">>>>>>>>>>>>>>ANSWER FOR QUESTION-6>>>>>>");
+
+                                         const addDifferent11 = 42 +  "1";
+                                         console.log(`${addDifferent11} is: ${typeof addDifferent11}`);
+
+                                         const addDifferent12 =42 + Number("1");
+                                         console.log(`${addDifferent12} is: ${typeof addDifferent12}`);
+
+                                                        //OR//
+                                        const addDifferent13 = 42 + +"1";
+                                        console.log(`${addDifferent13} is: ${typeof addDifferent13}`);                
                     
 
 
