@@ -1,4 +1,5 @@
-console.log(">>>>>>>>THIS IS LESSON-5: DATA TYPES AND TYPE CASTINGS");
+                    console.log(">>>>>>>>THIS IS LESSON-5: DATA TYPES AND TYPE CASTINGS");
+
 
 console.log(">>>>>>1.OBJECTS>>>>");
 
@@ -74,6 +75,34 @@ console.log(testObject1.string);//>>>>
                         delete user1.emailAddress;
 
                         console.log(`AFTER DELETING EMAIL-ADDRESS FROM USER 1 :[${user1.firstName + " " + user1.lastName + " ," + user1.age + " ," + user1.emailAddress + " " + user1.phoneNumber}]`);
+                   
+
+
+
+
+
+console.log(">>>>>>1.ARRAYS>>>>");
+
+let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+
+console.log(days);
+
+console.log(`Index-0 is Holding : ${days[0]}`);
+console.log(`Index-1 is Holding : ${days[1]}`);
+console.log(`Index-2 is Holding : ${days[2]}`);
+console.log(`Index-3 is Holding : ${days[3]}`);
+console.log(`Index-4 is Holding : ${days[4]}`);
+
+
+days[1] ="Saturday";
+
+console.log(`Value in Index-1 is change to [${days[1]}] from [Monday]`);
+
+console.log(`After Index-1 is changed: ${days}`);
+
+
+
+
 
 
 
