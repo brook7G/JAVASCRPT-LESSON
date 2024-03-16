@@ -100,6 +100,49 @@ console.log(`Value in Index-1 is change to [${days[1]}] from [Monday]`);
 
 console.log(`After Index-1 is changed: ${days}`);
 
+days[6] = "ARRAYS";
+console.log(`After adding the 6th-Index in the array ${days}`);
+
+
+                                       //as we mentioned earlier we can store different type of data in one array 
+                                       
+                                       let userData = ["Biruk", 24, 450000n, 3.5, true];
+                                       console.log(userData);
+
+                                       /*What is interesting is the fact that we can also store arrays as elements of the array,
+                                         and we can access the elements of this nested array using multiple square brackets.*/
+
+                                         let students = [["caalaa", "abebech", "kibrom", "siifan"], ["bekele", "tolaa", "boonaa", "maatii"]];
+
+                                         /*nestedArray*/
+                                         console.log(students[1]);
+                                         console.log(students[0]);
+
+                                         console.log(students[0][0]);
+                                         console.log(students[0][1]);
+                                         console.log(students[1][3]);
+                                         console.log(students[1][1]);
+                                         console.log(students[1][0]);
+
+                                         //Accessing them separately
+
+                                         let compDepart = students[0];
+                                         let softDepart = students[1];
+
+                                         console.log(softDepart[0]);
+                                         console.log(softDepart[1]);
+                                         console.log(softDepart[3]);
+
+                                         console.log(compDepart[0]);
+                                         console.log(compDepart[2]);
+                                         console.log(compDepart[3]);
+                                         
+
+
+
+
+
+
 
 
 
