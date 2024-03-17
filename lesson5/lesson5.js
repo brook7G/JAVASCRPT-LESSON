@@ -187,6 +187,44 @@ console.log(`After adding the 6th-Index in the array ${days}`);
                                         console.log(users[0]);
                                         console.log(users[1]);
 
+                                        //calling the keys 
+
+                                        console.log(users[0].name);// julie
+                                        console.log(users[1].role);// ceo
+
+                                        //adding new index to the array 
+
+                                        users[2] = {
+                                            name:"liat",
+                                            bankAcc:"01320503300220",
+                                            emailAddress:"liyatduna@gmail.com",
+                                            passWord:"liyu1999@november",
+                                            role: "Software Engineer"
+
+                                        };
+                                        console.log("the new added user information :" ,users[2]);
+
+
+                                        //PRINTING ALL THE USERS INCLUDING THE NEW ADDED USER INFO
+                                        console.log("USERS INFORMATION",users);
+
+                                        console.log(`${typeof users}`);///Object 
+
+                                        //so to solve this kind of problem 
+
+                                        console.log(users instanceof Array);//true
+                                        console.log(users[0].name instanceof Object);//fales
+
+                                        /**The instanceof operator is a two-argument operator, 
+                                           which requires the tested variable (or literal) and object class to be specified */
+
+                                           
+
+
+
+                                    
+
+
                                          
 
 
