@@ -136,6 +136,57 @@ console.log(`After adding the 6th-Index in the array ${days}`);
                                          console.log(compDepart[0]);
                                          console.log(compDepart[2]);
                                          console.log(compDepart[3]);
+
+
+
+
+ //WHAT CAN ARRAYS WILL BE USEFUL IN PRACTICE
+
+ let userA={
+    name:"JULIE",
+    bankAcc:"10000300223777",
+    emailAddress:"birukefekadu632@gmail.com",
+    passWord:"birukfekadu@fekadu",
+    role: "Manager"
+ };
+
+ let userB={
+    name:"SOROMA",
+    bankAcc:"100001212129",
+    emailAddress:"soromaShiferaw@gmail.com",
+    passWord:"soromashiferaw" ,
+    role: "CEO"
+
+ };
+
+ console.log(userB);
+ console.log(userA);
+ console.log(userA.bankAcc);
+ console.log(userB.role);
+
+                                        //BUT WE CAN DO MORE USING ARRAYS
+
+                                        let users=[
+                                            {
+                                                name:"JULIE",
+                                                bankAcc:"10000300223777",
+                                                emailAddress:"birukefekadu632@gmail.com",
+                                                passWord:"birukfekadu@fekadu",
+                                                role: "Manager"
+                                            },
+                                            {
+                                                name:"SOROMA",
+                                                bankAcc:"100001212129",
+                                                emailAddress:"soromaShiferaw@gmail.com",
+                                                passWord:"soromashiferaw" ,
+                                                role: "CEO" 
+                                            }
+
+                                        ];
+
+                                        console.log(users[0]);
+                                        console.log(users[1]);
+
                                          
 
 
