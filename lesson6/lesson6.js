@@ -21,6 +21,8 @@ console.log(regionsArray);//(10) ['OROMIA', 'TIGRAI', 'SNNP', 'AFAR', 'GAMBELA'
         console.log(regionsArray[8]);//undefined
         console.log(regionsArray[5]);//B-GUMUZ    
 
+        
+
 
 
 
