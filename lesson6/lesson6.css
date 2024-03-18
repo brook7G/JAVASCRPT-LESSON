@@ -1,0 +1,20 @@
+*{
+    background-color: rgb(156, 217, 233);
+    font-size: large;
+}
+body{
+    color: rgb(6, 27, 27);
+    
+}
+h4{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: brown;
+    text-align: center;
+    /* font-size: large; */
+}
+p{
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(16, 2, 2);
+    font-size: medium;
+
+}
