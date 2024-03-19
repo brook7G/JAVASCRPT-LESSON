@@ -36,6 +36,8 @@ console.log(regionsArray);//>>>>>>>>(10) ['OROMIA', 'TIGRAI', 'SNNP', 'AFAR', '
                                                                 console.log(arrayDepartments.indexOf("information technology"));//>>>>> 2
 
 
+                                                                
+console.log(">>>>>>>>>>>>>>>>>>>> A. PUSH: ");
 
 
         
