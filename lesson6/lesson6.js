@@ -24,7 +24,7 @@ console.log(regionsArray);//>>>>>>>>(10) ['OROMIA', 'TIGRAI', 'SNNP', 'AFAR', '
         console.log(regionsArray[5]);//B-GUMUZ    
 
 
-                                                console.log(">>>>>>>>>>>>>>>>>>>> A. INSTANCE-OF: ");
+                                                console.log(">>>>>>>>>>>>>>>>>>>> B. INSTANCE-OF: ");
 
                                                 let arrayDepartments = 
                                                         ["computer science", "software engineering", "information technology", "information science"];
@@ -37,7 +37,36 @@ console.log(regionsArray);//>>>>>>>>(10) ['OROMIA', 'TIGRAI', 'SNNP', 'AFAR', '
 
 
                                                                 
-console.log(">>>>>>>>>>>>>>>>>>>> A. PUSH: ");
+console.log(">>>>>>>>>>>>>>>>>>>> C. PUSH: ");
+arrayDepartments = arrayDepartments = ["computer science", "software engineering", "information technology", "information science"];
+console.log(arrayDepartments);// >>> (4) ['computer science', 'software engineering', 'information technology', 'information science']
+console.log(arrayDepartments.length);// >>> 4
+
+// pushing new vaalue in to the existing array
+arrayDepartments.push("Aerospace engineering");
+
+console.log(arrayDepartments);// >>>['computer science', 'software engineering', 'information technology', 'information science', 'Aerospace engineering']
+console.log(arrayDepartments.length);//>>>> 5
+
+
+//PUSHING MORE THAN TWO VALUES AT SAME TIME INTO EMPTY ARRAY 
+let arraySM =[];
+
+arraySM.push('linkedIn','instagram','facebook','twitter','skool');
+console.log(arraySM);//>>> ['linkedIn', 'instagram', 'facebook', 'twitter', 'skool']
+console.log(arraySM.length);//>>> 5
+
+
+console.log(">>>>>>>>>>>>>>>>> D. UNSHIFT: ");
+
+
+
+
+
+
+
+
+
 
 
         
