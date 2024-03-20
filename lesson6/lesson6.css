@@ -21,4 +21,9 @@ p{
 b{
     color: rgb(207, 49, 99);
 }
+ol{
+    color: black;
+    justify-content: space-between;
+    
+}
 

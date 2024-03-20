@@ -25,12 +25,13 @@
                 <p>The length property is used to get information about the length (the number of elements) of the array (including empty positions between existing elements).</p>
             </li>
 
-            <li>B. INSTANCE_OF:
+            <li>B. INDEXOF:
                 <p>The <b>indexOf</b> method is used to search the array to locate a given value. If the value is found (the element is in the array), its index (position) will be returned.     
                    The method <b>returns <b style="color: blue;">-1</b></b> if the element is not found. If there is more than one element with the same value in the array, the index of the first element is returned.
+                
                 </p>
                  
-                   <img src="instanceOf.png" alt="IF THE IMG IS NOT VISIBLE FIND 'instanceOf.png' IN LESSON-6 FOLDER "> 
+                   <img src="indexOf.png" alt="IF THE IMG IS NOT VISIBLE FIND 'indexOf.png' IN LESSON-6 FOLDER "> 
             
             </li>
 
@@ -41,7 +42,7 @@
                     The length of the array is increased by <b>1</b>, and the new element is inserted on the <b>right</b> (it has the largest index of all elements).
                 </p>
 
-                <img src="pushMethod.png" alt="IF THE IMG IS NOT VISIBLE FIND 'pushMethod   .png' IN LESSON-6 FOLDER ">
+                <img src="pushMethod.png" alt="IF THE IMG IS NOT VISIBLE FIND 'pushMethod.png' IN LESSON-6 FOLDER ">
 
             </li>
 
@@ -49,8 +50,56 @@
 
                 <p>
                     The <b>unshift</b> method works similarly to <b>push</b>, the difference being that a new element is added to the <b>beginning</b> of the array. 
-                    The array length is increased by <b>1</b>, all the <b style="color: bisque;">old elements are moved to the right</b> and the new element is placed in the empty space that has been created at the beginning of the array. 
+                    The array length is increased by <b>1</b>, all the <b style="color: rgb(168, 133, 21);">old elements are moved to the right</b> and the new element is placed in the empty space that has been created at the beginning of the array. 
                     The index of the new element is <b>0</b>.
+                </p>
+
+                <img src="unshiftMethod.png" alt="IF THE IMG IS NOT VISIBLE FIND 'unshiftMethod.png' IN LESSON-6 FOLDER">
+                
+            </li>
+
+            <li>E. POP: 
+                <p>
+                    The <b>pop</b> method allows you to <b>remove</b> the <b>last</b> element from the array. As a result of its execution, the element with the largest index is returned, while at the same time it is removed from the original array. 
+                    The length of the array is obviously reduced by <b>1</b>.
+
+            </p>
+
+                <img src="popMethod.png" alt="IF THE IMG IS NOT VISIBLE FIND 'popMethod.png' IN LESSON-6 FOLDER">
+            </li>
+
+            <li>F. SHIFT:
+                <p>
+                    The <b>shift</b> method works similarly to <b>pop</b>, only this time we remove the element from the <b>beginning</b> of the array (with the index 0). 
+                    The removed element is returned by the method, all other elements are shifted to the <b>left</b>, completing the empty space. The length of the original array is <b>reduced</b> by <b>1</b>.
+                </p>
+
+                <img src="shiftMethod.png" alt="IF THE IMG IS NOT VISIBLE FIND 'popMethod.png' IN LESSON-6 FOLDER">
+
+            </li>
+
+            <li>G. REVERSE:
+                <p>
+                    The <b>reverse</b> method reverses the <b>order</b> of elements in the array. As a result of its calling, the <b>first element</b> of the original array will become <b>the last</b>, the second last but one, and so on.
+                </p>
+
+                <img src="reverseMethod.png" alt="IF THE IMG IS NOT VISIBLE FIND 'reverseMethod.png' IN LESSON-6 FOLDER">
+            </li>
+
+            <li>H. SLICE:
+                <p>
+                    The slice method allows you to create a new array from selected elements of the original array. 
+                    Calling the method does not affect the original array. The method takes either one or two integer values as arguments.
+                    <p style="color: black;">The basic combinations are:
+                        
+                        <ol>:-one argument larger than zero – all elements from the index given as an argument to the end of the array are copied;</ol>
+                        <ol>:-two arguments larger than zero – the element from the index specified as the first argument to the element specified as the second argument are copied;</ol>
+                        <ol>:-two arguments, first positive, second negative – all elements from the specified index to the end of the array are copied, except for the specified number of the last elements (e.g. argument -3 means that we do not copy the last three elements)</ol>
+                        <ol>:-one negative argument – the specified number of the last elements are copied to the end of the array (e.g. -2 means that you copy the last two elements).</ol>
+                        
+
+                        </ol> 
+                    </p>
                 </p>
             </li>
 
