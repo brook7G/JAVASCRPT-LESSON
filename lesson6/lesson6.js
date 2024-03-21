@@ -117,6 +117,95 @@ console.log('BEFORE reverse is called: ', fruitsOnShelf);//>>> ['apple', 'mangos
 const reversedArray =  fruitsOnShelf.reverse();
 console.log('AFTER reverse is called:  ',fruitsOnShelf);// >>> ['lemon', 'banana', 'orange', 'mangos', 'apple']
 
+console.log(reversedArray);
+
+/*and  the below call can also console the same information*/ 
+
+console.log('accessing the reversed array by calling fruitsOnShelf variable',fruitsOnShelf);
+console.log('accessing the reversed array by calling reversedArray variable',reversedArray);
+
+
+
+
+
+                                                        console.log(">>>>>>>>>>>>>>>>> H. SLICE: ");
+
+                                                        const section1 = 
+                                                                        ["habtenas", "lual","sadam","pineal","tihut","muaz","gelila","liche"];
+
+
+                                                        console.log('1.BEFORE Slice method is in use:', section1);//>>>['habtenas', 'lual', 'sadam', 'pineal', 'tihut', 'muaz', 'gelila', 'liche']
+
+                                                        const slicedArray1= section1.slice(1,4);
+                                                        console.log('2.After Slice method is in use on section1:', section1);//>>>['habtenas', 'lual', 'sadam', 'pineal', 'tihut', 'muaz', 'gelila', 'liche']
+                                                        console.log('the sliced datas from section1:', slicedArray1);//>>>['lual', 'sadam', 'pineal']
+
+                                                        const slicedArray2 = section1.slice(0,-1);
+                                                        console.log('2.BEFORE Slice method is in use on section1:', section1);//['habtenas', 'lual', 'sadam', 'pineal', 'tihut', 'muaz', 'gelila', 'liche']
+                                                        console.log('2.AFTER Slice method is in use on section1:', slicedArray2);//['habtenas', 'lual', 'sadam', 'pineal', 'tihut', 'muaz', 'gelila']
+
+
+                                                        //ON EVERY ACTION OF SLICING THE ORIGINAL ARRAY (section1) WILL BE THE SAME 
+
+                                                        const slicedArray3 = section1.slice(2);
+                                                        console.log('3.AFTER Slice method is in use on index[2] of section1:',slicedArray3);
+
+                                                        const slicedArray4 = section1.slice(-1);
+                                                        console.log('4.AFTER Slice method is in use on index[-1] of section1:',slicedArray4);
+
+                                                        const slicedArray5 = section1.slice(-2);
+                                                        console.log('5.AFTER Slice method is in use on index[-2] of section1:',slicedArray5);
+
+                                                        const slicedArray6 = section1.slice(-3);
+                                                        console.log('6.AFTER Slice method is in use on index[-3] of section1:',slicedArray6);
+
+                                                        const slicedArray7 = section1.slice(-4, -1);
+                                                        console.log('7.AFTER Slice method is in use on index[-4,-1] of section1:',slicedArray7);
+
+
+                                                        // AFTER ALL SLICING METHOD IS PEERFORMED THE ARRAY=SECTION1 IS STAYED ORIGINAL
+                                                        console.log('AFTER ALL SLICING METHOD IS PEERFORMED THE ARRAY=SECTION1 IS STAYED ORIGINAL',section1)
+
+console.log(">>>>>>>>>>>>>>>>> I. CONCAT: ")
+
+const oldArray = ['biruk fekadu'];
+const recentArray =['is a controversial person'];
+
+
+const newArray = oldArray.concat(recentArray);
+const newArrayArray = recentArray.concat(oldArray);
+const lengthOf = newArray.length;
+
+console.log('before concat method is in use: ',oldArray);          //['biruk fekadu']
+console.log('before concat method is in use: ', recentArray);       //['is a controversial person']
+
+
+console.log('after concat method is in use: ', newArray);     //['biruk fekadu', 'is a controversial person']
+console.log('after concat method is in use: ', newArrayArray);     //['is a controversial person', 'biruk fekadu']
+console.log('length of concatenated array is :',lengthOf);      //2
+
+//adding the third array and checking if it works to concat three arrays in one place at the  same 
+
+
+const testArray = ['and he is 24'];
+
+const newlyArray = oldArray.concat(recentArray,testArray);
+const length = newlyArray.length;
+
+console.log('before concat method is in use :',testArray);    //['and he is 24']
+console.log('after concat method is in use :',newlyArray);     //['biruk fekadu', 'is a controversial person', 'is a controversial person']
+console.log('length of concatenated array is :',length);        //3
+
+
+
+
+                                                
+                                                        
+
+
+
+
+
 
                                                         
 
