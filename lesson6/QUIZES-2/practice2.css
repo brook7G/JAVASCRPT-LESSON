@@ -21,6 +21,7 @@ b{
 p{
     font-size: 22px;
 }
-p, ol{
+ol{
     font-size: 22px;
+    font-style: italic;
 }
