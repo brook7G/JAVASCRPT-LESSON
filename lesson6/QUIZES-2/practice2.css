@@ -1,0 +1,26 @@
+*{
+    background-color: black;
+}
+body{
+    color: aliceblue;
+}
+h1{
+    text-align: center;
+}
+
+h2{
+    color: rgb(249, 249, 249);
+}
+ul{
+    color: #66FCF1;
+}
+b{
+    color: #86c232;
+    
+}
+p{
+    font-size: 22px;
+}
+p, ol{
+    font-size: 22px;
+}
