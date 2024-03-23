@@ -140,8 +140,53 @@ console.log("SUM OF THE PAGES:");
 
     const totalPages = books[0].pages + books[1].pages + books[2].pages + books[3].pages;
     console.log(` total pages of the books in the array${totalPages}`);
+    
 
 
+                console.log("ANSWER FOR LAB QUESTION");
+                    const contacts = [
+                        {
+                            name:"Maxwell Wright",
+                            phone:"(0191) 719 6495",
+                            email:"Curabitur.egestas.nunc@nonummyac.co.uk"
+                        },
+
+
+                        {
+                            name:"Raja Villarreal",
+                            phone:"0866 398 2895",
+                            email:"posuere.vulputate@sed.com"
+                        },
+
+                        {
+                            name:"Helen Richards",
+                            phone:"0800 1111",
+                            email:"libero@convallis.edu"
+                        }
+
+                    ]
+
+                    console.log('My contacts', contacts);
+                    console.log(contacts.length);
+
+
+                    const newContact = {
+                        name:"Maisie Haley",
+                        phone:"09135313030",
+                        email:"risus.Quisque@urna.ca"
+                    }
+                    console.log('the new added contact is:  ',newContact)
+
+                    contacts.push(newContact);
+                    
+                    console.log('My contacts', contacts);
+                    console.log(contacts.length);
+
+                    console.log(`${contacts[0].name}/${contacts[0].phone}/${contacts[0].email}`);
+                    console.log(`${contacts[1].name}/${contacts[1].phone}/${contacts[1].email}`);
+
+
+    
                
             
 
