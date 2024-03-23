@@ -63,11 +63,6 @@ console.log(prefixedUserName /* +  prefixedUserName2*/);
 // console.log(prefixedUserName2);
 
 
-let z = 10 / 100;
-
-console.log(typeof (z));
-
-
 
 
 
