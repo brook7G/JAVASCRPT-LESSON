@@ -1,0 +1,19 @@
+*{
+    background-color: aquamarine;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+h1{
+    color: rgb(55, 35, 74);
+    text-align: center;
+    font-family: verdana;
+    font-size: 40px;
+    
+    
+}
+p{
+    color:rgb(255, 51, 0);
+    font-size: 20px;
+}
+b{
+    color: rgb(106, 50, 79);
+}
