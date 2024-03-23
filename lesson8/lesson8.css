@@ -1,10 +1,33 @@
+*{
+    font-size: 23px;
+}
+
 body{
     background-color: #B2B5E0;
 }
+
 h1{
     color: white;
-    font-size: 100px;
+    font-size: 35px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-style: italic;
+    font-style: normal;
     text-align: center;
+}
+
+p{
+    color: #24254c;
+    font-size: 23px;
+}
+
+b{
+    color: yellow;
+    font-style: italic;
+}
+
+h3{
+    color: white;
+    font-size: 24px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: normal;
+    
 }
