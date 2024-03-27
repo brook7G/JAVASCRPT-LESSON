@@ -131,6 +131,8 @@ console.log("5.COMPOUND ASSIGNMENT OPERATORS:")
             compound_op_5 **= 2;
             console.log('compound assignment with EXPON....: ',compound_op_5);
 
+            //GOTO THE NEXT LESSON ----LESSON-9 
+
 
 
 
