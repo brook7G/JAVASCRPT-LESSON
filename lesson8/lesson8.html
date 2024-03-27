@@ -38,7 +38,7 @@
              </p>
 
              <p>
-                <h3>2.ARITHMETIC OPERATIONS</h3>
+                <h3>2.ARITHMETIC OPERATORS</h3>
                 <b>Arithmetic</b> operators express <b>mathematical</b> operations, and they accept numerical values and variables. All arithmetic operators, except <b>addition</b>, will try to implicitly convert values to the Number type before performing the operation.
 
                 The <b>addition</b> operator will convert everything to a String if any of the operands is a String type, otherwise it will convert them to a Number like the rest of the arithmetic operators. <br><br><br>The order of the operations is respected in JavaScript like in math, 
@@ -49,8 +49,40 @@
 
              </p>
 
+             <p>
+                <h3>3.UNARY ARITHMETIC OPERATORS</h3>
+                There are also several <b>unary</b> arithmetic operators (<b>operating on a single operand</b>). Among them there are the plus "<b>+</b>" and minus <b>-</b> operators.
+                <br>
+                <br>
+                Both operators <b>convert operands</b> to the Number type, while the minus operator additionally negates it.
+             </p>
 
+             <p>
+                <h3>4.UNARY INCREMENT AND DECREMENT OPERATORS</h3>
+                Among the arithmetic operators, we also have at our disposal the unary <b>increment ++</b> and <b>decrement  - -</b> operators, in both <b>prefix</b> and <b>postfix</b> versions. 
+                They allow us to <b>increase</b> (increment) or <b>decrease</b> (decrement) the value of the operand by <b>1</b>.
+                <br>
+                <br>
 
+                These operators in the <b>postfix version</b> (i.e. the operator is on the right side of the operand) performs the operation by changing the value of the variable, but <b>returns the value before the change</b>. 
+                The <b>prefix version</b> of the operator (i.e. the operator is placed before the operand) performs the operation and <b>returns the new value</b>.
+                
+             </p>
+             <img src="unary.png" alt="">  
+             <p>
+               keep in mind that the <b>Number</b> type is a <b>floating-point</b> type, which means that the <b>results</b> of some of the operations may be <b>imprecise</b>.
+               <img src="imprecises.png" alt="">
+               <br><br>
+               These are artefacts of floating-point arithmetic. The number will be precise for integers up to <b>252</b>, but fractions may not be as precise, as many fractions are impossible to directly represent in binary format. 
+               We’ll discuss how to mitigate this in a moment when we introduce comparison operators.
+             </p>
+
+             <p>
+               <h3>5. COMPOUND ASSIGNMENT OPERATORS</h3>
+               Binary arithmetic operators can be combined with the assignment operator, resulting in the <b>addition</b> assignment <b>+=</b>, the <b>subtraction</b> assignment <b>-=</b>, the <b>multiplication</b> assignment <b>*=</b>, the <b>division</b> assignment <b>/=</b>, the <b>remainder</b> assignment <b>%=</b>, and the <b>power</b> assignment <b>**=</b>.
+               <br><br>
+               Each of these <b>operators</b> takes a <b>value</b> from the variable to which the assignment is to be made (the <b>left operand</b>) and <b>modifies</b> it by <b>performing an arithmetic operation </b>using the <b>right operand</b> value. The <b>new value</b> is assigned to the <b>left operand</b>.
+             </p>
 
     </p>
 
