@@ -1,0 +1,11 @@
+*{
+    background-color: aliceblue;
+}
+h1{
+    
+    color: rgb(21, 0, 255);
+    font-size: 70px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: normal;
+    text-align: center;
+}
