@@ -1,6 +1,12 @@
 *{
     background-color: #30d150;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
+body{
+    font-size: 10vw;
+}
+
 h1{
     
     color: rgb(255, 0, 128);
@@ -9,6 +15,7 @@ h1{
     font-style: normal;
     text-align: center;
 }
+
 h3{
     font-size: 22px;
     color: white;
@@ -16,10 +23,17 @@ h3{
 
 }
 
-p,li,br{
+p{
     color: #000000;
     font-size: 19px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+
+p,li{
+    color: #000000;
+    font-size: 19px;
+    font-family: Cambria;
 
 }
 
@@ -29,4 +43,19 @@ b{
     color: rgb(181, 102, 102);
     font-style:italic;
 
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+pre{
+    color: blue;
+}
+
+pre,code{
+    color: rgb(255, 0, 0);
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
