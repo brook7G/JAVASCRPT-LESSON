@@ -8,7 +8,73 @@
     <link rel="stylesheet" href="lesson9.css">
 </head>
 <body>
-    <h1>PROGRAMMING IS AN AWESOME DRUG</h1>
+    <h1>CONTINUED FROM LESSON 9</h1>
+    <h3>
+        6.LOGICAL OPERATORS
+    </h3>
+    <p>
+        <b>Logical operators</b> work with Boolean type values (true or false). For now, 
+        we can assume that they work on operands of this type and return values of this type only. JavaScript provides us with three such operators:
+            <li>a <b>conjunction</b>, i.e. logical <b>AND</b> (<b>&&</b> symbol)</li>
+            <li>an <b>alternative</b>, i.e. logical <b>OR</b> (symbol <b>||</b>)</li>
+            <li>a <b>negation</b>, i.e. logical <b>NOT</b> (symbol <b>!</b>)</li>
+        
+    </p>
+
+    <p>
+        <br>
+
+        Let's start with the <b style="color: rgb(0, 51, 255);">1.CONJUNCTION</b>. This is a binary operator that returns true if both operands are true.
+        <br>
+        <br>
+
+        >>>>>>>>>>><b>London is a city</b> AND <b>London is in Great Britain</b>.
+
+        <br>
+        <br>
+
+        <b>Both</b> statements are <b>true</b> in this case, and after combining them with <b>AND</b>, 
+        a sentence is created which is also <b>true</b>. If any of these statements were <b>false</b> (or both were false) the whole sentence would also be false, e.g:
+        <br><br>
+        >>>>>>>>>>><b>London is a city </b>AND <b style="color: red;">London is in Iceland</b>.
+    </p>
+
+    <p>
+        In the case of an <b style="color: rgb(0, 51, 255);">2.ALTERNATIVE</b> that is also a binary operator, it is enough for one of the operands to be true for the operator to return true. 
+        Coming back to our example with logical sentences, let's use a sentence made up of two statements connected by an <b>OR</b> operator, e.g.:
+        <br><br>
+        >>>>>>>>>>><b>London is a city</b> OR <b style="color: red;">London is in Iceland.</b>
+        <br><br>
+        The sentence may not look overly eloquent or sensible, but from the point of view of logic, <b>it is quite correct</b>. It is enough that <b>one of</b> the statements is <b>true</b>, so that the <b>whole</b> sentence is also <b>true</b>. 
+        <b>If both</b> statements are <b>false</b>, then the sentence will also be <b>false</b>, e.g.:
+        <br><br>
+        >>>>>>>>>>><b style="color: red;">London is a village</b> OR <b style="color: red;">London is in Iceland.</b>
+    </p>
+
+    <p>
+        The <b style="color: rgb(0, 51, 255);">3.NEGATION</b> operator is an unary, and it changes the logical value of the operand to its opposite, that is, false to true, and true to false. Using logical sentences, we can present it with the negation <b>NOT</b>. 
+        Let's take as example a simple sentence that is <b>true</b> <br><br>
+        >>>>>>>>>>><b>London is a city</b>
+        <br><br>
+        By adding negation to it , we change its value to <b>false</b>: <br><br>
+        >>>>>>>>>>><b style="color: red;">London is <b  style="color: blue;">NOT</b> a city</b><br><br>
+        <img src="londonCity.png" alt="">
+    </p>
+
+    <p>
+        We can, of course, connect as many of these operators as we need, creating more complex "sentences". 
+        <b>As in the case of arithmetic</b> operators, the sequence of actions is determined here. 
+        The <b>highest priority</b> is negation "<b>!</b>", then <b>conjunction</b> "<b>&&</b>", and finally the <b>alternative</b> "<b>||</b>". 
+        The precedence can of course be changed by means of <b>parentheses</b>.
+    </p>
+    <p>
+        <h3>LOGICAL OPERATORS AND BOOLEAN VALUES</h3>
+        As long as operands are of the type <b>Boolean</b>, we can easily see what will be <b>returned</b>. 
+        But those operators can also be used with different data types. The easiest case is logical <b>NOT</b>. <br>
+        <b>First</b>, the operand is temporarily converted to a Boolean value (according to the rules explained in the previous chapter) and only then it is treated with 
+        the appropriate operator action (i.e. a true value is converted to false, and vice versa). <b>Therefore</b>, the <b>NOT</b> operator will always <b>return either false or true</b>. 
+        Often, double negation is used to convert any type to Boolean.
+    </p>
     
 </body>
 </html>
