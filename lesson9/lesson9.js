@@ -112,7 +112,37 @@ console.log("6. LOGICAL OPERATORS: ");
 
             console.log('x++ && y++ is : ',x++ && y++);// 0
             console.log('the value of x : ',x);// 1
-            console.log('the value of y : ',y);// y == 0
+            console.log('the value of y : ',y);// y == 0 
+            //
+            //
+            //
+            console.log("")
+            console.log("COMPOUND ASSIGNMENT OPERATORS:");
+                let lol = true;
+                console.log(lol);//true
+
+                lol &&= false;// is the same as this program >> lol = lol && false;
+                
+                console.log(lol);//false
+                //
+                //
+                console.log("");
+                //
+                let omg = true;// is the  same as this program >> omg = omg && true;
+                console.log(omg);//true
+
+                omg ||= false;// is the same as this program >> omg = omg && false;
+                console.log(omg);//true
+                //
+                //
+                console.log("");
+                //
+                let wtf = false;// is the same as this program >> wtf = wtf && false;
+                console.log(wtf);//false
+
+                wtf ||= false;// is the same as this  program >> wtf = wtf && false;
+                console.log(wtf);//false
+
             
             
         

@@ -154,13 +154,43 @@
             <b>Logical operators</b> are usually used together with <b>conditional operators</b>, and they are especially useful in <b>conditional instructions</b> (decision making) 
             and in <b>loops </b>(loop-ending conditions). You can learn about their practical application in the sections on conditional instructions and loops mentioned just now.
         </p>
-        
+            
         <h3>
             3.COMPOUND ASIGNMENT OPERATORS
         </h3>
 
         <p>
+            Just like arithmetic operators, <b>binary logical operators</b> can be used in combination <b>with the assignment operator</b>, creating a logical AND assignment "<b>&&=</b>" and a logical OR assignment "<b>||=</b>" .
+            It should be easy to imagine how they work. In the case of the AND operator, we can check it with the following example:
 
+            <pre>
+                <code>
+                    let lol = true;
+                    console.log(lol);//true
+
+                    lol &&= false;// is the same as this program >> lol = lol && false;
+                    
+                    console.log(lol);//false
+                    //
+                    //
+                    console.log("");
+                    //
+                    let omg = true;// is the  same as this program >> omg = omg && true;
+                    console.log(omg);//true
+
+                    omg ||= false;// is the same as this program >> omg = omg && false;
+                    console.log(omg);//true
+                    //
+                    //
+                    console.log("");
+                    //
+                    let wtf = false;// is the same as this program >> wtf = wtf && false;
+                    console.log(wtf);//false
+
+                    wtf ||= false;// is the same as this  program >> wtf = wtf && false;
+                    console.log(wtf);//false
+                </code>
+            </pre>
         </p>
      
     
