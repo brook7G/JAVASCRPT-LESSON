@@ -1,0 +1,37 @@
+*{
+    background-color: rgb(0, 255, 170);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 10vw;
+    width: 100%;
+}
+
+h1{
+    color: rgb(255, 0, 0);
+    font-size: 50px;
+    text-align: center;
+}
+
+h3{
+    font-size: 30px;
+    color: rgb(97, 97, 229);
+    
+}
+
+p{
+    font-size: 20px;
+    color: black;
+}
+
+b{
+    font-size: 20px;
+    color: rgb(171, 171, 23);
+}
+
+pre, code {
+    font-family: monospace;
+    font-size: 16px;
+}
+
+p .tr{
+    color: rgb(255, 0, 0);
+}
