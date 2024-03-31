@@ -26,6 +26,11 @@ h3 .uniq {
     color: green;
     font-size: 30px;
 }
+.uniq{
+    color: rgb(14, 209, 186);
+    font-style: italic;
+    background-color: rgba(139, 113, 113, 0.515);
+}
 
 h3{
     font-size: 30px;
