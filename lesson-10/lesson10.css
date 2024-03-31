@@ -26,7 +26,7 @@ h3 .uniq {
     color: green;
     font-size: 30px;
 }
-.uniq{
+.uniq,b{
     color: rgb(14, 209, 186);
     font-style: italic;
     background-color: rgba(139, 113, 113, 0.515);
@@ -42,6 +42,12 @@ p{
     text-align: start;
     color: rgb(2, 33, 2);
     
+}
+
+ul{
+    font-size: 30px;
+    color: blue;
+    font-family: monospace;
 }
 
 b{
