@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson-10 with Biruk</title>
+    <script src="lesson10.js"></script>
+    <link rel="stylesheet" href="lesson10.css">
+</head>
+<body>
+    <h1>CONTINUED... [OPERATORS]</h1>
+    <h3>
+        STRINGS, COMPARISON, AND OTHER <span class="uniq">JS</span> OPERATORS
+    </h3>
+
+    <h2>
+        1. STRINGS OPERATORS 
+    </h2>
+    <p>
+        The only operator in this group is the " <b>concatenation</b>" +. This operator will convert everything to a String " <b>if any of the operands</b>" is a " <b>String</b>" type. 
+        Finally, it will create a new character string, attaching the right operand at the end of the left operand.
+        <pre>
+            <code>
+                const selamta = "Selam";
+                console.log(selamta + " " + "Hundee !!");// Selam Hundee !!
+                //
+                //
+                const melikt = "Melkam Addis Amet "
+                const melkamMignot = melikt + 2017;
+                console.log(melkamMignot);//  Melkam Addis Amet 2017
+                //
+                console.log(typeof melkamMignot); // STRING
+            </code>
+        </pre>
+    </p>
+
+    <h2 class="h20">
+        COMPOUND ASSIGNMENT OPERATORS
+    </h2>
+    <p>
+        You can probably guess that this operator can also be used in conjunction with the replacement operator. Its operation is so intuitive that we will stop with a simple example:
+
+        <pre>
+            <code>
+                let weregna = "Mn malet felegeh nw "
+                weregna += "biruk ";
+                weregna += 101;
+
+                console.log(weregna)
+            </code>
+        </pre>
+    </p>
+
+    <h2>
+       2. COMPARISON OPERATORS
+    </h2>
+    <p>
+        Comparison operators are used to check the equality or inequality of values. 
+        All comparison operators are binary, and all of them return a logical value representing the result of the comparison, <b>true </b> or <b>false</b>.
+        <br>
+        It makes sense to check equality, or which is greater, using <b>numeric</b> representation, and JavaScript will in most cases convert types to a <b>Number before comparison</b>.
+        <br><br>
+        There are <b>two exceptions </b>to this, <b>strings</b> and the <b>identity</b> (strict equality) operator. 
+        <br>
+        <b>** Strings</b> are compared char by char (precisely Unicode character by Unicode character using their values).
+        <br>
+        To <b>check</b> if the operands <b>are equal</b>, we can use either the identity ( <b>strict equality</b> ) operator <b>===</b> or the <b>equality</b> operator <b>==</b>.
+        <br><br>
+        The first is more restrictive, and <b> in order to return true</b>, the <b>operands must be identical</b> (i.e. they must be <b>equal</b> and of <b>the same type</b> ).
+
+        <pre>
+            <code>
+                console.log(10 === 5); // false
+                console.log(10 === 10); // true
+                console.log(10 === 10n); // false
+                console.log(10 === "10"); // false
+                console.log("10" === "10"); // true
+                console.log(0 === false); // false
+                console.log("biruk" === "fekadu"); // false 
+                console.log(undefined === false); // false 
+                console.log(null === false); // false
+            </code>
+        </pre>
+        <p>The <b>equality operator</b> requires that they are <b>only equal</b>, and their <b>types are not compared</b>. So if the operands are of <b>different types</b>, the interpreter will try to <b>convert them to numbers</b>, for example, 
+           <b>false</b> will convert <b>to 0</b>, <b>true</b> to <b>1</b>, <b>undefined</b> to <b>NaN</b>, <b>null</b> to <b>0</b>, <br>
+           ................. <b>10n</b> to <b>10</b> and <b>"123"</b> to <b>123</b>, etc.
+        </p>
+    </p>
+    <p>
+        " <b>Note</b>" that if any of the operands has a <b>NaN</b> value (or has been converted to NaN, e.g. with undefined), <b>the equality operator</b> will return <b>false</b>.
+        <pre>
+            <code>
+                        console.log(10 == 5); // FALSE
+                        console.log(10 == 10); //TRUE
+                        console.log(10 == 10n);//TRUE
+                        console.log(10 == "10"); //TRUE
+                        console.log("10" == "10"); //TRUE     
+                        console.log(0 == false);   //TRUE
+                        console.log("biruk" == "fekadu"); //FALSE
+                        console.log(undefined == false); //FALSE
+                        console.log(null == false);  // FALSE
+                        console.log(undefined == true);  //FALSE
+            </code>
+        </pre>
+        <p class="uniq"><b>Remember!</b> Use the identity operator unless you intentionally allow for a positive comparison between the different types.</p>
+    </p>
+    <p>
+        ***There are also <b>complementary operators</b> to those just demonstrated – the <b>nonidentity operator</b> !== and the <b>inequality operator</b> !=. 
+        <br>The <b>first</b> returns <b>true if</b> the operands are <b>not identical</b>, in other words, <b>they are equal</b> but of <b>different types</b>, or they are simply different. 
+        The <b>second</b> returns <b>true if </b>the <b>operands are different</b>.
+
+        <pre>
+            <code>
+                        console.log(10 !== 5); // true
+                        console.log(10 !== 10); //false
+                        console.log(10 !== 10n);//TRUE
+                        console.log(10 !== "10"); //TRUE
+                        console.log("10" !== "10"); //false     
+                        console.log(0 !== false);   //TRUE
+                        console.log("biruk" !== "fekadu"); //true
+                        console.log(undefined !== false); //true
+                        console.log(null !== false);  // true
+                        console.log(undefined !== true);  //true
+                        <br>
+                        console.log(10 != 5); // true
+                        console.log(10 != 10); //false
+                        console.log(10 != 10n);//TRUE
+                        console.log(10 != "10"); //TRUE
+                        console.log("10" != "10"); //false     
+                        console.log(0 != false);   //TRUE
+                        console.log("biruk" != "fekadu"); //true
+                        console.log(undefined != false); //true
+                        console.log(null != false);  // true
+                        console.log(undefined != true);  //true
+            </code>
+        </pre>
+    </p>
+
+    <p>
+        ***We also have operators that allow us to <b>check if one of the operands</b> is <b>bigger than</b> ">", <b>smaller than</b> "<", <b>bigger than or equal</b> to ">=", and <b>smaller than or equal</b> to "<=". 
+        These operators <b>work on any type</b> of operand, but it makes sense to <b>use them only on numbers</b> or values that will convert correctly to numbers.
+
+        <pre>
+            <code>
+                console.log(10 > 100); // -> false
+                console.log(101 > 100); // -> true
+                console.log(101 > "100"); // -> true
+                
+                console.log(101 < 100); // -> false
+                console.log(100n < 102); // -> true
+                console.log("10" < 20n); // -> true
+                
+                console.log(101 <= 100); // -> false
+                console.log(10 >= 10n); // -> true
+                console.log("10" <=  20); // -> true
+            </code>
+        </pre>
+    </p>
+
+    <p>
+        You can also use them <b>to compare strings</b> that do <b>not</b> represent <b>numbers</b>, but the algorithm of this comparison is quite complex, and the comparison itself is not very useful. 
+        By way of simplification, <b>single characters of both</b> strings are <b>tested on the same positions</b>. <br><br>
+        ***It is assumed that the values of the <b>single characters correspond to their positions in the alphabet</b> (the letter <b>b</b> has a <b>higher</b> value than the letter <b>a</b>). 
+        <b>Upper-case letters</b> have <b>lower</b> values than <b>lower-case letters</b>, and <b>digits</b> have even lower values.
+
+        <pre>
+            <code>
+                console.log("b" > "a"); // -> true
+                console.log("a" > "B"); // -> true
+                console.log("B" > "A"); // -> true
+                console.log("A" > "4"); // -> true
+                console.log("4" > "1"); // -> true
+                
+                console.log("ab1" < "ab4"); // -> true
+                console.log("ab4" < "abA"); // -> true
+                console.log("abB" < "aba"); // -> true
+                console.log("aba" < "abb"); // -> true
+                
+                console.log("ab" < "ab4"); // -> true
+            </code>
+        </pre>
+    </p>
+
+    
+</body>
+</html>
