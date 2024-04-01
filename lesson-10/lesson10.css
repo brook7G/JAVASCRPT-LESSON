@@ -29,7 +29,7 @@ h3 .uniq {
 .uniq,b{
     color: rgb(14, 209, 186);
     font-style: italic;
-    background-color: rgba(139, 113, 113, 0.515);
+    background-color: rgba(139, 113, 113, 0.152);
 }
 
 h3{
@@ -60,4 +60,25 @@ pre, code {
     color: rgb(27, 9, 185);
     font-family: monospace;
     width: 100%;
+}
+div {
+
+    font-size: 17px;
+    text-align: start;
+    color: rgb(2, 33, 2);
+
+}
+
+.precedence{
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 100%;
+    text-align: center;
+}
+
+img{ 
+    width: 100%;
+    align-items: center;
+    /* margin-left: 30px; */
 }

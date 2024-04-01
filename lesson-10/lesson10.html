@@ -35,7 +35,7 @@
     </p>
 
     <h2 class="h20">
-        COMPOUND ASSIGNMENT OPERATORS
+        1.1.COMPOUND ASSIGNMENT OPERATORS
     </h2>
     <p>
         You can probably guess that this operator can also be used in conjunction with the replacement operator. Its operation is so intuitive that we will stop with a simple example:
@@ -274,10 +274,65 @@
                     
                     <pre>
                         <code>
-                            
+
                         </code>
                     </pre>
     </p>
+
+    <h2 class="precedence">
+        4.PRECEDENCE 
+    </h2>
+    <p>
+        Practically in all the examples where we presented the <b>operation of successive operators</b>, we followed instructions in which one operator was used. In reality, usually multiple operators are used simultaneously. 
+        At this point, a quite important question arises: in what order will the interpreter perform them? This will of course affect the final result of the operators, so it is worth taking this into account when writing the instructions.
+
+        <pre>
+            <code>
+                let a = 10;
+                let b = a + 2 * 3;
+                let c = a + 2 < 20 -15;
+                //
+                console.log(a); // 10
+                console.log(b); // 16 
+                console.log(c); // false
+            </code>
+        </pre>
+        
+    </p>
+    <div>
+        <p>
+            In the <b>second line</b> of the example (<b>variable b declaration</b> ), the operators are executed in the order we know from mathematics. <b>First</b>, <b>multiplication is performed</b>, <b>then addition</b>, and at the end the resulting value is assigned to the variable. 
+            In the <b>third line</b> (declaration of <b>variable c</b> ) the matter gets a little more complicated. <b>First</b>, the <b>sum of</b> variable <b>a </b>and <b>number 2</b> is calculated, <b>then</b> the <b>sum of</b> numbers <b>20 </b>and <b>15,</b> and <b>both results</b> are compared with the logical operator (less than) and the result is placed in variable c.
+                <br><br>
+            The <b>JavaScript inter</b>preter uses <b>two operator properties to determine</b> the <b>sequence of</b> operations: <b>precedence</b> and <b>associativity</b>. Precedence can be treated as a priority, with some operators having the same precedence (e.g. addition and subtraction). 
+            Associativity allows you to specify the order of execution if there are several operators with the same priorities next to each other.
+
+            Precedence can be presented as a numerical value – the higher the value, the higher the priority of the operation. If, for example, an OP1 operator has a smaller precedence than OP2, then the instruction:
+
+            <pre><code>
+                a OP1 b OP2 c
+            </code></pre>
+            will be <b>executed</b> as follows: <b>first</b>, <b>OP2</b> will be executed <b>on</b> operands <b>b</b> and <b>c</b>, <b>then OP1</b> will be <b>executed</b> on the left operand a and the right operand, resulting from OP2. So the instruction could be presented in the form:
+
+            <pre><code>
+                a OP1 ( b OP2 c)
+            </code></pre>
+            If we perform the same operations (or different operations but with the same precedence), the interpreter uses associativity to determine the order of operations. Operators may have a specified left-associativity (left to right order) or right-associativity (right to left order). 
+            Let's assume that in our example, the operator OP1 has left-associativity:
+
+            <pre><code>
+                a OP1 b OP2 c
+            </code></pre>
+            In such a situation, the OP1 operation on operands a and b will be performed first, followed by a second OP1 operation on the received result and operand c. Bearing in mind that we are dealing with left-associativity, we could write the instruction in the following form:
+
+            <pre><code>
+                (a OP1 b) OP2 c
+            </code></pre>
+            It follows that it would be appropriate to know not only the precedence of all operators, but also their associativity. This may seem a bit overwhelming, taking into account the number of operators. Fortunately, it is usually enough to know the properties of the most basic operators and use brackets in doubtful situations. 
+            The brackets allow you to impose the order of operations, just like in mathematics. Keep this in mind when viewing the table below. It contains a list of operators we already know with their precedence and associativity, so it is quite large. You absolutely do not have to remember everything if you can use brackets to group operations.
+        </p>
+    </div>
+<!-- <img src="precedenceTable.png" alt=""> -->
 
 
     
