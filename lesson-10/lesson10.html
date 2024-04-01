@@ -187,13 +187,96 @@
     </h2>
     
     <p>
-        The list of operators in JavaScript is much longer, but many of them would not be particularly useful at this stage of learning, such as bitwise operators, 
+        The list of operators in JavaScript is much longer, but many of them would not be particularly useful at this stage of learning, such as <b>bitwise operators</b>, 
         which operate on single bits of operands. However, it is worth mentioning a few more operators, some of which have already appeared in earlier examples.
 
-        <ul>
-            A. ternary
-        </ul>
+            <ul>
+                A. typeof
+            </ul>
+                <p>It is a <b>unary operator</b>, which checks the type of operand (it can be a variable or a literal). The operator returns a string with the type name, <b>such as "boolean" or "number"</b>.
+
+                    If you want to refresh your knowledge of this operator, go back to the section about data types.
+                </p>
         
+                <pre>
+                    <code>
+                        const wtf= " what are you talking about";
+                            
+                        console.log(typeof wtf); // STRING
+                        console.log(typeof 10); // NUMBER
+
+                    </code>
+                </pre>
+
+                
+            <ul>
+                B. instanceof
+            </ul>   
+                <p>
+                    The instanceof operator appeared while discussing arrays. It is a binary operator that checks whether an object (left operand) is of some type (right operand). Depending on the test result, it returns true or false.
+
+                    During this course, the usefulness of this operator is limited to testing whether a variable contains an array
+                </p>
+                <pre>
+                    <code>
+                        const blabla=[{
+                            name:'biruk',
+                            age:24
+                        }];
+                        console.log(blabla instanceof Array); // true
+                        console.log(blabla instanceof Object); // true
+                        console.log(blabla instanceof String); // false
+                    </code>
+                </pre>
+
+
+
+            <ul>
+                c. delete
+            </ul>
+                <p>
+                    The unary delete operator was introduced while discussing objects. It allows you to delete a selected field of the object whose name is indicated with an operand.
+                </p>
+
+                <pre>
+                    <code>
+                        const myPlans =["God ", "Money ","Girlfriend","Google SWE"];
+                        console.log(myPlans);   // God , Money , Girlfriend , Google SWE
+                        
+                        delete myPlans[2]; // Girlfriend is deleted from myPlans
+                        console.log("my new plans",myPlans); // God, Money, Google SWE
+                    </code>
+                </pre>
+                    
+
+            <ul>
+                d. ternary
+            </ul>
+                <p>
+                    The last of the operators discussed is quite unusual, because it is the <b>only operator using three operands</b>. It is a conditional operator. 
+                    Based on the <b>value of the first operand</b> ( <b>true or false</b> ), the <b>value </b>of the <b>second or third operand</b>, respectively, is returned. <br><br> 
+                    <b>This operator</b> is most often used <b>to place one of the two</b> values in the variable <b>depending on</b> a certain <b>condition</b>. 
+                    We will come back to the operator when discussing the conditional if, but here we’ll provide only a simple example of its use. 
+                    The three operands are separated from each other by ? (the first from the second) and : (the second from the third).
+                </p>
+
+                <pre>
+                    <code>   
+                        console.log(true ? "Biruk" : "roro"); // Biruk
+                        console.log(false ? "Biruk" : "roro"); // roro
+
+                    </code>
+                </pre>
+                    <p>
+                        Each of these operands can be an <b>expression that must</b> be calculated.In the following example, <b>the first operand</b> is a <b>comparison of two numbers</b> using a comparison operator. 
+                        The <b>result</b> of the comparison will be <b>false</b>, which will be used by the conditional (ternary) operator.
+                    </p>
+                    
+                    <pre>
+                        <code>
+                            
+                        </code>
+                    </pre>
     </p>
 
 

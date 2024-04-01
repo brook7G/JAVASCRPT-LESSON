@@ -106,7 +106,58 @@ console.log("");
                                 console.log("aba" < "abb"); // -> true
                                 
                                 console.log("ab" < "ab4"); // -> true
+                                ////\\//\\//\\//\\//\\//\\//\\//\\//\\
+                                //\\//\\//\\//\\//\\//\\//\\//\\//\\//
 console.log("");
+             //
+            console.log("OTHER Js OPERATORS");
+            //
+            //
+                console.log("a.typeof");
+                    const wtf= " what are you talking about";
+                    
+                    console.log(typeof wtf); // STRING
+                    console.log(typeof 10); // NUMBER
+                    //
+
+                console.log("");
+                console.log("b.instanceof");
+                    const blabla=[{
+                        name:'biruk',
+                        age:24
+                    }];
+                    console.log(blabla instanceof Array); // true
+                    console.log(blabla instanceof Object); // true
+                    console.log(blabla instanceof String); // false
+                    //
+
+                console.log("");
+                console.log("c.delete");
+                
+                    const myPlans =["God ", "Money ","Girlfriend","Google SWE"];
+                    console.log(myPlans);  // God , Money , Girlfriend , Google SWE
+                    
+                    delete myPlans[2]; // Girlfriend is deleted from myPlans
+                    console.log("my new plans",myPlans); // God, Money, Google SWE
+                    //
+
+                console.log("");
+                console.log("d.ternary");    
+
+                console.log(true ? "Biruk" : "roro"); // Biruk
+                console.log(false ? "Biruk" : "roro"); // roro
+                //
+                //
+                console.log("");    
+                const name = 1 > 2 ? "Biruk" : "roro";
+                console.log(name); // roro
+
+                //\\//\\//\\//\\//\\//\\//\\
+                ////\\//\\//\\//\\//\\//\\//\\
+
+console.log("PRECEDENCE")                
+
+
 
     
                     
