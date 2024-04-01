@@ -312,24 +312,28 @@
             <pre><code>
                 a OP1 b OP2 c
             </code></pre>
-            will be <b>executed</b> as follows: <b>first</b>, <b>OP2</b> will be executed <b>on</b> operands <b>b</b> and <b>c</b>, <b>then OP1</b> will be <b>executed</b> on the left operand a and the right operand, resulting from OP2. So the instruction could be presented in the form:
+            will be <b>executed</b> as follows: <b>first</b>, <b>OP2</b> will be executed <b>on</b> operands <b>b</b> and <b>c</b>, <b>then OP1</b> will be <b>executed on</b> the <b>left operand "a"</b> and the <b>right</b> operand, <b>resulting from OP2</b>. So the instruction could be presented in the form:
 
             <pre><code>
                 a OP1 ( b OP2 c)
             </code></pre>
-            If we perform the same operations (or different operations but with the same precedence), the interpreter uses associativity to determine the order of operations. Operators may have a specified left-associativity (left to right order) or right-associativity (right to left order). 
+            If we <b>perform the same operation</b>s (or <b>different operations </b>but with the <b>same precedence</b> ), the <b>interpreter uses associativity</b> to <b>determine</b> the <b>order of operations</b>. Operators may have a <b>specified left-associativity</b> (<b>left to right order</b>) or <b>right-associativity</b> (<b>right to left order</b>). 
             Let's assume that in our example, the operator OP1 has left-associativity:
 
             <pre><code>
                 a OP1 b OP2 c
             </code></pre>
-            In such a situation, the OP1 operation on operands a and b will be performed first, followed by a second OP1 operation on the received result and operand c. Bearing in mind that we are dealing with left-associativity, we could write the instruction in the following form:
+            In such a situation, the <b>OP1</b> operation on operands <b>a and b</b> will be <b>performed first</b>, <b>followed</b> by a <b>second OP1 operation on the received result and operand c</b>. Bearing in mind that we are dealing with <b>left-associativity</b>, we could write the instruction in the following form:
 
             <pre><code>
                 (a OP1 b) OP2 c
             </code></pre>
-            It follows that it would be appropriate to know not only the precedence of all operators, but also their associativity. This may seem a bit overwhelming, taking into account the number of operators. Fortunately, it is usually enough to know the properties of the most basic operators and use brackets in doubtful situations. 
-            The brackets allow you to impose the order of operations, just like in mathematics. Keep this in mind when viewing the table below. It contains a list of operators we already know with their precedence and associativity, so it is quite large. You absolutely do not have to remember everything if you can use brackets to group operations.
+            <b>It follows</b> that it would be appropriate to know <b>not only the precedence of all operators</b>, but <b>also their associativity</b>. This may seem a bit overwhelming, taking into <b>account the number of operators</b>. 
+            <br><br>
+            <b>Fortunately</b>, it <b>is</b> usually <b>enough to know</b> the <b>properties of the most basic operators</b> and <b>use brackets in doubtful situations</b>. 
+            The <b>brackets</b> allow you to <b>impose the order</b> of operations, just <b>like in mathematics</b>. 
+            <br><br>
+            <b>*****Keep this in mind</b> when viewing the table provided in image (find it in your lesson-10 folder ). <b>It contains</b> a <b>list</b> of operators we already know with <b>their precedence</b> and <b>associativity</b>, so it is quite large. You absolutely do not have to remember everything if you can use brackets to group operations.
         </p>
     </div>
 <!-- <img src="precedenceTable.png" alt=""> -->
