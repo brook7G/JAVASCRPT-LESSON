@@ -82,3 +82,8 @@ img{
     align-items: center;
     /* margin-left: 30px; */
 }
+
+.summary{
+    color: rgb(255, 255, 255);
+    font-style: italic;
+}
