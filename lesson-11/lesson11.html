@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson-11 with Biruk</title>
+    <script src="lesson11.js"></script>
+    <link rel="stylesheet" href="lesson11.css">
+</head>
+<body>
+    <img id="norImg" src="/JavaScript-logo.png" alt="">
+    <h1>1.INTERACTING WITH THE USER</h1>
+        <p>
+            Most of the programs we deal with on a daily basis are dependent on <b id="normal">user interaction</b>. 
+            The user enters data, makes choices, and confirms the options given by the program. <br><br>
+            Thanks to this interaction, the program can start to use the <b id="normal">data</b> that is provided to it by the user during its execution 
+            (this data was not known when the program was started, nor was it known when it was written). <br>
+            <b id="normal">Secondly</b>, the program can perform certain actions conditionally, in other words, the user influences not only the data, but also its execution.
+            <br>
+            <br>
+            In the case of JavaScript, interaction with the user is quite a <b id="normal">complex topic</b>. This is for several reasons.
+            Do you remember that we can write programs in this language both for use in the browser (<b id="normal">client-side</b> ) and to perform certain actions <b id="normal">on the server-side</b>? 
+            This division influences the potential interaction. 
+            <br>
+            JavaScript programs written with <b id="normal" style="color: rgb(0, 255, 0);">node.js</b> for servers usually do not require such an interaction. 
+            We run them from the console level, often without a graphic environment.
+            <br><br>
+            Most often, the <b id="normal">user gives</b> certain options (e.g. path data) to the program being run in this way in the form of a configuration file and/or as <b id="normal">call arguments</b>. 
+            The data to run the program are then taken from <b id="normal">disk files, databases, network services,</b> etc. 
+            <br>
+            It is very rare for such console programs to need to enter some data while the program is running. 
+            If it is necessary, it is indicated by the appearance of appropriate information on the console, on which you need to enter some data.
+            <br><br>
+            This is definitely different for client-side applications. In most cases, they require continuous interaction between the user and the program. Using them, we can click on buttons, 
+            enter values into forms, select data from drop-down lists, and so on. The problem is that practically all elements used for this purpose are HTML components. 
+            Using them may not be very difficult, but it does require at least a thorough understanding of the basics of the <b id="normal">DOM </b>(<b id="normal">Document Object Model</b> ) used in web pages, 
+            and the basics of HTML itself.
+            <br>
+            <p id="noticed">An example of an HTML page that uses two elements for interaction, for which JavaScript code is used, is shown below: </p>
+
+            <img src="inputBox.png" alt="">
+        </p>
+
+
+        <div class="userInput">
+            <input id="myId" type="text" style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
+            <button style="color: #596235;background-color: white;" onclick="console.log(document.getElementById('myId').value)"><b>GO</b></button>
+
+        </div>
+
+        <p>
+            The <b id="normal">< input ></b> element is an <b id="normal">input field</b> where you can enter any <b id="normal">text</b>. In our case, we’ve given this element the <b id="normal">myId</b> identifier. 
+            The <b id="normal">< button ></button></b> element, as you can guess, corresponds to ... a button. Using the <b id="normal">onClick</b> attribute, we have indicated that if the button is clicked, 
+            a piece of JavaScript code is to be run. In this code, we refer to the document object (a fragment of the DOM model), which represents our website. 
+            We search for the element with the <b id="normal">myId identifier, retrieve its value</b> (i.e. the text entered) and print the result on the console.
+            <br>
+            As you can see, the idea is relatively simple, but both the DOM model and HTML language are definitely beyond the scope of the current course. 
+            So how can we communicate with the user if we do not use these standard mechanisms?
+            <br><br>
+            There is another <b id="normal">solution</b>. Please note that it is not used in modern web applications, but it allows you to easily give the user the opportunity to enter data or make certain decisions. 
+            We will use it in this course as a dummy for normal communication, rather than as an element that you will find useful in real programming. 
+            The <b id="normal">solution is</b> to use <b id="normal">dialog boxes</b>
+        </p>
+
+    <h1>
+        2.DIALOG BOX
+    </h1>
+
+        <p>
+            <b id="normal">Dialog boxes</b> are integral parts of web browsers, and available in almost all of them, even really old ones. All of them are <b id="normal">popup windows</b> (or modal windows) which means that when the dialog box is displayed, 
+            it isn’t possible to interact with the webpage itself until this dialog box is closed.
+            <br><br>
+            This inconvenience <b id="normal">when the popup is visible</b> is one of the reasons why <b id="normal">we shouldn’t overuse them</b>. They’re perfectly fine for the <b id="normal">learning process</b>, and in some rare cases where <b id="normal">important information</b> needs to be displayed, 
+            or some input from the user is mandatory, but they should be avoided in other circumstances. We have three dialog boxes available to use.
+        </p>
+    
+    
+    
+</body>
+</html>
