@@ -15,25 +15,30 @@
             The user enters data, makes choices, and confirms the options given by the program. <br><br>
             Thanks to this interaction, the program can start to use the <b id="normal">data</b> that is provided to it by the user during its execution 
             (this data was not known when the program was started, nor was it known when it was written). <br>
-            <b id="normal">Secondly</b>, the program can perform certain actions conditionally, in other words, the user influences not only the data, but also its execution.
+            <b id="normal">Secondly</b>, the program can perform certain actions conditionally, in other words, the user influences not only the data, 
+            but also its execution.
             <br>
             <br>
             In the case of JavaScript, interaction with the user is quite a <b id="normal">complex topic</b>. This is for several reasons.
-            Do you remember that we can write programs in this language both for use in the browser (<b id="normal">client-side</b> ) and to perform certain actions <b id="normal">on the server-side</b>? 
+            Do you remember that we can write programs in this language both for use in the browser (<b id="normal">client-side</b> ) and 
+            to perform certain actions <b id="normal">on the server-side</b>? 
             This division influences the potential interaction. 
             <br>
             JavaScript programs written with <b id="normal" style="color: rgb(0, 255, 0);">node.js</b> for servers usually do not require such an interaction. 
             We run them from the console level, often without a graphic environment.
             <br><br>
-            Most often, the <b id="normal">user gives</b> certain options (e.g. path data) to the program being run in this way in the form of a configuration file and/or as <b id="normal">call arguments</b>. 
+            Most often, the <b id="normal">user gives</b> certain options (e.g. path data) to the program being run in this way in the form of a 
+            configuration file and/or as <b id="normal">call arguments</b>. 
             The data to run the program are then taken from <b id="normal">disk files, databases, network services,</b> etc. 
             <br>
             It is very rare for such console programs to need to enter some data while the program is running. 
             If it is necessary, it is indicated by the appearance of appropriate information on the console, on which you need to enter some data.
             <br><br>
-            This is definitely different for client-side applications. In most cases, they require continuous interaction between the user and the program. Using them, we can click on buttons, 
+            This is definitely different for client-side applications. In most cases, they require continuous interaction between the user and the program. 
+            Using them, we can click on buttons, 
             enter values into forms, select data from drop-down lists, and so on. The problem is that practically all elements used for this purpose are HTML components. 
-            Using them may not be very difficult, but it does require at least a thorough understanding of the basics of the <b id="normal">DOM </b>(<b id="normal">Document Object Model</b> ) used in web pages, 
+            Using them may not be very difficult, but it does require at least a thorough understanding of the basics of the <b id="normal">DOM </b>(<b id="normal">
+                Document Object Model</b> ) used in web pages, 
             and the basics of HTML itself.
             <br>
             <p id="noticed">An example of an HTML page that uses two elements for interaction, for which JavaScript code is used, is shown below: </p>
@@ -49,15 +54,18 @@
         </div>
 
         <p>
-            The <b id="normal">< input ></b> element is an <b id="normal">input field</b> where you can enter any <b id="normal">text</b>. In our case, we’ve given this element the <b id="normal">myId</b> identifier. 
-            The <b id="normal">< button ></button></b> element, as you can guess, corresponds to ... a button. Using the <b id="normal">onClick</b> attribute, we have indicated that if the button is clicked, 
+            The <b id="normal">< input ></b> element is an <b id="normal">input field</b> where you can enter any <b id="normal">text</b>. 
+            In our case, we’ve given this element the <b id="normal">myId</b> identifier. 
+            The <b id="normal">< button ></button></b> element, as you can guess, corresponds to ... a button. 
+            Using the <b id="normal">onClick</b> attribute, we have indicated that if the button is clicked, 
             a piece of JavaScript code is to be run. In this code, we refer to the document object (a fragment of the DOM model), which represents our website. 
             We search for the element with the <b id="normal">myId identifier, retrieve its value</b> (i.e. the text entered) and print the result on the console.
             <br>
             As you can see, the idea is relatively simple, but both the DOM model and HTML language are definitely beyond the scope of the current course. 
             So how can we communicate with the user if we do not use these standard mechanisms?
             <br><br>
-            There is another <b id="normal">solution</b>. Please note that it is not used in modern web applications, but it allows you to easily give the user the opportunity to enter data or make certain decisions. 
+            There is another <b id="normal">solution</b>. Please note that it is not used in modern web applications, 
+            but it allows you to easily give the user the opportunity to enter data or make certain decisions. 
             We will use it in this course as a dummy for normal communication, rather than as an element that you will find useful in real programming. 
             The <b id="normal">solution is</b> to use <b id="normal">dialog boxes</b>
         </p>
@@ -67,12 +75,176 @@
     </h1>
 
         <p>
-            <b id="normal">Dialog boxes</b> are integral parts of web browsers, and available in almost all of them, even really old ones. All of them are <b id="normal">popup windows</b> (or modal windows) which means that when the dialog box is displayed, 
+            <b id="normal">Dialog boxes</b> are integral parts of web browsers, and available in almost all of them, even really old ones. 
+            All of them are <b id="normal">popup windows</b> (or modal windows) which means that when the dialog box is displayed, 
             it isn’t possible to interact with the webpage itself until this dialog box is closed.
             <br><br>
-            This inconvenience <b id="normal">when the popup is visible</b> is one of the reasons why <b id="normal">we shouldn’t overuse them</b>. They’re perfectly fine for the <b id="normal">learning process</b>, and in some rare cases where <b id="normal">important information</b> needs to be displayed, 
-            or some input from the user is mandatory, but they should be avoided in other circumstances. We have three dialog boxes available to use.
+            This inconvenience <b id="normal">when the popup is visible</b> is one of the reasons why <b id="normal">we shouldn’t overuse them</b>. 
+            They’re perfectly fine for the <b id="normal">learning process</b>, and in some rare cases where <b id="normal">important information</b> needs to 
+            be displayed, 
+            or <b id="normal"  >some input from the user</b> is <b id="normal">mandatory</b>, but they should be avoided in other circumstances. 
+            We have <b id="normal" style="color: rgb(0, 255, 42);">three dialog boxes</b> available <b id="normal">to use</b>.    
+            <br><br>
+            
+            <h3>
+                2.1. ALERT DIALOG BOX
+            </h3>
+            <p>
+                The <b id="normal">alert dialog box</b> is <b id="normal">the simplest</b> one of the three, and <b id="normal">to show an alert box</b>, 
+                we need to <b id="normal">call a method</b> named <b id="normal">alert()</b>. 
+                The alert method accepts one optional parameter – the text that will be displayed. <br><br> The <b id="normal">alert</b> method is a 
+                method of the object window, 
+                but for convenience, it can be used without the need to type <b id="normal">window.alert</b>, so both forms are correct and can be seen in real 
+                applications.
+                <pre>
+                    <code>
+                        alert("what are you?");
+                        window.alert("You dont have girlfriend and you are broke programmer!");
+                        alert(true);
+                        alert(24*1);
+                        alert("text 1","text 2"); //only "text 1" will be displayed
+                    </code>
+                </pre>
+                <p>
+                    Just like <b id="normal">console.log</b>, we <b id="normal">can insert any value to</b> the <b id="normal">alert method </b>and it will be converted 
+                    to a string.
+
+                    The <b id="normal">difference</b> is that <b id="normal">we can put an arbitrary number</b> of parameters <b id="normal">to console.log</b>, 
+                    whereas <b id="normal">with the alert</b> we must put <b id="normal">only one</b> 
+                    (or zero, as it’s an optional parameter).
+                    <br><br>
+                    The <b id="normal">alert window</b> will be <b id="normal">visible until</b> the user <b id="normal">clicks the OK button</b> visible on the popup. 
+                    Code execution will be halted until the dialog box is closed.
+                </p>
+            </p>
+
+            <h3>
+                2.2.CONFIRM DIALOG BOX 
+            </h3>
+
+            <p>
+                The second dialog box is called the <b id="normal">confirm dialog box</b>. Like alert, it’s a <b id="normal">method</b> that 
+                <b id="normal">accepts one optional parameter</b> – a message that will be displayed. <br><br>
+                The <b id="normal">difference</b> between alert and confirm is that the confirm dialog box displays two buttons, the 
+                <b id="normal">OK button and the Cancel button</b>. 
+                Depending on the button pressed by the user, the confirm method returns a Boolean value. True is returned when the user closes the dialog box using 
+                the OK button, and false is returned when the user presses the Cancel button.
+
+                <pre>
+                    <code>
+                        let confirmation = window.confirm("ARE YOU READY TO START THIS LESSON? ");
+                        console.log(singularity); 
+                    </code>
+                </pre>
+                <p>
+                    The values <b id="normal">true or false</b>, returned by the confirm method as a result of the user's decision, allow for conditional execution of 
+                    some program actions. 
+                    In the example below, we have additionally used a recently learned conditional operator:
+
+                    <pre>
+                        <code>
+                            let remove = confirm("Remove all data");
+                            let message = remove ? "deleting data" : "cancelled"
+
+                            console.log(message);
+                        </code>
+                    </pre>
+                </p>
+            </p>
+            <h3>
+                2.3.PROMPT DIALOG BOX
+            </h3>
+            <p>
+                The last of the dialog boxes is the <b id="normal">prompt dialog box</b>. It’s a <b id="normal">further development of</b> the 
+                <b id="normal">confirm popup</b>. 
+                Like the confirm dialog box, it <b id="normal">contains the OK and Cancel buttons</b>, 
+                but it <b id="normal">also contains</b> a <b id="normal">single-line text field</b> that allows the user <b id="normal">to input text</b>.
+                <br><br>
+                As with other dialog boxes, the prompt accepts an optional parameter as a message that will be displayed. The prompt also accepts a second optional 
+                parameter, 
+                which is the default value of the text field visible in the dialog window. The same as confirm, the prompt method will return a result that is 
+                dependent on user input.
+                <br><br>
+                <b id="normal">If</b> the user <b id="normal">closes the window</b> with the <b id="normal">OK button</b>, anything in the text field will 
+                be returned from the prompt method as a string. <br><br>
+                <b id="normal">If</b> the dialog box is <b id="normal">closed</b> with the <b id="normal">Cancel button</b>, the method will <b id="normal">return</b>
+                a <b id="normal" style="color: greenyellow;">null</b> value. Due to the fact that on pressing the OK button, the value returned will be of the String 
+                type, we sometimes need to convert it to another type,for example, to a Number type. As with all user input, we need to be prepared for the fact that the 
+                data provided by the user can be invalid, either by mistake or on purpose, so always treat values like this with extra caution.
+
+                <pre>
+                    <code>
+                        let name = window.prompt("what is your name?" ,"retarded");
+                        name = name? name: "anonymous";
+                        let age = prompt("hello " + name + " how old are you?");
+                        alert(name + "is " + age + " years old and still single!!");
+                    </code>
+                </pre>
+            </p>
+            
         </p>
+    <h1>
+        SUMMARY
+    </h1>    
+        <p>
+            <img src="summary.png" alt="">
+            <b id="normal">Dialog windows</b> may not be the most effective and elegant way to communicate with the program, but they will be completely sufficient for 
+            our needs.
+
+            They will <b id="normal">allow you</b> to <b id="normal">retrieve data</b> and take into account the user's decisions, 
+            which will be <b id="normal">able to influence the program</b>.
+        </p>
+    <h1>
+        PRACTICE
+    </h1>    
+        <p>
+            <b id="normal">Exercise</b>: Using everything you’ve learned up until this point, write a script that asks a user about the <b id="normal">width</b>, 
+            <b id="normal">height</b>, and <b id="normal">length</b> of a box, then calculate and return to the user the volume of this box.
+            <br><br>
+            As an example, a box with <b id="normal">width = 20</b>, <b id="normal">height = 10</b>, and <b id="normal">length = 50</b> will have a volume of 10000 
+            (omitting units, as they are not relevant in this scenario). For now, assume that the values provided by the user are valid numbers, but if you have any 
+            ideas on how, you can try to make this script in such a way thatit will be resistant to invalid values
+        </p>
+    <h1>LAB PRACTICE</h1>    
+    <p>
+        <h3>
+            SCENARIO
+        </h3>
+            <p>Let's go back to our contact list. After some recent tweaks (i.e. using an array and objects) it is actually starting to look like a list. However, one quite
+                serious problem remained. Changing data in the list, such as adding a new contact, has to be provided for right away in the program code. What if we want to give 
+                the user the ability to enter the data of the added contact while the program is running? Modify the program to add, at the end of the list, not the contact, 
+                which is given in the code, but the one which the user will give during the program run. Use the prompt method to do this. At the end, display the first and the 
+                last contact from the list.
+            </p>
+        <pre>
+            <code>
+                let contacts = [{
+                    name: "Maxwell Wright",
+                    phone: "(0191) 719 6495",
+                    email: "Curabitur.egestas.nunc@nonummyac.co.uk"
+                    }, {
+                    name: "Raja Villarreal",
+                    phone: "0866 398 2895",
+                    email: "posuere.vulputate@sed.com"
+                    }, {
+                    name: "Helen Richards",
+                    phone: "0800 1111",
+                    email: "libero@convallis.edu"
+                    }];
+                    
+                    
+                    
+                    // write your code(answer) here
+                    
+                   
+                    let last = contacts.length - 1;
+                    
+                    console.log(`${contacts[0].name} / ${contacts[0].phone} / ${contacts[0].email}`);
+                    console.log(`${contacts[last].name} / ${contacts[last].phone} / ${contacts[last].email}`);
+            </code>
+        </pre>
+    </p>
+        
     
     
     
