@@ -32,13 +32,13 @@
  }
 
  h2{
-    font-size: 2.5vw;
+    font-size: 2.9vw;
     color: rgb(246, 243, 19) ;
  }
  
  h3{
-     font-size: 2.5vw;
-     color: rgb(255, 251, 0);
+     font-size: 2.9vw;
+     color: rgb(255, 21, 0);
  }
  
  p{
@@ -47,13 +47,12 @@
  
  b{
      color: #596235;
-     background-color: white;
-     font-size: 2vw;
+     
+     font-size: 2vw;    
  
  }
  #normal{
-     color: white;
-     background-color: #596235;
+     color: rgb(174, 0, 255);
      font-size: 2vw;
  }
  
