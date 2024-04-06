@@ -85,7 +85,8 @@ if (isUserReady2)
     /*Fix this code by closing both commands (console.log and alert) in the block. Check how this will affect the program.
 let isUserReady2 = confirm("Are you ready");
 if (isUserReady2){
-    
+    console.log("user-2 is ready!!");
+    alert("user-2 is ready!!");
 }    
     
     */
