@@ -1,4 +1,4 @@
-console.log("Q1");
+/*console.log("Q1");
 var length=200;
 var width=200;
 
@@ -58,7 +58,72 @@ if(costOfItemPurchased>1000) {
     console.log(`total cost: ${costOfItemPurchased} birr`)
 }else{
     console.log(`total cost: ${costOfItemPurchased} birr`)
-}
+}*/
+
+
+//
+//
+//
+          /*  console.log("the if statement");
+
+            console.log("");
+
+            let isUserReady = confirm("Are you ready?");
+            console.log(isUserReady );
+
+            if (isUserReady){
+                alert("User is ready!!");
+            } */
+//
+//
+console.log("");
+
+let isUserReady2 = confirm("Are you ready buddy?");
+if (isUserReady2)
+    console.log("user-2 is ready!!");
+    alert("user-2 is ready!!");
+    /*Fix this code by closing both commands (console.log and alert) in the block. Check how this will affect the program.
+let isUserReady2 = confirm("Are you ready");
+if (isUserReady2){
+    
+}    
+    
+    */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

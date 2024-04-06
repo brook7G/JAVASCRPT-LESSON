@@ -14,9 +14,73 @@
     <p>
         <h2>CONDITIONAL STATEMENTS</h2>
         <p>
-            <h3>if.....statements</h3>
+            <b>Conditional execution</b>, or <b>control flow statements</b>, have been mentioned a few times already, and now it’s time to examine them in detail. 
+            This is a very important topic, as control flow statements are essential not only to JavaScript, but to programming in general. 
+            Without the ability to react and change its behavior, any code would always do the same thing. 
+            Of course, this is sometimes exactly what we need, but most of the time we need responsiveness and the ability to handle different situations in the code.
+            <br>
+            <br>
+            We can imagine our program as a tree that starts from the trunk and gradually splits it into subsequent branches. 
+            The trunk is the beginning of the program, and each conditional instruction is a reflection of a new branch. 
+            Conditional instructions are executed on the basis of the user's decision, results of previous calculations, or other information that the program will take into account. 
+            JavaScript provides a few ways to branch code execution, based on arbitrary conditions. From this chapter on, 
+            there will be more tasks and code that you will need to write, as now you should have almost all the necessary tools to hand.
+        </p>
+        <p>
+            <h3>The <b>if</b> statements</h3>
             <p>
-                if statements are....
+                <b>The if statement</b> is the first and simplest control flow instruction available in JavaScript. 
+                It has a few forms, but in its basic form, it <b>checks a given condition</b>, and <b>depending on</b> its <b>Boolean value</b>, either <b>executes a block</b> of code, or <b>skips it</b>. 
+                The syntax looks like this:
+                <pre>
+                    <code>
+                        if(condition){
+                            block of code
+                        }
+                    </code>
+                </pre>
+
+                <p>
+                    The <b>if</b> keyword <b>needs to be followed </b>by the <b>expression in parentheses</b>, which will be <b>evaluated to the Boolean</b>, and <b>if the result is true</b>, 
+                    the <b>block of code</b> that follows the conditional expression is <b>executed</b>. 
+                    <b>If the expression evaluates to false</b>, the <b>block of code</b> will <b>NOT be executed</b>. 
+                    <b>The code block</b> should be <b>separated</b> using <b>curly brackets</b>.
+                    <pre>
+                        <code>
+                            let isUserReady = confirm("Are you ready?");
+                            console.log(isUserReady );
+
+                            if (isUserReady){
+                                alert("User is ready!!");
+}
+                        </code>
+                    </pre>
+                </p>
+                <p>
+                    In the <b>example</b>, an alert with the message <b>"User is ready!" </b>will <b>show only when</b> the <b>user closes the 
+                        confirm dialog box</b> by <b>clicking the OK button</b>. 
+                    But <b>if the user closes</b> the <b>"Are you ready?"</b> confirmation box without clicking OK, the "User ready!" message will never be shown.
+                    <br>
+                    In the example, there is one line inside the if block of code, which means that we could omit the curly brackets around that block. 
+                    However, while it may look tempting to do so, it’s always better to use curly brackets. That way, the code is cleaner and easier to read, 
+                    and it also saves you from a very common error that happens when trying to add another instruction inside an if block and forgetting to add brackets.
+                    <br>
+                    <br>
+                    In the example below, we probably forgot to close the two commands inside the block directly behind the if command. 
+                    Check how this piece of code will behave when you run it, depending on your answer to the question "Are you ready?":
+                    <pre>
+                        <code>
+                            let isUserReady2 = confirm("Are you ready buddy?");
+                            if (isUserReady2)
+                                console.log("user-2 is ready!!");
+                                alert("user-2 is ready!!");
+
+                        </code>
+                    </pre>
+                    <p>
+                        <b>Fix this code by closing both commands</b> (console.log and alert) in the block. Check how this will affect the program.
+                    </p>
+                </p>
             </p>
 
             <h3>if..else....statements</h3>
