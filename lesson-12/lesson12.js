@@ -1,4 +1,4 @@
-/*console.log("Q1");
+console.log("Q1");
 var length=200;
 var width=200;
 
@@ -58,13 +58,13 @@ if(costOfItemPurchased>1000) {
     console.log(`total cost: ${costOfItemPurchased} birr`)
 }else{
     console.log(`total cost: ${costOfItemPurchased} birr`)
-}*/
+}
 
 
 //
 //
 //
-          /*  console.log("the if statement");
+            console.log("the if statement");
 
             console.log("");
 
@@ -73,34 +73,33 @@ if(costOfItemPurchased>1000) {
 
             if (isUserReady){
                 alert("User is ready!!");
-            } */
+            } 
 //
 //
 console.log("");
-
-/*let isUserReady2 = confirm("Are you ready buddy?");
-if (isUserReady2)
+let isUserReady_2 = confirm("Are you ready buddy?");
+if (isUserReady_2)
     console.log("user-2 is ready!!");
-    alert("user-2 is ready!!");*/
+    alert("user-2 is ready!!");
 console.log("");
-            /* Fix this code by closing both commands (console.log and alert) in the block. Check how this will affect the program.
+             //Fix this code by closing both commands (console.log and alert) in the block. Check how this will affect the program.
         let isUserReady2 = confirm("Are you ready");
         if (isUserReady2){
             console.log("user-2 is ready!!");
             alert("user-2 is ready!!");
         }    
-*/
+
 
 //
 //
-/*const unitPrice =10;
+const unitPrice =10;
 const pieces = prompt('How many pieces do you want to order',0);
 
 if(pieces>0){
     const totalPrice = pieces * unitPrice;
     console.log(totalPrice);
 }
-console.log('total price:',totalPrice);*/
+console.log('total price:',totalPrice);
 //
 //
 //
