@@ -128,6 +128,93 @@ if(userAge > 21 && cartValue >= 400 || points >= 500){
     shippingCost = 0;
 }
 console.log('shippingCost of user_:',shippingCost);    
+console.log("");
+//
+//
+//
+
+                                                                console.log('If..else:');
+                                                                console.log("");
+                                                                    var userIsReady=confirm('Are you ready');
+                                                                    if(userIsReady){
+                                                                        console.log("user is ready")
+                                                                    }
+                                                                    if(userIsReady==false){
+                                                                        console.log("user is not ready");
+                                                                    };
+                                                                    //
+                                                                    //using different way
+
+                                                                    var userIsReady=confirm('Are you ready');
+                                                                    if(userIsReady){
+                                                                        console.log("user is ready");
+                                                                    } else {
+                                                                        console.log("user is not ready");
+                                                                    };
+
+                                                                    //
+                                                                    //
+                                                                    let number=prompt('enter number');
+                                                                    if(number < 10){
+                                                                        alert('<10');
+                                                                    }else if(number < 30){
+                                                                        alert('<30');
+                                                                    }else if(number < 60){
+                                                                        alert('<60');
+                                                                    }else if(number < 90){
+                                                                        alert('<90');
+                                                                    }else if(number < 100){
+                                                                        alert('<100');
+                                                                    }else if(number == 100){
+                                                                        alert('100')
+                                                                    }else{
+                                                                        alert('>100 ')
+                                                                    };
+                                                                    ///
+                                                                    ///
+                                                                    ///
+                                                                    /**In the next, longer example, we can see the usage of cascading ifs with elses, 
+                                                                     * and also complex logical conditions. Feel free to mess around with the values assigned 
+                                                                     * to the variables to see how the results change. */
+                                                                    //
+                                                                    //
+                                                                    
+                                                                    const INSURANCE_COST = 2.99;
+
+                                                                    let shipping_Cost = 9.99;
+                                                                    let isOrderValid = true;
+
+                                                                    let user_Age = 22;
+                                                                    let _points = 400;
+                                                                    let cart_Value = 199;
+                                                                    let hasPromoCode = false;
+                                                                    let hasParentsApproval = false;
+                                                                    let addInsurance = true;
+
+                                                                    /** calculate shipping cost*/
+                                                                    if ((user_Age > 65) || (user_Age >= 21 && (hasPromoCode || cart_Value > 300 || _points > 500))) {
+                                                                    shippingCost = 0;
+                                                                    } else if (user_Age < 21 && hasParentsApproval) {
+                                                                    shipping_Cost = shipping_Cost - 5;
+                                                                    } else if (user_Age < 21) {
+                                                                    isOrderValid = false;
+                                                                    }
+
+                                                                    /** take account of insurance */
+                                                                    if (isOrderValid && addInsurance && !hasPromoCode) {
+                                                                    shipping_Cost += INSURANCE_COST;
+                                                                    }
+
+                                                                    /** show message */
+                                                                    if (isOrderValid) {
+                                                                    console.log('shipping cost :',shipping_Cost);
+                                                                    } else {
+                                                                    console.log("Cannot order if under 21");
+                                                                    }
+                                                                    //
+                                                                    //
+                                                                    ///
+
         
 
 

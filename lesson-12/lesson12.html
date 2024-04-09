@@ -156,12 +156,148 @@
 
             <h3>if..else....statements</h3>
             <p>
-               <b id="normal">if else</b>   statements are....
+               The if statement is very handy indeed, but what if we also want to execute some code when a given condition is not met? 
+               We could of course just use another if statement and change the condition, as shown in the example:
+               <pre>
+                <code>
+                    var userIsReady=confirm('Are you ready');
+                    if(userIsReady){
+                        console.log("user is ready")
+                    }
+                    if(userIsReady==false){
+                        console.log("user is not ready");
+                    }
+                </code>
+               </pre>
+               <p>
+                This will work as expected, but it doesn't look very good. What if in the future we have to change this condition? Will we remember to change it in both places? 
+                This is a possible future logic error. So what can we do? We can use an <b id="normal">else</b> keyword.
+                <br>
+                <br>
+                The <b id="normal">else</b> keyword is an optional part of the if statement, and it allows us to add a second code block that will be executed only when the initial condition is 
+                NOT met. Both blocks of code are separated using the else keyword. <br><br><br>
+                So the if ... else syntax looks like this:
+                <pre>
+                    <code>
+                        if (condition) {
+                            condition - true code
+                          } else {
+                            condition - false code
+                          }
+                          
+                    </code>
+                </pre>
+                <p>
+                    Using the new syntax, we can rewrite our previous example:
+                    <pre>
+                        <code>
+                            var userIsReady=confirm('Are you ready');
+                            if(userIsReady){
+                                console.log("user is ready");
+                            } else {
+                                console.log("user is not ready");
+                            };
+                        </code>
+                    </pre>
+                    <p>
+                        Now we have only one condition, and we’re sure that one of the two code blocks will be executed. 
+                        Such a structure is used very often and is especially useful when we have two alternative versions of the code.
+                    </p>
+                </p>
+               </p>
             </p>
 
-            <h3>if..else..if..nested if statements</h3>
+            <h3>if..else..if..statements</h3>
             <p>
-                nested if statements are 
+                Both <b id="normal">if</b> and <b id="normal">if … else</b> statements give us great flexibility in how code can behave in relation to anything else. 
+                But branching the code execution flow only to two branches is sometimes not enough. 
+                There’s a simple solution to this in JavaScript – we can nest <b id="normal">if ... else</b> statements. 
+                How does this work? An else segment can have an <b id="normal">if</b> or <b id="normal">if … else</b> statement inside it, 
+                and it’s possible to nest any number of <b id="normal"> if … else</b> statements in this way if needed.
+                <pre>
+                    <code>
+                        let number=prompt('enter number');
+                        if(number < 10){
+                            alert('<10');
+                        }else if(number < 30){
+                            alert('<30');
+                        }else if(number < 60){
+                            alert('<60');
+                        }else if(number < 90){
+                            alert('<90');
+                        }else if(number < 100){
+                            alert('<100');
+                        }else if(number == 100){
+                            alert('100')
+                        }else{
+                            alert('>100 ')
+                        };
+                    </code>
+                </pre>
+            </p>
+            <p>
+                In the code visible in the example, only one alert will be shown, and JavaScript will stop checking conditions after the first condition that has been met.
+            </p>
+            <p>
+                In the next, longer example, we can see the usage of cascading ifs with elses, and also complex logical conditions. 
+                Feel free to mess around with the values assigned to the variables to see how the results change.
+                <pre>
+                    <code>
+                        const INSURANCE_COST = 2.99;
+
+                        let shipping_Cost = 9.99;
+                        let isOrderValid = true;
+
+                        let user_Age = 22;
+                        let _points = 400;
+                        let cart_Value = 199;
+                        let hasPromoCode = false;
+                        let hasParentsApproval = false;
+                        let addInsurance = true;
+
+                        /** calculate shipping cost*/
+                        if ((user_Age > 65) || (user_Age >= 21 && (hasPromoCode || cart_Value > 300 || _points > 500))) {
+                        shippingCost = 0;
+                        } else if (user_Age < 21 && hasParentsApproval) {
+                        shipping_Cost = shipping_Cost - 5;
+                        } else if (user_Age < 21) {
+                        isOrderValid = false;
+                        }
+
+                        /** take account of insurance */
+                        if (isOrderValid && addInsurance && !hasPromoCode) {
+                        shipping_Cost += INSURANCE_COST;
+                        }
+
+                        /** show message */
+                        if (isOrderValid) {
+                        console.log('shipping cost :',shipping_Cost);
+                        } else {
+                        console.log("Cannot order if under 21");
+                        }
+                    </code>
+                </pre>
+                <p>
+                    To summarize what’s going on, we can dissect each case separately: <br>
+                    >>>>if <b id="normal">userAge</b> is less than 21 and <b id="normal">hasParentsApproval</b> is false, the order is invalid;<br>
+                    >>>>If <b id="normal">userAge</b> is less than 21 but <b id="normal">hasParentsApproval</b> is set to true, the shippingCost will be reduced by 5;<br>
+                    >>>>If <b id="normal">userAge</b> is 65 or higher, <b id="normal">shippingCost </b>is reduced to zero;<br>
+                    >>>>If <b id="normal">userAge</b> is lower than 65, but higher than or equal to 21 AND one of the following: <br>
+                    .............- <b id="normal">hasParentsApproval</b> is equal to true; <br>
+                    .............- <b id="normal">cartValue</b> is greater than 300; <br>
+                    .............- <b id="normal">points</b> is greater than 500; <br>
+                    .............-the <b id="normal">shippingCost</b> is reduced to zero. <br><br>
+                    In any other case, the cost remains at the default value.
+                    <br>
+                    After all of this, we do another check: <br>
+                    -----if <b id="normal">addInsurance</b> is set to true;
+                    -----AND in addition <b id="normal">orderIsValid</b>;
+                    -----AND <b id="normal">hasPromoCode</b> is not true, then we add <b id="normal">INSURANCE_COST</b> to the shippingValue.
+                    <br><br>
+                    In the end, we display the shippingCost if the order is valid, and the message if it is not. <br>
+
+                    Take your time with this example, and play with the values to understand what is happening and how.
+                </p>
             </p>
         </p>
     </p>
