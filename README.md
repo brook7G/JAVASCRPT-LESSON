@@ -29,7 +29,7 @@ This repository contains a comprehensive JavaScript lesson designed to help begi
 
 The lesson is structured into several sections, each focusing on a specific aspect of JavaScript:
 
-- **Section 1:** Introduction to JavaScript
+- **Section 1:** Introduction to JavaScript and Programming Languages
 - **Section 2:** Variables and Data Types
 - **Section 3:** Control Structures
 - **Section 4:** Functions and Scope
