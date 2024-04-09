@@ -81,7 +81,7 @@
                         <b>Fix this code by closing both commands</b> (console.log and alert) in the block. Check how this will affect the program.
                     </p>
                 </p>
-                <p>
+                <p><b id="normal">NOTE</b><br>
                     We talked about code blocks, and more specifically, their scope, in the section devoted to variables. 
                     If you don't remember this topic, it would be good for you to return to it for a while. 
                     As a quick reminder – we use program blocks whenever, for some reason, we want to separate a piece of code to form a logical whole. 
@@ -90,6 +90,67 @@
                     we can cause them to be executed only when certain circumstances occur (i.e. the condition we’ve invented is fulfilled). 
                     Remember that variables and constants declared using let and const inside a block are local, that is, their scope is limited to that particular block. 
                     Also make sure to use indentations in the blocks to make the code more readable. In other words, move the instructions in them to the right.
+                    <br><br>
+                    As we have already mentioned, by using data blocks, we can make the constants and variables declared inside them local (not visible to the outside). 
+                    We discussed this in detail in the variable section, so here we will only present a practical example to remind you:
+                    <pre>
+                        <code>
+                                const unitPrice =10;
+                                const pieces = prompt('How many pieces do you want to order',0);
+
+                                if(pieces>0){
+                                    const totalPrice = pieces * unitPrice;
+                                    console.log(totalPrice);
+                                }
+                                console.log('total price:',totalPrice);
+                        </code>
+                    </pre>
+                    <p>
+                        The total variable is declared inside the block. We can put a value to it, we can read it – but all this only inside the block. 
+                        Attempting to refer to it outside the block will end in an error. The interpreter will inform us that it does not know such a variable.
+                        <br>
+                        This is a good moment to remind you of logical and comparison operations, as they’re most commonly used as conditions, 
+                        especially in more complex situations. Let's take a look at the example:
+                        <pre>
+                            <code>
+                                let userAge=24;
+                                let isFemale=false;
+                                let points=700;
+                                let cartValue=399;
+                                let shippingCost=9.99;
+
+                                if(userAge>0){
+                                    if(cartValue >= 400 || points >= 500){
+                                        shippingCost = 0;
+                                    }
+                                }
+                                console.log('shippingCost:',shippingCost);
+                            </code>
+                        </pre>
+                        <p>
+                            In this example, to set the <b id="normal">shippingCost</b> to zero, the userAge needs to be over 21. 
+                            The second if is calculated and needs the cartValue to be over or equal to 400, or the points to be greater than or equal to 500.
+                            <br><br>
+                            Another way to write the same thing is to use the logical AND operator. We can now remove one if instruction and describe everything as one,
+                             more complex condition. Please note that we used additional parentheses to group the selected logical operations. 
+                             This will allow us to force their execution precedence.
+                             <pre>
+                                <code>
+                                    if(userAge > 21 && cartValue >= 400 || points >= 500){
+                                        shippingCost = 0;
+                                    }
+                                </code>
+                             </pre>   
+                             <p>
+                                Here the condition will be evaluated to true when:
+                                <br><br>
+
+                                <b id="normal">>>>>>></b>userAge is greater than 21 AND;<br>
+                                <b id="normal">>>>>>></b>cartValue is greater than or equal to 300 OR points is greater than or equal to 500.
+                                So, we need to have the first condition met, and at least one from the second or third conditions.
+                             </p>
+                        </p>
+                    </p>
                 </p>
             </p>
 
