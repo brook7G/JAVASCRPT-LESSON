@@ -6,9 +6,75 @@
     <title>Lesson 13 with Biruk</title>
     <link rel="stylesheet" href="lesson13.css">
     <script src="lesson13.js"></script>
+    <img id="norImg" src="/JavaScript-logo.png" alt="">
 </head>
 <body>
     <h1>CONDITIONAL STATEMENTS CONTINUED</h1>
-    
+    <h2>CONDITIONAL OPERATORS</h2>
+    <p>
+        <p>
+            We talked about the conditional (<b id="normal">ternary</b>) operator in the part of the course dedicated to operators. 
+            It allows us to perform one of two actions based on the value of the first operand. 
+            Most often it is used as an alternative to the <b id="normal">if ... else</b> instruction when you want to assign one of two values to a variable, 
+            depending on a certain condition.
+            <br>
+            In such cases, it is simply shorter and a bit more readable than the <b id="normal">if ... else</b> construction.
+            <br>
+            Let's look at a simple example, so far without using a conditional operator:
+            <pre>
+                <code>
+                    let price = 100;
+                    let shippingCost;
+
+                    if(price > 50){
+                        shippingCost = 0;
+                    }else{
+                        shippingCost = 5;
+                    }
+                    //
+                    console.log(`price = ${price}, shipping = ${shippingCost}, `); // -> price = 100, shipping = 0
+                </code>
+            </pre>
+        </p>
+        <p>
+            The same code rewritten using the conditional operator looks a bit easier. 
+            As a reminder: the first operand (before the question mark) is the condition to verify, 
+            the second operand (between the question mark and the colon) will be returned if the condition is true, 
+            and the third operand (after the colon) if the condition is false.
+            <pre>
+                <code>
+                    let priceOf=100;
+                    let shippingCostOf= priceOf > 50 ? 0 : 5;
+
+                    console.log(`price = ${priceOf}, shipping = ${shippingCostOf}`); // -> price = 100, shipping = 0
+                </code>
+            </pre>
+        </p>
+        <p>
+            The conditional operator returns the values of the second or third operand, but if they are complex expressions, it will calculate them first. 
+            You can use this fact to place the commands to be executed conditionally as these operands.
+            <pre>
+                <code>
+                    let start =  confirm("start");
+                    start ? alert("here we go!!") : console.log("Aborted!");
+                </code>
+            </pre>
+        </p>
+        <p>
+            However, it would make more sense to save the same piece of code in the following form:
+            <pre>
+                <code>
+                    let startAgain = confirm("Start Again");
+                    let message = startAgain ? "here we go!!" : "Aborted!";
+                    alert(message);
+                </code>
+            </pre>
+        </p>
+        <p>
+            It’s possible to have longer code as operands, but it’s better to use if statements, as it is much clearer what intention the developer had when writing the code.
+            <br><br>
+        </p>
+    </p>
+    <h2>THE Switch...case STATEMENT</h2>
 </body>
 </html>
