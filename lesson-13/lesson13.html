@@ -77,10 +77,73 @@
     </p>
     <h2>THE Switch...case STATEMENT</h2>
     <p>
-        The last type of statement that is used for conditional code execution is a switch statement. 
-        We’re only talking about it now because, among other things, compared to the if statement, it is not a construction used especially often. 
-        It’s somewhat similar to nested if … else statements, but instead of evaluating different expressions, 
-        switch evaluates one conditional expression and then tries to match its value to one of the given cases. Here is the syntax of the switch statement:
+        <p>
+            The last type of statement that is used for conditional code execution is a switch statement. 
+            We’re only talking about it now because, among other things, compared to the if statement, it is not a construction used especially often. 
+            It’s somewhat similar to nested if … else statements, but instead of evaluating different expressions, 
+            switch evaluates one conditional expression and then tries to match its value to one of the given cases. Here is the syntax of the switch statement:
+            <pre>
+                <code>
+                    switch(expression){
+                        case value1:
+                            block of code
+                            break;
+                        case value2:
+                            block of code
+                            break;
+                        default:
+                            block of code
+                            
+                    }
+                </code>
+            </pre>
+        </p>
+        <p>
+            It starts with the <b id="normal">switch</b> keyword followed by the expression to be evaluated in parentheses. 
+            Next is the code block that has one or more case clauses (technically it’s possible to have zero cases, 
+            but this wouldn’t be very useful) followed directly by a value corresponding to this case and a colon character. 
+            After the colon, there is a block of code that will be executed when the expression is evaluated to this case value. 
+            The block of code optionally ends with the <b id="normal">break</b> keyword. All cases follow the same template. 
+            <br><br>
+            Additionally, a special case named <b id="normal">default</b> can be present (by convention placed on the end of the switch statement; however, it isn’t required). 
+            The <b id="normal">default</b> case is executed when none of the cases matches the expression. 
+            The evaluation itself is made with a strict comparison operator <b id="normal">(===)</b> so not only must the value match, 
+            but also the type of case value and the expression.
+            <br><br>
+            To understand it better, run the following code:
+            <pre>
+                <code>
+                    let gate=prompt("choose a gate: a, b, or c");
+                    let win = false;
+
+                    switch(gate){
+                        case "a":
+                            alert("GATE A: empty");
+                            break;
+                        case "b":
+                            alert("GATE B: main prize");
+                            break;
+                        case "c":
+                            alert("GATE C: empty");
+                            break;
+                        default: 
+                        alert("No Gate: " + String(gate));           
+                    }
+                    if(win){
+                        alert("Winner!")
+                    }
+                </code>
+            </pre>
+        </p>
+    </p>
+    <h2>SECTION SUMMARY</h2>
+    <p>
+        Control flow statements are an essential part of almost any application, and we use them to check and handle user input, 
+        values fetched from the web, or the results of almost any operation.
+
+        They allow us to build flexible and reactive applications. The most universal construction is the <b id="normal">if ... else</b> statement.
+
+        However, do not forget that in some situations it will be more convenient to use a conditional operator or switch statement.
     </p>
 </body>
 </html>

@@ -41,4 +41,27 @@ console.log("");
 
                         let startAgain = confirm("Start Again");
                         let message = startAgain ? "here we go!!" : "Aborted!";
-                        alert(message);
+                        alert(message); 
+console.log("");
+console.log("SWITCH...CASE:.....");
+//
+//
+let gate=prompt("choose a gate: a, b, or c");
+let win = false;
+
+switch(gate){
+    case "a":
+        alert("GATE A: empty");
+        break;
+    case "b":
+        alert("GATE B: main prize");
+        break;
+    case "c":
+        alert("GATE C: empty");
+        break;
+    default: 
+    alert("No Gate: " + String(gate));           
+}
+if(win){
+    alert("Winner!")
+}
