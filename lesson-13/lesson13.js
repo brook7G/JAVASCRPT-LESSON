@@ -77,20 +77,20 @@ if(win){
                                             console.log("");
                                             console.log("ANSWER FOR QUESTION-1:");
                                             //   
-                                            // let user_number =prompt("Enter your lucky number");
-                                            // if (user_number >90 && user_number <110){
-                                            //     alert("Bingo!");
-                                            // }else{
-                                            //     alert("Miss")
-                                            // };
+                                            let user_number =prompt("Enter your lucky number");
+                                            if (user_number >90 && user_number <110){
+                                                alert("Bingo!");
+                                            }else{
+                                                alert("Miss")
+                                            };
                                             //
                                             //
                                             console.log("");
                                             console.log("ANSWER FOR QUESTION-2:");
                                             //
-                                            // let user_number_2 =prompt("Enter your lucky number");
-                                            // let message = user_number_2 >90 && user_number_2 <110? "BINGO!": "MISS";
-                                            // alert(message);
+                                            let user_number_2 =prompt("Enter your lucky number");
+                                            let message = user_number_2 >90 && user_number_2 <110? "BINGO!": "MISS";
+                                            alert(message);
                                             //
                                             //
                                             console.log("");
