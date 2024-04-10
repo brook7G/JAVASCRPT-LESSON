@@ -22,7 +22,7 @@ console.log("");
                         //
                         //The same code rewritten using the conditional operator looks a bit easier.
 
-                        let priceOf=100;
+                       /* let priceOf=100;
                         let shippingCostOf= priceOf > 50 ? 0 : 5;
 
                         console.log(`price = ${priceOf}, shipping = ${shippingCostOf}`);
@@ -64,4 +64,36 @@ switch(gate){
 }
 if(win){
     alert("Winner!")
-}
+}*/
+//
+//
+//
+
+                                            console.log("");
+                                            console.log("PRACTICE QUESTION AND ANSWER");
+
+                                            //
+                                            //
+                                            console.log("");
+                                            console.log("ANSWER FOR QUESTION-1:");
+                                            //   
+                                            // let user_number =prompt("Enter your lucky number");
+                                            // if (user_number >90 && user_number <110){
+                                            //     alert("Bingo!");
+                                            // }else{
+                                            //     alert("Miss")
+                                            // };
+                                            //
+                                            //
+                                            console.log("");
+                                            console.log("ANSWER FOR QUESTION-2:");
+                                            //
+                                            // let user_number_2 =prompt("Enter your lucky number");
+                                            // let message = user_number_2 >90 && user_number_2 <110? "BINGO!": "MISS";
+                                            // alert(message);
+                                            //
+                                            //
+                                            console.log("");
+                                            console.log("ANSWER FOR QUESTION-3:");
+                                            //
+                                            let _operator = prompt("Enter a for + ","Enter d for / ","Enter m for *","Enter s for - ")
