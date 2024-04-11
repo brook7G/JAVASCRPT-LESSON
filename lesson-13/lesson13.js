@@ -22,7 +22,7 @@ console.log("");
                         //
                         //The same code rewritten using the conditional operator looks a bit easier.
 
-                       /* let priceOf=100;
+                       let priceOf=100;
                         let shippingCostOf= priceOf > 50 ? 0 : 5;
 
                         console.log(`price = ${priceOf}, shipping = ${shippingCostOf}`);
@@ -64,12 +64,12 @@ switch(gate){
 }
 if(win){
     alert("Winner!")
-}*/
+}
 //
 //
 //
 
-                                            console.log("");
+                                            console.log("PRACTICE QUESTION :");
 
                                             //
                                             //
@@ -88,11 +88,90 @@ if(win){
                                             console.log("ANSWER FOR QUESTION-2:");
                                             //
                                             let user_number_2 =prompt("Enter your lucky number");
-                                            let message = user_number_2 >90 && user_number_2 <110? "BINGO!": "MISS";
-                                            alert(message);
+                                            let message2 = user_number_2 >90 && user_number_2 <110? "BINGO!": "MISS";
+                                            alert(message2);
                                             //
                                             //
                                             console.log("");
                                             console.log("ANSWER FOR QUESTION-3:");
                                             //
-                                            let _operator = prompt("Enter a for + ","Enter d for / ","Enter m for *","Enter s for - ")
+                                            let first_number =Number(prompt("enter the first number",0));
+                                            let second_number =Number(prompt("enter the second number",0));
+                                            let _operator = prompt("enter operand (+ , - , / , *)");
+                                            let result1;
+
+                                            if(!Number.isNaN(first_number) && !Number.isNaN(second_number)){
+                                                switch(_operator){
+                                                    case '+':
+                                                        result1 = first_number + second_number;
+                                                        break;
+                                                    case '-':
+                                                        result1 = first_number - second_number;
+                                                        break;
+                                                    case '*':
+                                                        result1 = first_number * second_number;
+                                                        break;
+                                                    case '/':
+                                                        result1 = first_number / second_number;
+                                                        break;
+                                                    default:    
+                                                        result1 = "Error: unknown operand";              
+                                                }
+                                            }else {
+                                                result1 = ("Error: atleast one of the entered values is not a number")
+                                            }
+                                            alert(`${first_number} ${_operator} ${second_number} = ${result1}`);
+console.log("");
+console.log("ANSWER FOR THE LAB QUESTION");
+console.log("");
+//
+//
+let contacts = [{
+    name: "Maxwell Wright",
+    phone: "(0191) 719 6495",
+    email: "Curabitur.egestas.nunc@nonummyac.co.uk"
+}, {
+    name: "Raja Villarreal",
+    phone: "0866 398 2895",
+    email: "posuere.vulputate@sed.com"
+}, {
+    name: "Helen Richards",
+    phone: "0800 1111",
+    email: "libero@convallis.edu"
+}];    
+
+
+let perform=prompt("show first contact/last contact or add new contact(first, last, add)");
+
+let first =(` Name: ${contacts[0].name} \n Phone: ${contacts[0].phone} \n Email: ${contacts[0].email}`);
+let last =(` Name: ${contacts[contacts.length -1].name} \n Phone: ${contacts[contacts.length -1].phone} \n Email: ${contacts[contacts.length -1].email}`);
+ 
+let name =prompt('enter name');
+let phone = prompt('enter phone');
+let email = prompt('enter email');
+
+let new_contact ={
+    name:name, 
+    phone:phone, 
+    email:email
+};
+    new_contact=(`Name: ${new_contact.name}\n Email: ${new_contact.email}\n Phone: ${new_contact.phone}`);  
+    contacts.push(new_contact);
+
+let result;
+
+
+switch(perform){
+    case 'first':
+        result=first;
+        break;
+    case 'last':
+        result=last;
+        break;
+    case 'add':
+        result=new_contact;
+        break;
+    default:
+
+}
+alert(result);
