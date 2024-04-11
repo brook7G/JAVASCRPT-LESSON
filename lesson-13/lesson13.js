@@ -70,7 +70,6 @@ if(win){
 //
 
                                             console.log("");
-                                            console.log("PRACTICE QUESTION AND ANSWER");
 
                                             //
                                             //
