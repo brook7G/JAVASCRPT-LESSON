@@ -55,11 +55,13 @@
      font-size: 2vw;
  }
  
- /* #noticed{
-     color:whitesmoke;
-     font-size: monospace;
-     font-size: 1.6vw;
- } */
+ #noticed{
+     color:rgb(0, 255, 13);
+     
+ }
+ #front{
+    color:rgb(246, 243, 19);
+}
  
  pre, code{
      font-size: 1.7vw;
