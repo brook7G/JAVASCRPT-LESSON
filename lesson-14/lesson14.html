@@ -162,6 +162,23 @@
             <br>
             This is one of the most common mistakes of beginner programmers – they remember to change its value inside the loop, 
             but forget to set its value for the first test.
+
+        </p>
+        <p>
+            The example is correct, but there is a lot of redundant code here, which is not really needed (we only did it in the first place so 
+            that we could analyze the operation of subsequent instructions in a relatively simple way). 
+            Exactly the same effect will be achieved by simplifying our code as shown below.
+
+            Try to analyze exactly what the changes are about. We’ve used for this purpose, among others, the operators we recently learned.
+            <pre>
+                <code>
+                    let isOver = false;
+                    let counter_ = 1;
+                    while(!isOver){
+                        isOver = !confirm(`[${counter_++}] continue the loop`);   
+                    } 
+                </code>
+            </pre>
         </p>
     </p>
 </body>
