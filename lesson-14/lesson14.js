@@ -1,7 +1,7 @@
 console.log("LOOPS");
 //
 console.log("");
-console.log("While...loop:")
+console.log("loop:")
 console.log("");
 //
         console.log("0");    //0
@@ -42,7 +42,7 @@ console.log("");
                         n+=10;
                         //
                                 console.log("");
-                                console.log("using while loop for the above shitty code:");
+                                console.log("While...:using while loop for the above shitty code:");
                                 console.log("");
                                 //
                                 //
@@ -66,10 +66,37 @@ console.log("");
                                                             //
                                 console.log("");
                                 // A Better way to code the above program is to:
-                                let isOver = false;
-                                let counter_ = 1;
-                                while(!isOver){
-                                    isOver = !confirm(`[${counter_++}] continue the loop`);   
-                                }                         
+                                        let isOver = false;
+                                        let counter_ = 1;
+                                        while(!isOver){
+                                            isOver = !confirm(`using(while): [${counter_++}] continue the loop`);   
+                                        };
+                                        //
+console.log("");
+console.log("do while loop");
+console.log("");
+//
+//
+        let is_Over ;
+        let _counter =1;
+        do{
+            is_Over = !confirm(`using (do while): [${_counter++}] continue the loop`);
+        }
+        while(!is_Over);
+        //
+                      console.log("");
+                      //In the next example, we demonstrate what we said earlier – a do ... while loop always iterates at least once:
+                      
+                      let conditional =false;
+                      while(conditional){
+                        console.log("A while loop iteration");    
+                      }
+                      do{
+                        console.log("A do while loop iteration \n it iterates at least once");
+                      }while (conditional); 
+
+                                
+                                
+
 
 
