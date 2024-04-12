@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson-14 with Biruk</title>
+    <link rel="stylesheet" href="lesson14.css">
+    <script src="lesson14.js"></script>
+</head>
+<body>
+    <h1>LOOPS</h1>
+    <h2>What are loops?</h2>
+    <p>
+        <p>
+            In programming, loops are the second form of flow control statement. Together with conditional execution statements like if and switch, 
+            they allow for almost infinite freedom in how the application can work from an algorithmic point of view. While conditional statements 
+            are able to change code behavior (allowing us to decide during program execution whether a certain piece of code is to be performed or not), 
+            loops are an easy way to repeat any fragment of the code as many times as we want, or until some condition is met. 
+            There are a few types of loops in JavaScript, but we can loosely split them into two categories:
+            <br><br>
+            <p id="subPara_">
+                    loops that are repeated a given number of times<br>
+                    loops that continue until some condition is met.
+            </p>
+            
+        </p>
+    </p>
+    <h2>The <span id="speTitle">while</span> Loops</h2>
+    <p>
+        So we know that loops allow us to execute a selected piece of code multiple times. But what would be the purpose of this? Imagine that in the program, 
+        we have created an array containing information about system users. If we wanted to display the name of each of them on the console, 
+        we would have to write console.log as many times as there are users. For example, for 100 users we write 100 console.log calls one under another. 
+        It would look rather weird, wouldn't it? Instead, we can use a loop that calls the same console.log command 100 times, but for each subsequent array element. 
+        Each iteration of the loop will refer to the successive user. In a moment, we will learn how to use different loops.
+        <br><br>
+        <p>
+            Let's start with an example where we do not use a loop. 
+            Our goal is to write out the consecutive numbers <b id="normal">0, 10, 20, 30, 40, 50, 60, 70, 80 and 90</b> on the console.
+            <pre>
+                <code>
+                    console.log("0");    //0
+                    console.log("10");   //10
+                    console.log("20");   //20
+                    console.log("30");   //30   
+                    console.log("40");   //40   
+                    console.log("50");   //50
+                    console.log("60");   //60
+                    console.log("70");   //70   
+                    console.log("80");   //80    
+                    console.log("90");   //90 
+                </code>
+            </pre>
+            <p>
+                All in all, we have achieved our effect, but it looks a bit strange. We repeat the same command ten times, one by one. 
+                At first sight, it may seem that the commands are not exactly the same. Yes, each time we call the console.log, 
+                but each time a different literal appears as an argument: 0, 10, 20, and so on.
+                <br>
+                <br>
+                <pre>
+                    <code>
+                        let n = 0;
+                        console.log(n); //0
+                        n+=10;
+                        console.log(n); //10
+                        n+=10;
+                        console.log(n); //20
+                        n+=10;
+                        console.log(n); //30
+                        n+=10;
+                        console.log(n); //40
+                        n+=10;
+                        console.log(n); //50
+                        n+=10;
+                        console.log(n); //60
+                        n+=10;
+                        console.log(n); //70
+                        n+=10;
+                        console.log(n); //80
+                        n+=10;
+                        console.log(n); //90
+                        n+=10;
+                    </code>
+                </pre>
+            </p>
+            <p>
+                We use the variable n, which we initialize with 0. Then we repeat this identical piece of code ten times: 
+                we display the current value of the n variable on the console, and then increase this value by 10.
+                <pre>
+                    <code>
+                        console.log(n);
+                        n+=10;
+                    </code>
+                </pre>
+            </p>
+            <p>
+                This is exactly the situation in which we can use a loop. Using the while loop, we rewrite our code again. 
+                We leave the declaration and initialization of the n variable unchanged. The repeating code fragment is enclosed in a separate code block, 
+                and using the word while, we specify that it is to be executed as long as the value of variable n is less than 91.
+                <pre>
+                    <code>
+                        let _n = 0;
+                        while(_n < 91) {
+                            console.log(_n);
+                            _n+=10;
+                        }
+                    </code>
+                </pre>
+            </p>
+            <p>
+                The <b id="speTitle">while</b> loop is so versatile that someone persistent enough could replace all other control flow instructions with while loops, 
+                even <b id="speTitle">if</b> statements. Of course, it would be cumbersome at best. 
+                The while loop is one of the loops that we normally use when we don't know exactly how many times something should be repeated, but we do know when to stop.
+                The syntax of the while loop is as follows:
+                <pre>
+                    <code>
+                        while(condition){
+                            block of code
+                        }
+                    </code>
+                </pre>
+            </p>
+            <p id="spePara">
+                The expression in parentheses is evaluated at the beginning of each iteration of the loop. 
+                If the condition is evaluated to true, the code in the curly brackets will be executed. 
+                Then execution jumps back to the beginning of the loop, and the condition is evaluated again. 
+                The loop will iterate, and the code will be executed as long as the condition is evaluated to true. 
+                This means, of course, that with an ill-formed condition, a while loop can turn into an infinite loop, a loop without end. 
+                Depending on the context, that may be what we want to achieve. Almost all computer games, 
+                for example, are basically infinite loops that are repeating: reading input from the player, 
+                updating the game state, rendering on screen as many times per second as necessary. This is a big simplification, but true nonetheless.
+            </p>
+        </p>
+        <p>
+            Let's look at one more example. <br><br>
+
+            This time, the decision whether the loop is to end will be made by the user answering the question asked during each 
+            iteration of the loop (we will use the confirm dialog we recently introduced).
+            <pre>
+                <code>
+                    let is_over=false;
+                    let counter = 1;
+                    while(is_over != true){
+                        let continue_loop = confirm(`[${counter}] continue the loop`);
+                        is_over = continue_loop === true? false: true;
+                        counter = counter + 1;
+                    }
+                </code>
+            </pre>
+        </p>
+        <p>
+            The loop will be repeated until the <b id="noticed">is_over</b> variable is set to <b id="noticed">true</b>. <br><br>
+
+            In the loop, we display the question: <b id="noticed">"Continue the loop?"</b>, 
+            which is preceded by the number of the iteration (the <b id="noticed">counter</b> variable).
+            <br>
+            Note that the <b id="noticed">counter</b> variable is not used in the while condition, as its role is only informative. 
+            Clicking on the OK button in the confirm dialog will cause the <b id="noticed">continue_loop</b> variable 
+            to be set to <b id="noticed">true</b> (otherwise it will be set to <b id="noticed">false</b>).
+            <br>
+            Based on the value from the <b id="noticed">continue_loop</b> variable, we set a new value for the <b id="noticed">is_over</b> variable. 
+            Remember that the variable that is tested in the while condition should be initialized beforehand.
+            <br>
+            This is one of the most common mistakes of beginner programmers – they remember to change its value inside the loop, 
+            but forget to set its value for the first test.
+        </p>
+    </p>
+</body>
+</html>
