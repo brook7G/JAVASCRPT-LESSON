@@ -62,6 +62,14 @@ console.log("");
                                                                 let continue_loop = confirm(`[${counter}] continue the loop`);
                                                                 is_over = continue_loop === true? false: true;
                                                                 counter = counter + 1;
-                                                            }       
+                                                            }     
+                                                            //
+                                console.log("");
+                                // A Better way to code the above program is to:
+                                let isOver = false;
+                                let counter_ = 1;
+                                while(!isOver){
+                                    isOver = !confirm(`[${counter_++}] continue the loop`);   
+                                }                         
 
 
