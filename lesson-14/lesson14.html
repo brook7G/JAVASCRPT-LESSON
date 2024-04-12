@@ -25,7 +25,7 @@
             
         </p>
     </p>
-    <h2>The <span id="speTitle">while</span> Loops</h2>
+    <h2>The <span id="speTitle">while</span> Loop</h2>
     <p>
         So we know that loops allow us to execute a selected piece of code multiple times. But what would be the purpose of this? Imagine that in the program, 
         we have created an array containing information about system users. If we wanted to display the name of each of them on the console, 
@@ -177,6 +177,58 @@
                     while(!isOver){
                         isOver = !confirm(`[${counter_++}] continue the loop`);   
                     } 
+                </code>
+            </pre>
+        </p>
+    </p>
+    <h2>The <span id="speTitle">do...while</span> Loop</h2>
+    <p>
+        The <b id="speTitle">do ... while</b> loop is very similar to the plain <b id="speTitle">while</b> loop, the main difference being that in a while loop, 
+        the condition is checked before each iteration, and in the <b id="speTitle">do ... while</b>loop, the condition is checked after each iteration.
+        <br><br>
+        This doesn’t seem like a big difference, but the consequence of this is that a <b id="speTitle">do ... while</b> loop 
+        code is always executed at least once before the first condition check is done, and a plain <b id="speTitle">while</b> may 
+        never be executed at all if the initial condition is evaluated to false at the beginning of the loop.
+        <br><br>
+        The syntax of the <b id="speTitle">do ... while</b> loop looks as follows:
+        <pre>
+            <code>
+                do{
+                    block of code
+                }
+                while(condition);
+            </code>
+        </pre>
+        <p>
+            Let's rewrite our last example using <b id="speTitle">do ... while</b> instead of <b id="speTitle">while</b>. 
+            Note that this time the <b id="speTitle">isOver</b> variable does not need to be initialized before the loop (the condition is checked at the end of the loop, 
+            and the confirm dialog box will be called before the first test).
+            <pre>
+                <code>
+                    let is_Over ;
+                    let _counter =1;
+                    do{
+                        is_Over = !confirm(`using (do while): [${_counter++}] continue the loop`);
+                    }
+                    while(!is_Over);
+                </code>
+            </pre>
+        </p>
+        <p>
+            The behavior of the program will be identical to the previous one, in which we used while. 
+            Compare both examples, and you should easily see the differences caused by using the different loop statements.
+            <br><br>
+            In the next example, we demonstrate what we said earlier – a <b id="speTitle">do ... while</b> loop always iterates at least once:
+            <pre>
+                <code>
+                    let condition = false;
+                    while(condition){
+                        console.log("A while loop iteration");
+                    }
+                    do{
+                        console.log("A do while loop iteration")
+                    }
+                    while(condition);
                 </code>
             </pre>
         </p>
