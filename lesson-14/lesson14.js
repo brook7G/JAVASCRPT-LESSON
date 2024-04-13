@@ -94,6 +94,50 @@ console.log("");
                       do{
                         console.log("A do while loop iteration \n it iterates at least once");
                       }while (conditional); 
+                      //
+
+                      console.log("")
+                      console.log("for loop ");
+                      console.log("");
+                      //
+
+                              for(let i=0; i<10; ++i){
+                                console.log(i);
+                              }
+                              //
+                                        console.log("");
+                                        console.log("using while loop ");
+                                        console.log("");
+                                        //
+                                                let i=0;
+                                                while(i<10){
+                                                  console.log(i);
+                                                  i++;
+                                                }
+                                                //
+                                                          console.log("");
+                                                          console.log("Array: sum of elements in the array using 'for' loop");
+                                                          console.log("");
+                                                          //
+                                                                   let values = [10,30,40,100]; // change the values in the array and check the result
+                                                                   let sum = 0;
+                                                                   for(let i = 0; i < 4; i++){
+                                                                    sum += values[i]; //or you can change to > sum = sum +values[i];
+                                                                    
+                                                                   }
+                                                                   console.log(sum); // 180
+                                                                   //
+                                                                            console.log("");
+                                                                            console.log("incase of large size of arrays: \n use array.length()");
+                                                                            console.log("");
+                                                                            //
+                                                                                    let value = [10,30,40,100];
+                                                                                    let result = 0;
+                                                                                    for(let i = 0; i < value.length; i++){
+                                                                                      result += value[i];
+
+                                                                                    }
+                                                                                    console.log(result); // 180
 
                                 
                                 
