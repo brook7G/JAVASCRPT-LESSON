@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 15 with Biruk</title>
+    <script src="lesson15.js"></script>
+    <link rel="stylesheet" href="lesson15.css">
+    <img id="norImg" src="/JavaScript-logo.png" alt="">
+</head>
+<body>
+    <h1 id="speH1">LOOP & ARRAY</h1>
+    <p>
+        Let's try to play with arrays again.
+            <br><br>
+        This time the program will be a bit more complicated. We want the user to enter names during the program's execution (we will use the <b id="speTitle">prompt</b> dialog box), 
+        which will be placed in the array one by one. Entering the names will end when the Cancel button is pressed. 
+        Then we will write the entire contents of the array (i.e. all entered names) to the console.
+        <pre>
+            <code>
+                while (!is_over) {
+                    let add_name = prompt("Enter Name or click cancel to finish");
+                    if(add_name != null){
+                        contacts_name.push(add_name);
+                
+                    }else {
+                        is_over = true; 
+                    };
+                
+                };
+                for(let i = 0; i < contacts_name.length; i++){
+                    console.log(contacts_name[i]);
+                };
+            </code>
+        </pre>
+    </p>
+    
+    
+</body>
+</html>
