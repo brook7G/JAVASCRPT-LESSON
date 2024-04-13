@@ -233,5 +233,133 @@
             </pre>
         </p>
     </p>
+    <h2>The <span id="speTitle">for</span> Loop</h2>
+    <p>
+        <p>The for loop is part of the second type of loops, the one which is better in situations where we know how many times the loop should be executed (although this is not necessary). 
+            The syntax of the for loop is a bit more complicated and looks as follows:
+            <pre>
+                <code>
+                    for(initialization;condition;increment){
+                        block of code;
+                    }
+                </code>
+            </pre>
+            <p>
+                In the parentheses after the word for, we will not find a single condition this time, as was the case in the while loop. 
+                The inside of the parentheses is divided into three fields by semicolons, and each field is assigned a different meaning. 
+                In each of these fields, a statement may appear, which will be interpreted as follows in the order:
+                <p id="subPara_">
+                    loop initialization statement. <br>
+                    loop condition statement. <br>
+                    loop increment statement. <br>
+                    
+
+                </p>
+                <p>All three statements are optional, but in fact we very rarely miss any of them. Let's take a closer look at them.</p>
+            </p>
+        </p>
+        <h3>The <span id="speTitle">for</span> loop <b id="speTitle">initialization</b> statement</h3>
+        <p>
+            The initialization statement is executed only once, before the first loop iteration. Usually, it’s used to initialize (or declare and initialize) 
+            a variable that will be used as a loop counter. 
+            We can use any existing variable as a counter, but in general it’s good practice to declare a new one, as this makes the code cleaner and 
+            easier to read and understand. The initialization statement is optional and can be left empty, except for ending with a semicolon.
+        </p>
+        <h3>The <span id="speTitle">for</span> loop <b id="speTitle">condition</b> statement</h3>
+        <p>
+            A condition statement is an expression that is evaluated to a Boolean before each loop iteration. 
+            If this expression is evaluated to true, the loop will execute its code. In the case of the condition being evaluated to false, the loop is terminated, 
+            and no more iterations will be executed, and the code execution jumps to the first statement after this for loop. The condition statement is also optional, 
+            but if left empty, it will be assumed as always true, leading to an infinite loop if no other means of exiting the loop is used.
+        </p>
+        <h3>The <span id="speTitle">for</span> loop <b id="speTitle">increment</b> statement</h3>
+        <p>
+            The increment statement is always executed at the end of the current loop iteration, and most of the time it’s used to increment (or decrement, 
+            depending on the need) a loop counter that is used in a condition statement. It can be any expression, not only incrementation/decrementation. 
+            This can also be left empty.
+            <br><br>
+            It may look a bit complicated, but after the first simple example, everything should become clearer. 
+            Using the for loop, we will try to write out successive integers from 0 to 9 on the console, so we will make ten iterations:
+            <pre>
+                <code>
+                    for(let i=0; i<10; i++){
+                        console.log(i);
+                    }
+                </code>
+            </pre>
+            <p>
+                As shown in the syntax of the for loop, there are three expressions inside the parentheses. The let <b id="speTitle">i = 0</b> 
+                is an initialization,<b id="speTitle"> i < 10 </b>is a condition, and <b id="speTitle">i++</b> is an increment.
+                <br><br>
+                Now let's try to rewrite the same example using the while loop:
+                <pre>
+                    <code>
+                        let i=0;
+                        while(i<10){
+                          console.log(i);
+                          i++;  
+                        }
+                    </code>
+                </pre>
+                <p>
+                    In both cases (for loop and while loop), we declare and initiate variable <b id="speTitle">i</b> before the loop starts (initially set to <b id="speTitle">0</b> ). 
+                    Both loops will be executed as long as condition <b id="speTitle">i < 10</b> is fulfilled.
+                    <br><br>
+                    In both loops, at the end of each iteration, the value of variable <b id="speTitle">i</b> will be increased by <b id="speTitle">1</b>. 
+                    And of course, in both loops in each iteration, the current value of variable <b id="speTitle">i</b> will be printed on the console.
+                    <br><br>
+                    So you can see that the for loop actually offers just a slightly different, more consistent way of writing the same thing that you can achieve with the while loop. 
+                    Such a notation is particularly useful in cases such as the one presented in the example, where we use an iteration counter (in our example, 
+                    the <b id="speTitle">i</b> variable), which must be initialized and incremented (or decremented). 
+                    In such a situation, everything related to the counter (initialization, loop end condition, change of counter value) is located practically in one place, 
+                    which may increase the readability of the code.
+                    
+                    <p id="speTitle">
+                        A typical example of using a for loop, where we know the number of iterations in advance, is when going through the elements of an array.
+                        <br><br>
+                        Let's move on to another simple example. Let's assume that we have a four-element array of integers at our disposal and our dream is to sum up all these numbers. 
+                        There is nothing easier than to go through the array, taking the element one by one and adding them to the result. We just have to remember that before starting the loop,
+                        the result is <b id="noticed">0</b>.
+                        <pre>
+                            <code>
+                                let values = [10,30,40,100]; // change the values in the array and check the result
+                                let sum = 0;
+                                for(let i = 0; i < 4; i++){
+                                 sum += values[i]; //or you can change to > sum = sum +values[i];
+                                 
+                                }
+                                console.log(sum); // 180
+                            </code>
+                        </pre>
+                        <p id="speTitle">
+                            simple right?
+                            <br><br>
+                            But there is a slight awkwardness in the code.
+                            <br>
+                            We have set the number of iterations to four. It’s true that there are exactly four elements in the array, and in our example this number does not change, but it is not a universal rule.
+                            <br>
+                            In normal programs, arrays very often change dynamically during program execution (elements are added or removed). In this case, it is definitely better to use the array property called length (we mentioned it when discussing arrays).
+                            <br>
+                            This property contains the current number of array elements. So our example rewritten correctly will look like this:
+                            <pre>
+                                <code>
+                                    let value = [10,30,40,100];
+                                    let result = 0;
+                                    for(let i = 0; i < value.length; i++){
+                                      result += value[i];
+
+                                    }
+                                    console.log(result); // 180
+                                </code>
+                            </pre>
+
+                        </p>
+                    </p>
+
+                </p>
+            </p>
+            
+        </p>
+    </p>
 </body>
 </html>
