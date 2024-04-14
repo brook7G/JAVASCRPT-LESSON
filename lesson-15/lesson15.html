@@ -33,6 +33,152 @@
                 };
             </code>
         </pre>
+        <p>
+            The <b id="speTitle">contacts_name</b> array is initially empty. In each iteration of the <b id="speTitle">while</b> loop we call the <b id="speTitle">prompt</b> dialog box. 
+            If the user enters a new name and presses the OK button, this name will be entered in the local <b id="speTitle">add_name</b> variable. 
+            If the user clicks Cancel, the variable will contain <b id="speTitle">null</b>. So we check in the conditional instruction if the name is different from <b id="speTitle">null</b>. 
+            If so, the value of the name variable is attached to the end of the <b id="speTitle">contacts_name</b> array using the <b id="speTitle">push</b> method (if you do not remember it,
+            go back to the chapter where we discussed arrays). If the name is <b id="speTitle">null</b>, the <b id="speTitle">is_over</b> variable 
+            value is changed to end the <b id="speTitle">while</b> loop.
+            <br><br>
+            <p id="spePara">
+                After leaving the <b id="noticed">while</b> loop, we go through the whole names array (using the <b id="noticed">for</b> loop and the <b id="noticed">length</b> 
+                property of the names array) and we display all the names placed there. In this way, we have done something absolutely new unnoticed. 
+                Using arrays, loops, and interaction with the user (<b id="noticed">prompt</b> dialog box) we have created and filled in a dynamic data structure. 
+                Please note that while writing this program, it is not clear how many array elements there will be, or even what elements there will be.
+            </p>
+            <!-- <br><br> -->
+            <p>
+                Going through the elements of the array, we use an <b id="speTitle">index</b> variable that we initialize with the value 0 (the index of the first element in the array) 
+                and increment it by one during each iteration. This is obviously not the only approach. 
+                For example, if we wanted to go through the elements of the array in reverse order, we would initialize the index variable with the value of the largest index and decrease 
+                it by one during each iteration. There is also nothing to stop us from jumping a few elements at a time, incrementing or decrementing the index variable by a value greater than one. 
+                Take a look at the example below:
+                <pre>
+                    <code>
+                        let ageOf = [10, 20, 33, 50, 101];
+                        for (let i = 0; i < ageOf.length; i++) {
+                        console.log(ageOf[i]);// 10 20 33 50  101
+                        }
+                        console.log("");
+                        for (let i = ageOf.length - 1; i > 0; i--) {
+                        console.log(ageOf[i]);//101 50 33 20 
+                        }
+                        console.log("");
+                        for (let i = 0; i < ageOf.length; i += 2) {
+                        console.log(ageOf[i]);//10 33 101
+                        }
+                    </code>
+                </pre>
+            </p>
+
+        </p>
+    </p>
+    <h3>for ... of</h3>
+    <p>
+        In addition to the regular for loop, there are two specific versions, one of which, <b id="speTitle">for ... of</b>, is dedicated for use with arrays (and other iterative structures, 
+        which are however beyond the scope of this course). In a loop of this type, we do not explicitly specify any conditions or number of iterations, 
+        as it is performed exactly as many times as there are elements in the indicated array.
+        <br><br>
+        Let's come back to our example from summing up numbers from the four-element array.
+        <br><br>
+        In this example, we use a simple for loop:
+        <pre>
+            <code>
+                let val = [10, 30, 50, 100];
+                let sum = 0;
+                for (let i = 0; i < val.length; i++) {
+                  sum += val[i];
+                }
+                console.log("sum is:", sum); //190
+            </code>
+        </pre>
+        <p>
+            The version of this program using the loop <b id="speTitle">for ... of</b> will look slightly different:
+            <pre>
+                <code>
+                    let val_2 = [10, 30, 50, 100];
+                    let sum_2 = 0;
+                    for(let number of val_2){
+                        sum_2 += number;
+                    }
+                    console.log('using "for...of" loop ...sum is:', sum_2); //190
+                </code>
+            </pre>
+            <p>
+                In brackets after the word for, you will not find three fields separated by semicolons. There is a variable declaration, followed by the word of and then an array, 
+                the elements of which we will loop through (variable or literal). In our example, for (let number of values) means that the 
+                number variable will contain the subsequent elements of the values array in each iteration.
+                <br><br>
+                The syntax of this loop is as follows:
+                <pre>
+                    <code>
+                        for(variable of array ){
+                            block of code   
+                        }
+                    </code>
+                </pre>
+                <p>
+                    In practice, much more often than different versions of the for loop, the forEach method is used to iterate through array elements.
+                        <br><br>
+                    This is one of the array type methods. Its use requires the ability to write your own functions, so we will return to it in the functions section of the course.
+                </p>
+            </p>
+            <p>
+                Let's look at one more example.
+                <br>
+                This time, we declare a cities array, which contains objects describing some of the biggest cities in the world.
+                <br>
+                Each object contains name and population fields. Using the for ... of loop, we go through this array and display information about all cities that have more than 20 million 
+                inhabitants.
+                <pre>
+                    <code>
+                        let cities_info=[
+                        {
+                            city_name:"New York",
+                            city_population:18.65e6
+                        },
+                        {
+                            city_name:"Cairo",
+                            city_population:18.82e6
+                        },
+                        {
+                            city_name:"Mumbai",
+                            city_population:19.32e6
+                        },
+                        {
+                            city_name:"São Paulo",
+                            city_population:20.88e6
+                        },
+                        {
+                            city_name:"Mexico City",
+                            city_population:21.34e6
+                        },
+                        {
+                            city_name:"Shanghai",
+                            city_population:23.48e6
+                        },
+                        {
+                            city_name:"Delhi",
+                            city_population:25.87e6
+                        },
+                        {
+                            city_name:"Tokyo",
+                            city_population:37.26e6
+                        }
+                    ];
+                    for(let city of cities_info){
+                        if(city.city_population>20e6){
+                            console.log(`City Name: ${city.city_name} \nPopulation Size: ${city.city_population} `)
+                        }
+                    }
+                    </code>
+                </pre>
+                <p>
+                    Run the code and then experiment with the conditions (e.g. display all cities with more than 20 million inhabitants but less than 25 million, etc.).
+                </p>
+            </p>
+        </p>
     </p>
     
     
