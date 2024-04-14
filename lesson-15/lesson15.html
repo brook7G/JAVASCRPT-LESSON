@@ -180,6 +180,38 @@
             </p>
         </p>
     </p>
+    <h3>for ... in</h3>
+    <p>
+        There is also a version of the <b id="speTitle">for</b> loop that enables us to walk through object fields. This is a for ... in construction. 
+        It iterates through all fields of the indicated object, placing the names of these fields (or keys) in the variable. In the example, we use an object containing data about a user:
+        <pre>
+            <code>
+
+            </code>
+        </pre>
+        <p>
+            In each loop iteration, the names of successive fields of the user object are assigned to the key variable, i.e.: name, surname, age, email. 
+            Then we write them on the console. But what if we want to retrieve the values stored in the fields with these names? In order to get access to the specified field, 
+            we use dot notation (the part of the course dedicated to data types) that is, after the name of the object, we write a dot and the field name (key). 
+            The key given in this notation is always treated as a literal. In the for ... in loop, this approach will not work, because the field name (key) is placed in a variable. 
+            Fortunately, we have an alternative solution, bracket notation. It allows you to refer to the selected object field using brackets (like in arrays). 
+            In the square bracket behind the object name, we place the field name, which can be either a literal or a variable containing that name.
+            <pre>
+                <code>
+
+                </code>
+            </pre>
+            <p>
+                Using bracket notation, we improve our example by displaying not only the keys, but also their assigned values.
+                <pre>
+                    <code>
+
+                    </code>
+                </pre>
+            </p>
+        </p>
+    </p>
+    
     
     
 </body>
