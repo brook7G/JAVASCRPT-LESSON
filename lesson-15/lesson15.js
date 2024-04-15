@@ -1,22 +1,22 @@
 console.log("LOOPS AND ARRAY");
 console.log("");
 //
-    let contacts_name = [];
-    let is_over = false;
+    // let contacts_name = [];
+    // let is_over = false;
 
-    while (!is_over) {
-        let add_name = prompt("Enter Name or click cancel to finish");
-        if(add_name != null){
-            contacts_name.push(add_name);
+    // while (!is_over) {
+    //     let add_name = prompt("Enter Name or click cancel to finish");
+    //     if(add_name != null){
+    //         contacts_name.push(add_name);
 
-        }else {
-            is_over = true;
-        };
+    //     }else {
+    //         is_over = true;
+    //     };
 
-    };
-    for(let i = 0; i < contacts_name.length; i++){
-        console.log(contacts_name[i]);
-    };
+    // };
+    // for(let i = 0; i < contacts_name.length; i++){
+    //     console.log(contacts_name[i]);
+    // };
         
                 console.log("");
                 console.log("going through the elements using: Index");
@@ -107,35 +107,50 @@ console.log("");
                                   }
                                 }
                                 //
-                                console.log("");
-                                console.log("for ... in:");
-                                console.log("");
-                                //
-                                    let user_info = {
-                                      name_: "Biruk",
-                                      sur_name: "Fekadu",
-                                      phone_number: "0938741514",
-                                      email_address:
-                                        "birukefekadu632@gmail.com",
-                                      role_: "CEO",
-                                      age_: "24",
-                                    };
+console.log("");
+console.log("for ... in:");
+console.log("");
+//
+    let user_info = {
+      name_: "Biruk",
+      sur_name: "Fekadu",
+      phone_number: "0938741514",
+      email_address:
+        "birukefekadu632@gmail.com",
+      role_: "CEO",
+      age_: "24",
+    };
 
-                                    for (let key in user_info) {
-                                      console.log(key); // name_ /sur_name /phone_number /email_address /role_ /age_
-                                    };
-                                    //
-                                    console.log(user_info.name_); // Biruk
-                                    console.log(user_info[name_]); // undefined
-                                    //
-                                    console.log
-                                    console.log("for ... in:using bracket notation");
-                                    console.log("");
-                                    //
-                                        for(let key in user_info){
-                                          console.log(`${key} -> ${user_info[key]}`);
-                                        };
-                                      
+    for (let key in user_info) {
+      console.log(key); // name_ /sur_name /phone_number /email_address /role_ /age_
+    };
+    //
+    console.log(user_info.name_); // Biruk
+    // console.log(user_info[name_]); // undefined
+    //
+    console.log
+    console.log("for ... in:using bracket notation");
+    console.log("");
+    //
+        for(let key in user_info){
+          console.log(`${key} -> ${user_info[key]}`);
+        };
+        //
+        //
+        //
+        console.log("");
+        console.log("break ... continue statements")
+        console.log("");
+        //
+        let i = 0;
+        while (true) {
+          console.log(i);
+          if (i >= 5) {
+            break;
+          }
+        }
+        alert(`Exited the loop with (${i}).`);
+      
                                 
                                 
                               
