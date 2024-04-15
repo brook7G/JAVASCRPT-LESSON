@@ -108,16 +108,34 @@ console.log("");
                                 }
                                 //
                                 console.log("");
-                                let user = {
-                                    name: "Calvin",
-                                    surname: "Hart",
-                                    age: 66,
-                                    email: "CalvinMHart@teleworm.us"
-                                };
-                                 
-                                for (let key in user) {
-                                    console.log(key); // -> name, surname, age, email
-                                };
+                                console.log("for ... in:");
+                                console.log("");
+                                //
+                                    let user_info = {
+                                      name_: "Biruk",
+                                      sur_name: "Fekadu",
+                                      phone_number: "0938741514",
+                                      email_address:
+                                        "birukefekadu632@gmail.com",
+                                      role_: "CEO",
+                                      age_: "24",
+                                    };
+
+                                    for (let key in user_info) {
+                                      console.log(key); // name_ /sur_name /phone_number /email_address /role_ /age_
+                                    };
+                                    //
+                                    console.log(user_info.name_); // Biruk
+                                    console.log(user_info[name_]); // undefined
+                                    //
+                                    console.log
+                                    console.log("for ... in:using bracket notation");
+                                    console.log("");
+                                    //
+                                        for(let key in user_info){
+                                          console.log(`${key} -> ${user_info[key]}`);
+                                        };
+                                      
                                 
                                 
                               
