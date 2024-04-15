@@ -6,7 +6,7 @@
     <title>Lesson 15 with Biruk</title>
     <script src="lesson15.js"></script>
     <link rel="stylesheet" href="lesson15.css">
-    <img id="norImg" src="/JavaScript/JavaScript-logo.png" alt="">
+    <img id="norImg" src="/JavaScript-logo.png" alt="">
 </head>
 <body>
     <h1 id="speH1">LOOP & ARRAY</h1>
@@ -186,7 +186,19 @@
         It iterates through all fields of the indicated object, placing the names of these fields (or keys) in the variable. In the example, we use an object containing data about a user:
         <pre>
             <code>
+                let useer_info = {
+                    name_: "Biruk",
+                    sur_name: "Fekadu",
+                    phone_number: "0938741514",
+                    email_address:
+                      "birukefekadu632@gmail.com",
+                    role_: "CEO",
+                    age_: "24",
+                  };
 
+                  for (let key in useer_info) {
+                    console.log(key);
+                  }
             </code>
         </pre>
         <p>
@@ -198,6 +210,8 @@
             In the square bracket behind the object name, we place the field name, which can be either a literal or a variable containing that name.
             <pre>
                 <code>
+                    console.log(user_info.name_); // Biruk
+                    console.log(user_info[name_]); // undefined
 
                 </code>
             </pre>
@@ -205,11 +219,22 @@
                 Using bracket notation, we improve our example by displaying not only the keys, but also their assigned values.
                 <pre>
                     <code>
-
+                        for(let key in user_info){
+                            console.log(`${key} -> ${user_info[key]}`);
+                          };
                     </code>
                 </pre>
             </p>
         </p>
+    </p>
+    <h3>The <span id="spePara">break</span> and <span>continue</span> statement</h3>
+    <p>
+        The <b id="speTitle">break</b> statement is used to terminate the execution of a loop or a switch statement. In each of these contexts, whenever the JavaScript engine encounters a 
+        <b id="speTitle">break</b> statement, it exits the whole loop or switch statement, and jumps to the first statement after that loop or switch.
+        <br><br>
+        In the example, we can see an infinite <b id="speTitle">while</b> loop that will be exited using <b id="speTitle">break</b> after the variable <b id="speTitle">i</b> becomes 
+        greater than or equal to 5. Such a use of <b id="speTitle">break</b> is only of illustrative importance, because it would make more sense to include this 
+        condition directly in the <b id="speTitle">while</b> construction.
     </p>
     
     
