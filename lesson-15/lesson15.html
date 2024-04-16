@@ -235,6 +235,22 @@
         In the example, we can see an infinite <b id="speTitle">while</b> loop that will be exited using <b id="speTitle">break</b> after the variable <b id="speTitle">i</b> becomes 
         greater than or equal to 5. Such a use of <b id="speTitle">break</b> is only of illustrative importance, because it would make more sense to include this 
         condition directly in the <b id="speTitle">while</b> construction.
+        <pre>
+            <code>
+                let i = 0;
+                while (true) {
+                  console.log(i);
+                  if (i >= 5) {
+                    break;
+                  }
+                }
+                alert(`Exited the loop with (${i}).`);
+            </code>
+        </pre>
+        <p>
+            Just like <b id="speTitle">break</b>, <b id="speTitle">continue</b> can be used in loops (but not in the switch statement). When used, it applies to the closest surrounding loop. 
+            The continue statement, in contrast to break, does not end the whole loop, but rather starts the next iteration of this loop.
+        </p>
     </p>
     
     
