@@ -119,6 +119,7 @@ console.log("");
         "birukefekadu632@gmail.com",
       role_: "CEO",
       age_: "24",
+      other:""
     };
 
     for (let key in user_info) {
