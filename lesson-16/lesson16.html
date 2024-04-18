@@ -82,6 +82,110 @@
             switch statements do not execute just one branch, but rather they execute the entire code from the first case that matches until the end of the switch statement. 
             This behavior is called pass-through and has some uses, but most of the time we want to execute only one branch, and for that reason the break keyword is present. 
             When a JavaScript interpreter comes to a <b id="speTitle">break</b>, it will jump out of the current <b id="speTitle">switch</b> statement.
+            <br><br>
+            To understand this better, look at this slightly modified example of a switch statement:
+            <pre>
+                <code>
+                    let gate = prompt("Choose gate: a, b, or c");
+                    let win = false;
+                    
+                    switch (gate) {
+                        case "a":
+                            alert("Gate A: empty");
+                        case "b":
+                            alert("Gate B: main prize");
+                            win = true;
+                        case "c":
+                            alert("Gate C: empty");
+                        default:
+                            alert("No gate " + String(gate));
+                    }
+                    
+                    if (win) {
+                        alert("Winner!");
+                    }
+                </code>
+            </pre>
+            <p>
+                The only difference is that now there are no break keywords at all. 
+                Run this code and check what happens when the answer "a" is given to the prompt dialog. Now all alerts are displayed, even the default one.
+                <br><br>
+                The fall-through can be useful when more than one case should end with exactly the same behavior.
+                <pre>
+                    <code>
+                        let gate_ = prompt("Choose gate: a, b, or c");
+                        let win_ = false;
+                        
+                        switch (gate_) {
+                            case "a":
+                            case "A":
+                            case 1:
+                            case "1":
+                                alert("Gate A: empty");
+                                break;
+                            case "b":
+                            case "B":
+                            case 2:
+                            case "2":
+                                alert("Gate B: main prize");
+                                win = true;
+                                break;
+                            case "c":
+                            case "C":
+                            case 3:
+                            case "3":
+                                alert("Gate C: empty");
+                                break;
+                            default:
+                                alert("No gate " + String(gate_));
+                        }
+                        
+                        if (win_) {
+                            alert("Winner!");
+                        }
+                    </code>
+                </pre>
+                <p>
+                    The code visible in the example will behave the same when "a", "A", 1 or "1" is given as the answer to the prompt.
+                </p>
+            </p>
+            <p>
+                The last important part is that if a more complex code is needed inside any given case, we should place that code in separate code blocks by 
+                additionally surrounding the code with curly brackets. This will add to code readability and allow for the declaration of variables only in the given case scope.
+                <pre>
+                    <code>
+                        let _gate = prompt("Choose gate: a, b, or c");
+                        let _win = false;
+                        
+                        switch (_gate) {
+                            case "a": {
+                                let message = "Gate A";
+                                console.log(message);
+                                break;
+                            }
+                            case "b": {
+                                let message = "Gate B";
+                                console.log(message);
+                                break;
+                            }
+                            case "c": {
+                                let message = "Gate C";
+                                console.log(message);
+                                break;
+                            }
+                            default:
+                                alert("No gate " + String(_gate));
+                        }
+                        
+                        if (_win) {
+                            alert("Winner!");
+                        }
+                    </code>
+                </pre>
+                <p>
+                    In the example, a redeclaration error would be observed in each of the cases and would not be encapsulated in its own scope.
+                </p>
+            </p>
         </p>
     </p>
 
