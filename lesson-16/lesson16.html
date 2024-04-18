@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson-16 with Biruk</title>
+    <link rel="stylesheet" href="lesson16.css">
+    <script src="lesson16.js"></script>
+</head>
+<body>
+    <h3>The <span id="spePara">break</span> and <span id="spePara">continue</span> statement</h3>
+    <p>
+        The <b id="speTitle">break</b> statement is used to terminate the execution of a loop or a switch statement. In each of these contexts, whenever the JavaScript engine encounters a 
+        <b id="speTitle">break</b> statement, it exits the whole loop or switch statement, and jumps to the first statement after that loop or switch.
+        <br><br>
+        In the example, we can see an infinite <b id="speTitle">while</b> loop that will be exited using <b id="speTitle">break</b> after the variable <b id="speTitle">i</b> becomes 
+        greater than or equal to 5. Such a use of <b id="speTitle">break</b> is only of illustrative importance, because it would make more sense to include this 
+        condition directly in the <b id="speTitle">while</b> construction.
+        <pre>
+            <code>
+                let i = 0;
+                while (true) {
+                  console.log(i);
+                  if (i >= 5) {
+                    break;
+                  }
+                }
+                alert(`Exited the loop with (${i}).`);
+            </code>
+        </pre>
+        <p>
+            Just like <b id="speTitle">break</b>, <b id="speTitle">continue</b> can be used in loops (but not in the switch statement). When used, it applies to the closest surrounding loop. 
+            The continue statement, in contrast to break, does not end the whole loop, but rather starts the next iteration of this loop.
+            <br>
+            We can think of it as jumping right to the end of the current iteration.
+            <pre>
+                <code>
+                    let i = 0;
+                    // An infinite loop
+                    while (true){
+                        console.log(i);
+                        i++;
+                        if (i >= 5) {
+                            break;
+                        }
+                    }
+                    
+                    alert(`Exited the loop with a break (${i}).`);
+
+                </code>
+            </pre>
+            <p>
+                Just like break, continue can be used in loops (but not in the switch statement). When used, it applies to the closest surrounding loop. 
+                The continue statement, in contrast to break, does not end the whole loop, but rather starts the next iteration of this loop.
+                <br><br>
+                We can think of it as jumping right to the end of the current iteration.
+                <pre>
+                    <code>
+                        for (let i = 0; i < 10; i++) {
+                            if (i == 3) {
+                                continue;
+                            }
+                            console.log(i);
+                        }
+                        
+                    </code>
+                </pre>
+            </p>
+            <p>
+                The program writes numbers from 0 to 9 to the console, but skips the number 3. 
+                This happens because when <b id="speTitle">i</b> equals 3, the continue statement is executed, 
+                ending this iteration (and skipping the <b id="speTitle">console.log</b> statement) and starting another one.
+                <br><br>
+                Both break and continue are not used particularly often. We should definitely not use them when we can terminate the loop with a properly constructed condition. 
+                They are useful in emergency situations, when something unusual happens in loops with more complex iterations.
+            </p>
+        </p>
+        <h3>The <span id="spePara">break</span> keyword</h3>
+        <p>
+            We also need to say a few words about the <b id="speTitle">break</b> keyword. 
+            In the example, the <b id="speTitle">break</b> keyword is present in all cases except in the <b id="speTitle">default</b> case. In contrast to <b id="speTitle">if</b> statements, 
+            switch statements do not execute just one branch, but rather they execute the entire code from the first case that matches until the end of the switch statement. 
+            This behavior is called pass-through and has some uses, but most of the time we want to execute only one branch, and for that reason the break keyword is present. 
+            When a JavaScript interpreter comes to a <b id="speTitle">break</b>, it will jump out of the current <b id="speTitle">switch</b> statement.
+        </p>
+    </p>
+
+</body>
+</html>
