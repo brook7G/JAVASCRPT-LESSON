@@ -164,6 +164,11 @@ for( let key in vessel) {
                                                     }
                                                     alert(result1);
                                                 }
+                                                //
+                                                //
+                                                //
+console.log("LAB-Exercise");
+console.log("");
                                             
 let contacts = [
     {
