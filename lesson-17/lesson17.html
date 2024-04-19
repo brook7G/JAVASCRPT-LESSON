@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson-17 with Biruk</title>
+    <script src="lesson17.js"></script>
+    <link rel="stylesheet" href="/lesson-16/lesson16.css">
+    <img id="norImg" src="/JavaScript-logo.png" alt="">
+</head>
+<body>
+    <h1 id="speH1">LESSON-17: <span id="spePara">FUNCTIONS</span></h1>
+    <u><h2>Part-One</h2></u>
+    <h2 id="spePara">FUNCTIONS</h2>
+    <p>
+        We talked about functions in the chapter on variables, when we discussed the scope of visibility of local variables declared with the keyword var. 
+        We learned on this occasion what functions are, but in this chapter, we will take a much closer look at them, expanding our knowledge on the subject.
+        <br><br>
+        So <b id="front">what is function</b>? It's a separated piece of code, constituting a certain closed logical whole, intended to perform a specific task. 
+        We usually assign a name to such a separated piece of code. With this name, we can call it (execute it) many times in different places of the program.
+        <br><br>
+        This is a simplification, because there are functions that do not have a name, for example, anonymous functions (we will talk about them later). 
+        For the time being, let’s assume that a function has a name, which we give when declaring it. This name is used when calling the function, in other words, 
+        when running the code contained in it.
+        <br><br>
+        The declaration and calling of functions are independent of each other, which we will see in a moment.
+    </p>
+    <h3 id="noticed">why do we use functions?</h3>
+    <p >
+        There are many reasons, one of the most important being to divide the code into some logically independent parts. 
+        Such modularity increases the readability of the code – it is easier to write and analyze a long program that is not a sequence of single instructions.
+        It also allows for easy testing of code fragments closed in functions independently of the rest of the program.
+        <br><br>
+        A very important reason for using a function is the reuse of code – if you repeat the same sequence of instructions in the program in many places, 
+        you can close this sequence in a function, and in those places you only have to call the function.
+        <br><br>
+        Apart from reducing the amount of code in a program (thus increasing its readability), 
+        it also means that if you need to make some changes in this sequence of instructions, 
+        you have to do it only once, inside the function. If we didn’t use a function in this situation, 
+        we would have to make changes independently in every place where this sequence of instructions appeared in the code.
+        <br><br>
+        Let's take a look at a simple program, written without any functions.
+        <pre>
+            <code>
+                let temperatures;
+                let sum;
+                let mean_Temp;
+                //
+
+                temperatures = [
+                12, 12, 11, 11, 10, 9, 9, 10, 12, 13, 15, 18, 21, 24, 24, 23, 25, 25, 23, 21,
+                20, 19, 17, 16,
+                ];
+                sum = 0;
+                //
+
+                for (let i = 0; i < temperatures.length; i++) {
+                sum += temperatures[i];
+                }
+                //
+
+                mean_Temp = sum / temperatures.length;
+                console.log(`mean : ${mean_Temp}`); // mean : 16.666666666666668
+                //
+                //
+
+                temperatures = [
+                17, 16, 14, 12, 10, 10, 10, 11, 13, 14, 15, 17, 22, 27, 29, 29, 27, 26, 24,
+                21, 19, 18, 17, 16,
+                ];
+                sum = 0;
+                //
+
+                for (let i = 0; i < temperatures.length; i++) {
+                sum += temperatures[i];
+                }
+                //
+
+                mean_Temp = sum / temperatures.length;
+                console.log(`mean : ${mean_Temp}`); // mean : 18.083333333333332
+
+            </code>
+        </pre>
+    </p>
+
+    
+</body>
+</html>
