@@ -99,8 +99,13 @@ for (number of number_array) {
                         //                        
 //
 //
+console.log("")
+console.log("EXERCISE-5:")
+//
 let vessel =
+
     {
+        //answer for the question
         LATITUDE:'LATITUDE',
         LONGITUDE:'154.48535',
         COURSE:'285.6',
@@ -113,4 +118,50 @@ let vessel =
 for( let key in vessel) { 
     console.log(`${key} -> ${vessel[key]}`); 
 }
-
+//
+//
+                                            console.log("");
+                                            console.log("EXERCISE-6:");
+                                            //
+                                            console.log("");
+                                            console.log("ANSWER FOR QUESTION-3:");
+                                            //
+                                            //
+                                                while (true) {
+                                                    let first_number =Number(prompt("enter the first number",0));
+                                                    let second_number =Number(prompt("enter the second number",0));
+                                                    let _operator = prompt("enter operand (+ , - , / , *)");
+                                                    let result1;
+        
+                                                    //quit if 'Q' is entered as  input in one of the input (first_number, second_number or _operator)
+                                                    if(first_number==="Q" || second_number==="Q" || _operator==="Q"){
+                                                        break;
+                                                    }
+                                                    first_number=Number(first_number)
+                                                    second_number=Number(second_number)
+                                                    //the loop
+                                                    if(!Number.isNaN(first_number) && !Number.isNaN(second_number)){
+                                                        switch(_operator){
+                                                            case '+':
+                                                                result1 = first_number + second_number;
+                                                                break;
+                                                            case '-':
+                                                                result1 = first_number - second_number;
+                                                                break;
+                                                            case '*':
+                                                                result1 = first_number * second_number;
+                                                                break;
+                                                            case '/':
+                                                                result1 = first_number / second_number;
+                                                                break;
+                                                            default:
+                                                                result1 = "Error: unknown operand";              
+                                                        }
+                                                        
+                                                    }
+                                                    else{
+                                                        result1 = ("Error: atleast one of the entered values is not a number")
+                                                    }
+                                                    alert(result1);
+                                                }
+                                            
