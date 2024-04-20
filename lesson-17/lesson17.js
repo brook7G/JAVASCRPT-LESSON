@@ -211,3 +211,44 @@ temperature_4 = [
 
 temp_mean_4 = get_temp_mean_4();
 console.log(`mean---: ${temp_mean_4}`); // mean---: 18.083333333333332
+//
+//
+
+console.log("");
+console.log("THE .. return .. STATEMENT");
+//
+function get_temp_mean_5() {
+  sum_of_Temperature_5 = 0;
+  for (let i = 0; i < temperature_5.length; i++) {
+    sum_of_Temperature_5 += temperature_5[i];
+  }
+  return sum_of_Temperature_5 / temperature_5.length;
+}
+
+/*The temp_mean_ variable has also become slightly redundant. We store the result of the function 
+call in it, which is then displayed on the console. This can also be simplified by placing the get_temp_mean_
+function call directly in console.log (without the use of the temp_mean_ variable).*/
+//
+
+let temperature_6;
+//
+function get_temp_mean_6() {
+  let sum_of_Temperature_6 = 0;
+  for (let i = 0; i < temperature_6.length; i++) {
+    sum_of_Temperature_6 += temperature_6[i];
+  }
+  return sum_of_Temperature_6 / temperature_6.length;
+}
+//
+temperature_6 = [
+  17, 16, 14, 12, 10, 10, 10, 11, 13, 14, 15, 17, 22, 27, 29, 29, 27, 26, 24,
+  21, 19, 18, 17, 16,
+];
+console.log(`mean---: ${get_temp_mean_6}`);
+//
+//
+temperature_6 = [
+  12, 12, 11, 11, 10, 9, 9, 10, 12, 13, 15, 18, 21, 24, 24, 23, 25, 25, 23, 21,
+  20, 19, 17, 16,
+];
+console.log(`mean---: ${get_temp_mean_6}`);
