@@ -300,15 +300,19 @@
                 In practice, using <b id="front">return</b> here would not make much sense. It causes the <b id="front">console.log("message 2")</b> to never be called. 
                 So it would be easier not to write a second <b  id="front">console.log</b> call at all.
                 <br><br>
-                However, using the conditional instructions, we can, for example, react to errors inside the function, and in certain situations interrupt the function immediately.
+                However, using the conditional instructions, we can, for example, react to errors inside the function, and in certain situations interrupt the function 
+                immediately.
             </p>
         </p>
         <p>
-            As we said, <b id="front">return</b> allows us not only to terminate a function. If we place some expression (literal, variable, function call) immediately after the return keyword, 
-            the value of this expression will be returned by the completed function to the place where it was called. You can then, for example, assign the returned value to a variable. 
+            As we said, <b id="front">return</b> allows us not only to terminate a function. If we place some expression (literal, variable, function call) immediately 
+            after the return keyword, 
+            the value of this expression will be returned by the completed function to the place where it was called. You can then, for example, assign the returned value 
+            to a variable. 
             Let's take a look at an example of the getTrue function.
             <br><br>
-            In the example, we declare a simple <b id="front">getTrue</b> function, which always returns true. Pay attention to the function call – we store the result of this call in the test variable. 
+            In the example, we declare a simple <b id="front">getTrue</b> function, which always returns true. Pay attention to the function call – we store the result of
+             this call in the test variable. 
             As you can guess, this variable will have the true value.
             <pre>
                 <code>
@@ -318,6 +322,50 @@
                       //
                       let test = getTrue();
                       console.log(test); // true
+                </code>
+            </pre>
+        </p>
+        <p>
+            Let's go back to the example with mean temperatures.
+            <br><br>
+            Until now, the calculations made inside the <b id="spePara">get_temp_mean_</b> function have been performed on the global variable <b id="spePara">temp_mean_</b>. 
+            We will change this. 
+            Inside the function, we will declare the local <b id="front">result</b> variable, which will contain the calculated result, and use <b id="front">return</b> 
+            to return it. 
+            The global variable <b id="spePara">temp_mean_</b> will contain the result of the function call, that is, the first time, <b id="normal">16.666666666666668</b> 
+            and the second time, <b id="normal">18.083333333333332</b>.
+            <br><br>
+            <pre>
+                <code>
+                    let temperature_4;
+                    let temp_mean_4;
+                    //
+                    function get_temp_mean_4() {
+                      let sum_of_Temperature_4 = 0;
+                      let result;
+                      for (let i = 0; i < temperature_4.length; i++) {
+                        sum_of_Temperature_4 += temperature_4[i];
+                      }
+                      result = sum_of_Temperature_4 / temperature_4.length;
+                    
+                      return result;
+                    }
+                    //
+                    temperature_4 = [
+                      12, 12, 11, 11, 10, 9, 9, 10, 12, 13, 15, 18, 21, 24, 24, 23, 25, 25, 23, 21,
+                      20, 19, 17, 16,
+                    ];
+                    
+                    temp_mean_4 = get_temp_mean_4();
+                    console.log(`mean---: ${temp_mean_4}`); // mean---: 16.666666666666668
+                    //
+                    temperature_4 = [
+                      17, 16, 14, 12, 10, 10, 10, 11, 13, 14, 15, 17, 22, 27, 29, 29, 27, 26, 24,
+                      21, 19, 18, 17, 16,
+                    ];
+                    
+                    temp_mean_4 = get_temp_mean_4();
+                    console.log(`mean---: ${temp_mean_4}`); // mean---: 18.083333333333332
                 </code>
             </pre>
         </p>
