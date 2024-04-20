@@ -81,6 +81,62 @@
 
             </code>
         </pre>
+        <p>
+            The program will calculate and display the mean daily temperature on the basis of the provided data (24 temperature measurements, in hourly intervals, 
+            starting from midnight). In the program, we declare the variable temperatures, which will be a 24-element table containing the obtained measurements.
+            <br><br>
+            We have measurements for two successive days, for which we will make calculations. The mean temperature is of course calculated by summing up all values 
+            and dividing the result by their number.
+            <br><br>
+            At first glance, you can see that the code fragment responsible for a calculation is repeated twice. In two places of the program, 
+            we use the same sequence of instructions, so it would be worth thinking about creating a function out of them.
+            <br><br>
+            We will do it in several stages, introducing some new concepts related to functions. Let's start with a function declaration.
+        </p>
+    </p>
+    <h2 id="spePara">DECLARING FUNCTIONS</h2>
+    <p>
+        As with variables, functions need to be declared before we can use them. The syntax for function declaration looks like this:
+        <pre>
+            <code>
+                function function_name() {
+                    block of code;
+                }
+            </code>
+        </pre>
+        <p>
+            This type of function declaration in JavaScript is called a function statement. 
+            A function statement starts with the <b id="front">function</b> 
+            keyword followed by the function name. Function names need to follow the same rules as variable names, 
+            and should also be meaningful. After the function name, there are parentheses that can optionally have function parameters, 
+            which we’ll discuss in a while. After the parentheses comes the function body, 
+            which is made from any number of statements (a code block).
+            <br><br>
+            So let's try to declare a function according to these rules, which will contain a fragment of our program code calculating 
+            the mean daily temperature. We will call it <b id="front">getMeanTemp</b>. For now, the function will use variables, 
+            declared outside of it (in the surrounding context). In fact, it is practically never done that way, 
+            but we will deal with it at one of the subsequent stages.
+            <pre>
+                <code>
+                    let temperature;
+                    let sum_of_Temperature ;
+                    let temp_mean;
+
+                    //
+                    //declare function
+
+                    function get_temp_mean() {
+                    sum_of_Temperature = 0;
+                    for (let i = 0; i < temperature.length; i++) {
+                        sum_of_Temperature += temperature[i];
+                    }
+                    temp_mean = sum_of_Temperature / temperature.length;
+                    }
+                </code>
+            </pre>
+
+        </p>
+
     </p>
 
     
