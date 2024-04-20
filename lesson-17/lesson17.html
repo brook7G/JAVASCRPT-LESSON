@@ -368,9 +368,61 @@
                     console.log(`mean---: ${temp_mean_4}`); // mean---: 18.083333333333332
                 </code>
             </pre>
+            <p>
+                The <b id="spePara">result</b> variable is actually only used to temporarily store the value to be returned. So we can simplify the function code even more. 
+                We will skip the <b id="spePara">result</b> variable by placing the appropriate operation directly after <b id="spePara">return</b>.
+                <pre>
+                    <code>
+                        function get_temp_mean_5() {
+                            sum_of_Temperature_5 = 0;
+                            for (let i = 0; i < temperature_5.length; i++) {
+                              sum_of_Temperature_5 += temperature_5[i];
+                            }
+                            return sum_of_Temperature_5/temperature_5.length;
+                          }                          
+                    </code>
+                </pre>
+                <p>
+                    The <b id="spePara">temp_mean_</b> variable has also become slightly redundant. We store the result of the function call in it, which is then displayed on the console. 
+                    This can also be simplified by placing the <b id="spePara">get_temp_mean_</b> function call directly in <b id="spePara">console.log</b> (without the use of the <b id="spePara">temp_mean_</b> variable).
+                    <pre>
+                        <code>
+                            let temperature_6;
+                            //
+                            function get_temp_mean_6() {
+                            let sum_of_Temperature_6 = 0;
+                            for (let i = 0; i < temperature_6.length; i++) {
+                                sum_of_Temperature_6 += temperature_6[i];
+                            }
+                            return sum_of_Temperature_6 / temperature_6.length;
+                            }
+                            //
+                            temperature_6 = [
+                            17, 16, 14, 12, 10, 10, 10, 11, 13, 14, 15, 17, 22, 27, 29, 29, 27, 26, 24,
+                            21, 19, 18, 17, 16,
+                            ];
+                            console.log(`mean---: ${get_temp_mean_6}`);
+                            //
+                            //
+                            temperature_6 = [
+                            12, 12, 11, 11, 10, 9, 9, 10, 12, 13, 15, 18, 21, 24, 24, 23, 25, 25, 23, 21,
+                            20, 19, 17, 16,
+                            ];
+                            console.log(`mean---: ${get_temp_mean_6}`);
+                        </code>
+                    </pre>
+                </p>
+                <p>
+                    Our <b id="spePara">get_temp_mean_6</b> is slowly beginning to look like a normal function. It is a logically independent piece of code, it returns a calculated value, and it operates on local variables. 
+                    There is one small problem left to solve. We count the mean using the data contained in the global variable temperatures. And the function should be independent of what is 
+                    happening outside it. At the same time, it should allow us to calculate the mean value for different data. How do we reconcile these two conflicting demands?
+                    <br><br>
+                    The function parameters are used for this.
+                </p>
+            </p>
         </p>
-
     </p>
+    <h2 id="spePara">PARAMETERS</h2>
 
     
 </body>
