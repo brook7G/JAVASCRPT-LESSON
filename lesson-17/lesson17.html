@@ -113,7 +113,7 @@
             which is made from any number of statements (a code block).
             <br><br>
             So let's try to declare a function according to these rules, which will contain a fragment of our program code calculating 
-            the mean daily temperature. We will call it <b id="front">getMeanTemp</b>. For now, the function will use variables, 
+            the mean daily temperature. We will call it <b id="front">get_temp_mean</b>. For now, the function will use variables, 
             declared outside of it (in the surrounding context). In fact, it is practically never done that way, 
             but we will deal with it at one of the subsequent stages.
             <pre>
@@ -137,6 +137,59 @@
 
         </p>
 
+    </p>
+    <h2 id="spePara">CALLING FUNCTIONS</h2>
+    <p>
+        To call a function, we need to write a function name and follow it with parentheses. Our complete example should therefore look like this:
+        <pre>
+            <code>
+                let temperature_2;
+                let sum_of_Temperature_2;
+                let temp_mean_2;
+
+                function get_temp_mean_2() {
+                sum_of_Temperature_2 = 0;
+                for (let i = 0; i < temperature_2.length; i++) {
+                    sum_of_Temperature_2 += temperature_2[i];
+                }
+                temp_mean_2 = sum_of_Temperature_2 / temperature_2.length;
+                }
+                //
+                //
+                temperature_2 = [
+                12, 12, 11, 11, 10, 9, 9, 10, 12, 13, 15, 18, 21, 24, 24, 23, 25, 25, 23, 21,
+                20, 19, 17, 16,
+                ];
+                get_temp_mean_2();
+                console.log(`mean : ${temp_mean_2}`); // mean : 16.666666666666668
+                //
+                temperature_2 = [
+                17, 16, 14, 12, 10, 10, 10, 11, 13, 14, 15, 17, 22, 27, 29, 29, 27, 26, 24,
+                21, 19, 18, 17, 16,
+                ];
+                get_temp_mean_2();
+                console.log(`mean : ${temp_mean_2}`); // mean : 18.083333333333332
+            </code>
+        </pre>
+        <p>
+            At the beginning of the program, after the variable declaration, we have the <b id="front">get_temp_mean_2</b> function declaration.
+            <br><br>
+            In the later part of the code, we call it twice by writing <b id="front">get_temp_mean_2()</b>. Each call causes the program to jump into the function code, 
+            execute its instructions and return to the next instruction after the function call.
+            <br>
+            Simple, isn't it? 
+            <br><br>
+            Usually, functions are declared before they are called, mostly at the beginning of the code. However, this is only a good practice, 
+            which increases the readability of the code, not a JavaScript syntax requirement. Function declarations are automatically moved to the 
+            top of the scope, so we can use them before the declaration, as long as they are in the scope.
+            <br><br>
+            So the code:
+            <pre>
+                <code>
+                    
+                </code>
+            </pre>
+        </p>
     </p>
 
     
