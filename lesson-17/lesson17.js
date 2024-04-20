@@ -42,27 +42,27 @@ console.log(`mean : ${mean_Temp}`); // mean : 18.083333333333332
 //
 //
 //
-console.log("DECLARING FUNCTIONS:");
-console.log("")
-//
-//declare variables
+                                    console.log("DECLARING FUNCTIONS:");
+                                    console.log("")
+                                    //
+                                    //declare variables
 
-let temperature;
-let sum_of_Temperature ;
-let temp_mean;
+                                    let temperature;
+                                    let sum_of_Temperature ;
+                                    let temp_mean;
 
-//
-//declare function
+                                    //
+                                    //declare function
 
-function get_temp_mean() {
-  sum_of_Temperature = 0;
-  for (let i = 0; i < temperature.length; i++) {
-    sum_of_Temperature += temperature[i];
-  }
-  temp_mean = sum_of_Temperature / temperature.length;
-}
-//
-//
+                                    function get_temp_mean() {
+                                      sum_of_Temperature = 0;
+                                      for (let i = 0; i < temperature.length; i++) {
+                                        sum_of_Temperature += temperature[i];
+                                      }
+                                      temp_mean = sum_of_Temperature / temperature.length;
+                                    }
+                                    //
+                                    //
 console.log("CALLING FUNCTIONS:");
 console.log("");
 //
@@ -93,6 +93,95 @@ temperature_2 = [
 ];
 get_temp_mean_2();
 console.log(`mean : ${temp_mean_2}`); //mean : 18.083333333333332
+//
+//
+
+                                      console.log("");
+                                      console.log('declaring FUNCTIONS before they are called');
+                                      //
+                                      //
+
+                                      let name = 'Biruk Fekadu';
+                                      //
+                                      //declaring before calling
+
+                                      function get_user_info(){
+                                        console.log(`user-name : ${name}`);
+                                      }
+                                      //
+                                      //calling the function
+
+                                      get_user_info(); // user-name : Biruk Fekadu
+                                      //
+
+                                      console.log("");
+                                      console.log('calling FUNCTIONS before they are declared');
+                                      //WILL WORK EXACTLY THE SAME AS :
+
+                                      let user_name = "Fekadu Tolesa";
+                                      get_user_name(); // user-name : Fekadu Tolesa
+                                      //
+                                      function get_user_name() {
+                                        console.log(`user-name : ${user_name}`);
+                                      };
+                                      //
+                                      //
+console.log("");
+console.log("FUNCTIONS:-local variables");
+//
+let temperature_3;
+let temp_mean_3;
+//
+//declaring function
+function get_temp_mean_3() {
+  let sum_of_Temperature_3 = 0;
+  for (let i = 0; i < temperature_3.length; i++) {
+    sum_of_Temperature_3 += temperature_3[i];
+  }
+  temp_mean_3 = sum_of_Temperature_3 / temperature_3.length;
+}
+//
+//
+temperature_3 = [
+  12, 12, 11, 11, 10, 9, 9, 10, 12, 13, 15, 18, 21, 24, 24, 23, 25, 25, 23, 21,
+  20, 19, 17, 16,
+];
+get_temp_mean_3();
+console.log(`mean : ${temp_mean_3}`); // mean : 16.666666666666668
+//
+temperature_3 = [
+  17, 16, 14, 12, 10, 10, 10, 11, 13, 14, 15, 17, 22, 27, 29, 29, 27, 26, 24,
+  21, 19, 18, 17, 16,
+];
+get_temp_mean_3();
+console.log(`mean : ${temp_mean_3}`); // mean : 18.083333333333332
+//
+//
+                                                                  console.log("");
+                                                                  console.log("THE .. return .. STATEMENT");
+                                                                  //
+                                                                  function showMsg() {
+                                                                    console.log("Message-1");
+                                                                    return;
+                                                                    console.log("Message-2");
+                                                                  }
+                                                                  showMsg(); // Message-1
+                                                                  //
+                                                                  //
+console.log("");
+console.log("THE .. return .. STATEMENT");
+//
+function getTrue() {
+  return true;
+}
+//
+let test = getTrue();
+console.log(test); // true
+
+
+
+
+
 
 
 
