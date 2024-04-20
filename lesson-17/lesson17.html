@@ -187,9 +187,141 @@
             <pre>
                 <code>
                     
+
+                    let name = 'Biruk Fekadu';
+                    //
+                    //declaring before calling
+
+                    function get_user_info(){
+                    console.log(`user-name : ${name}`);
+                    }
+                    //
+                    //calling the function
+
+                    get_user_info(); // user-name : Biruk Fekadu
+                </code>
+            </pre>
+            <p>
+                will work exactly the same as:
+                <pre>
+                    <code>
+                        let user_name = "Fekadu Tolesa";
+                        get_user_name(); // user-name : Fekadu Tolesa
+                        //
+                        function get_user_name() {
+                        console.log(`user-name : ${user_name}`);
+                        }
+                    </code>
+                </pre> 
+                <p>
+                    So we already know what a <b id="front">declaration and a function call are</b>. It is time to take a closer look at its contents. 
+                    Let's start with the variables we use in it.
+                </p>
+            </p>
+        </p>
+    </p>
+    <h2 id="spePara">FUNCTIONS - local variables</h2>
+    <p>
+        Let's try to make a small change to our program calculating the mean temperature.
+        <br><br>
+        Do you remember what local variables are?
+        <br><br>
+        This is how we call the variables that are declared and used in some limited scope 
+        and are not visible in the whole program, which means that we can only use them inside that particular scope.
+        <br><br>
+        Variables declared with the <b id="spePara">let</b> keyword are local inside the code block (i.e. inside the range limited by curly brackets), 
+        while variables declared with the var keyword are local inside the function block. So if you declare a variable inside a function block, 
+        whether using let or var, it will only be visible (and usable) inside the function block. This is very useful, 
+        because usually the variables you use inside a function are not needed outside of it.
+        <pre>
+            <code>
+                let temperature_3;
+                let temp_mean_3;
+                //
+                //declaring function
+                function get_temp_mean_3() {
+                let sum_of_Temperature_3 = 0;
+                for (let i = 0; i < temperature_3.length; i++) {
+                    sum_of_Temperature_3 += temperature_3[i];
+                }
+                temp_mean_3 = sum_of_Temperature_3 / temperature_3.length;
+                }
+                //
+                //
+                temperature_3 = [12, 12, 11, 11, 10, 9, 9, 10, 12, 13, 15, 18, 21, 24, 24, 23, 25, 25, 23, 21, 20, 19, 17, 16];
+                get_temp_mean_3();
+                console.log(`mean : ${temp_mean_3}`); // mean : 16.666666666666668
+                //
+                temperature_3 = [17, 16, 14, 12, 10, 10, 10, 11, 13, 14, 15, 17, 22, 27, 29, 29, 27, 26, 24, 21, 19, 18, 17, 16];
+                get_temp_mean_3();
+                console.log(`mean : ${temp_mean_3}`); // mean : 18.083333333333332
+            </code>
+        </pre>
+        <p>
+            In our code, an example of such a variable is <b id="spePara">sum_of_Temperature_3</b>.
+            <br><br>
+            Although we have declared it outside the <b id="spePara">get_temp_mean_3</b> function (it is a global variable), we only refer to it inside 
+            the function. A global declaration is therefore unnecessary.
+            <br><br>
+            Let's put it in order, declaring <b id="spePara">sum_of_Temperature_3</b> locally.
+            <br><br>
+            The behavior of the program is the same, but the code has gained some clarity. The sum variable is now local, it can only be used inside the
+            <b id="spePara">get_temp_mean_3</b> function (which is enough for us, because it was not needed for anything outside the function). <br><br>
+            In general, we should strive to keep the function code as separate from the surrounding context as possible, among other things by 
+            not using global variables inside it.In our example, there are two more such variables: temperatures and meanTemp.The latter, meanTemp, 
+            is used inside the function to store and return the calculated result.
+            <br><br>
+            Let's deal with it.
+        </p>
+    </p>
+    <h2 id="spePara">THE <span id="front" style="font-style: italic; font-family: monospace;">return</span> STATEMENT</h2>
+    <p>
+        Functions that have been called execute a sequence of instructions contained in their body. 
+        The result of this execution may be a certain value that we may want to store in some variable. 
+        The return keyword comes to help us in this case. What exactly is <b id="front">return</b> for?
+        <br><br>
+        <li id="list"><b id="front">First</b>, it causes the function to end exactly where this word occurs, even if there are further instructions.</li>
+        <li id="list"><b id="front">Second</b>, it allows us to return a given value from inside the function to the place where it was called.</li>
+        <p>
+            Let's move away for a moment from our example with mean temperature calculation and play with a slightly simpler code. 
+            The <b id="front">showMsg</b> function contains only two <b id="spePara">console.logs</b> separated by return.
+            <pre>
+                <code>
+                    function showMsg() {
+                        console.log("Message-1");
+                        return;
+                        console.log("Message-2");
+                      }
+                      showMsg(); // Message-1
+                </code>
+            </pre>
+            <p>
+                As expected, the call ends up displaying only the first message "message 1", then the <b id="front">return</b> interrupts the function. 
+                In practice, using <b id="front">return</b> here would not make much sense. It causes the <b id="front">console.log("message 2")</b> to never be called. 
+                So it would be easier not to write a second <b  id="front">console.log</b> call at all.
+                <br><br>
+                However, using the conditional instructions, we can, for example, react to errors inside the function, and in certain situations interrupt the function immediately.
+            </p>
+        </p>
+        <p>
+            As we said, <b id="front">return</b> allows us not only to terminate a function. If we place some expression (literal, variable, function call) immediately after the return keyword, 
+            the value of this expression will be returned by the completed function to the place where it was called. You can then, for example, assign the returned value to a variable. 
+            Let's take a look at an example of the getTrue function.
+            <br><br>
+            In the example, we declare a simple <b id="front">getTrue</b> function, which always returns true. Pay attention to the function call – we store the result of this call in the test variable. 
+            As you can guess, this variable will have the true value.
+            <pre>
+                <code>
+                    function getTrue() {
+                        return true;
+                      }
+                      //
+                      let test = getTrue();
+                      console.log(test); // true
                 </code>
             </pre>
         </p>
+
     </p>
 
     
