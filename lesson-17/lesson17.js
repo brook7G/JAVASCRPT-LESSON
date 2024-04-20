@@ -39,3 +39,28 @@ for (let i = 0; i < temperatures.length; i++) {
 
 mean_Temp = sum / temperatures.length;
 console.log(`mean : ${mean_Temp}`); // mean : 18.083333333333332
+//
+//
+//
+console.log("DECLARING FUNCTIONS:");
+console.log("")
+//
+//declare variables
+
+let temperature;
+let sum_of_Temperature ;
+let temp_mean;
+
+//
+//declare function
+
+function get_temp_mean() {
+  sum_of_Temperature = 0;
+  for (let i = 0; i < temperature.length; i++) {
+    sum_of_Temperature += temperature[i];
+  }
+  temp_mean = sum_of_Temperature / temperature.length;
+}
+
+
+
