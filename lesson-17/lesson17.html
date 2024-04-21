@@ -384,7 +384,8 @@
                 </pre>
                 <p>
                     The <b id="spePara">temp_mean_</b> variable has also become slightly redundant. We store the result of the function call in it, which is then displayed on the console. 
-                    This can also be simplified by placing the <b id="spePara">get_temp_mean_</b> function call directly in <b id="spePara">console.log</b> (without the use of the <b id="spePara">temp_mean_</b> variable).
+                    This can also be simplified by placing the <b id="spePara">get_temp_mean_</b> function call directly in <b id="spePara">console.log</b> (without the use of the 
+                    <b id="spePara">temp_mean_</b> variable).
                     <pre>
                         <code>
                             let temperature_6;
@@ -413,7 +414,8 @@
                     </pre>
                 </p>
                 <p>
-                    Our <b id="spePara">get_temp_mean_6</b> is slowly beginning to look like a normal function. It is a logically independent piece of code, it returns a calculated value, and it operates on local variables. 
+                    Our <b id="spePara">get_temp_mean_6</b> is slowly beginning to look like a normal function. It is a logically independent piece of code, it returns a calculated value, 
+                    and it operates on local variables. 
                     There is one small problem left to solve. We count the mean using the data contained in the global variable temperatures. And the function should be independent of what is 
                     happening outside it. At the same time, it should allow us to calculate the mean value for different data. How do we reconcile these two conflicting demands?
                     <br><br>
@@ -424,12 +426,16 @@
     </p>
     <h2 id="spePara">PARAMETERS</h2>
     <p>
-        First of all, the use of parameters in functions is optional. There may be functions that do not have parameters, as we have seen in our previous examples, just as there may be functions that do not return values. 
+        First of all, the use of parameters in functions is optional. There may be functions that do not have parameters, as we have seen in our previous examples, 
+        just as there may be functions that do not return values. 
         However, most often we create functions that have defined parameters and return values.
         <br><br>
-        In JavaScript, a function’s parameters appear in its declaration. These are names separated by commas, placed in parentheses after the function name. Each parameter inside a function will be treated as a local variable. 
-        A function whose definition specifies the parameters must be invoked in an appropriate way. When such a function is called, the values (literals, variables, function calls) should be placed in parentheses after its name, 
-        and are treated as parameters inside the function. The values given during a call are called arguments. Arguments, if there is more than one, are separated by commas and must be passed in the same order as the parameters 
+        In JavaScript, a function’s parameters appear in its declaration. These are names separated by commas, placed in parentheses after the function name. 
+        Each parameter inside a function will be treated as a local variable. 
+        A function whose definition specifies the parameters must be invoked in an appropriate way. When such a function is called, the values (literals, variables, 
+        function calls) should be placed in parentheses after its name, 
+        and are treated as parameters inside the function. The values given during a call are called arguments. Arguments, if there is more than one, 
+        are separated by commas and must be passed in the same order as the parameters 
         we define in the function declaration.
         <br><br>
         Let's look at a simple function that adds two values. We will call it add.
@@ -442,7 +448,8 @@
             </code>
         </pre>
         <p>
-            In the function declaration, in parentheses, we put two parameters: <b id="spePara">first</b> and <b id="spePara">second</b>. The names of the parameters, just like the variables, should be related to their purpose – in this case, 
+            In the function declaration, in parentheses, we put two parameters: <b id="spePara">first</b> and <b id="spePara">second</b>. The names of the parameters, 
+            just like the variables, should be related to their purpose – in this case, 
             we have done it differently to emphasize that the order of the parameters is important. 
             Inside the add function, these parameters are treated as local variables, whose values will be given when the function is called.
             <pre>
@@ -453,11 +460,14 @@
                 </code>
             </pre>
             <p>
-                In the example call, we pass the arguments <b id="spePara">5</b> and <b id="spePara">7</b> to the function. Thus, during the function operation, the <b id="spePara">first</b> parameter has a value of <b id="spePara">5</b> and the <b id="spePara">second</b> parameter has a value of <b id="spePara">7</b>. The function returns the value <b id="spePara">12</b> to the result variable.
+                In the example call, we pass the arguments <b id="spePara">5</b> and <b id="spePara">7</b> to the function. Thus, during the function operation, 
+                the <b id="spePara">first</b> parameter has a value of <b id="spePara">5</b> and the <b id="spePara">second</b> parameter has a value of <b id="spePara">7</b>. 
+                The function returns the value <b id="spePara">12</b> to the result variable.
             </p>
         </p>
         <p>
-            You can pass any type of data as arguments to the function, both simple and complex. Let's write the <b id="spePara">getElement</b> function, which will return the selected element from the array, with the array and index of the element being the function's parameters.
+            You can pass any type of data as arguments to the function, both simple and complex. Let's write the <b id="spePara">getElement</b> function, which will return 
+            the selected element from the array, with the array and index of the element being the function's parameters.
             <pre>
                 <code>
                     function getElement(elementss,index) {
@@ -476,6 +486,43 @@
                           
                     </code>
                 </pre>
+            </p>
+        </p>
+        <p>
+            Let's go back to the example with mean temperature. The <b id="spePara">get_temp_mean_</b> function will take one parameter – temperatures. At the same time, we will remove the global 
+            variable with this name from the program and create two others, <b id="spePara">day1</b> and <b id="spePara">day2</b>, which will contain the measurement data. 
+            These data will be passed on to the function.
+            <pre>
+                <code>
+                    function get_temp_mean_7(temperature_7) {
+                        let sum_of_Temperature_7 = 0;
+                        for (let i = 0; i < temperature_7.length; i++) {
+                          sum_of_Temperature_7 += temperature_7[i];
+                        }
+                        return sum_of_Temperature_7 / temperature_7.length;
+                      }
+                      //
+                      let day_1 = [
+                        12, 12, 11, 11, 10, 9, 9, 10, 12, 13, 15, 18, 21, 24, 24, 23, 25, 25, 23, 21,
+                        20, 19, 17, 16,
+                      ];
+                      console.log(`mean day1 : ${get_temp_mean_7(day_1)}`); //mean day1 : 16.666666666666668
+                      //
+                      let day_2 = [
+                        17, 16, 14, 12, 10, 10, 10, 11, 13, 14, 15, 17, 22, 27, 29, 29, 27, 26, 24,
+                        21, 19, 18, 17, 16,
+                      ];
+                      console.log(`mean day2 : ${get_temp_mean_7(day_2)}`); // mean day2 : 18.083333333333332
+                </code>
+            </pre>
+            <p>
+                The first time the <b id="spePara">get_temp_mean_</b> function is called, the <b id="spePara">day1</b> variable is passed on to the <b id="spePara">get_temp_mean_</b> 
+                function as an argument. 
+                The calculations performed inside the function using the temperatures parameter will therefore be based on the values from the day1 variable. 
+                In the second call, we pass another array to the function, stored in the <b id="spePara">day2</b> variable.
+                <br><br>
+                You can probably already point out one more thing: when calling the console.log method (a function related to the console object) we also pass an argument to it – 
+                a string to be displayed on the console. This means that we have been using the parameters of the function since the beginning of the course.
             </p>
         </p>
     </p>
