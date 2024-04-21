@@ -324,3 +324,21 @@ let first = 10,
 console.log(add(first, second)); //40
 console.log(add(second, third)); //80
 console.log(add(third, first)); //60
+//
+//
+console.log("");
+console.log("SHADOWING: additional examples:");
+//
+let stud_1 = 100, stud_2 = 400, stud_3 = 300;
+//
+function best(stud_1){
+  let stud_2 = 100;
+  console.log(stud_1); //undefined
+  console.log(stud_2); //100
+  console.log(stud_3); //300
+}
+//
+best();
+console.log(stud_1); //100
+console.log(stud_2); //400
+console.log(stud_3); //300
