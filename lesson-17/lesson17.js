@@ -252,3 +252,32 @@ temperature_6 = [
   20, 19, 17, 16,
 ];
 console.log(`mean---: ${get_temp_mean_6}`);
+///
+///
+///
+console.log("");
+console.log("PARAMETERS:");
+//
+//
+
+function add(first_number, second_number) {
+  return first_number + second_number;
+}
+//
+let result = add(5, 7);
+console.log(result); // 12
+//
+//
+
+console.log("");
+console.log("getElement:");
+//
+//
+function getElement(elementss, index) {
+  return elementss[index];
+}
+//
+let names = ["balcha", "caaltuu", "badhasa", "suleman"];
+let name_ = getElement(names, 2);
+//
+console.log(name_); // badhasa
