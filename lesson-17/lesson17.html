@@ -565,7 +565,27 @@
                       console.log(add(third, first)); //60
                 </code>
             </pre>
-
+        </p>
+        <p>
+            Analyze the example carefully, writing down the specific values that are passed on to the add function in each of the four calls.
+            <br><br>
+            Also try to run and analyze one more simple example, in which you can shadow variables with both parameters and local variables.
+            <pre>
+                <code>
+                    function best(stud_1) {
+                        let stud_2 = 100;
+                        console.log(stud_1); //undefined
+                        console.log(stud_2); //100
+                        console.log(stud_3); //300
+                      }
+                      //
+                      best();
+                      console.log(stud_1); //100
+                      console.log(stud_2); //400
+                      console.log(stud_3); //300
+                      
+                </code>
+            </pre>
         </p>
     </p>
 
