@@ -526,6 +526,48 @@
             </p>
         </p>
     </p>
+    <h2 id="spePara">SHADOWING</h2>
+    <p>
+        As we mentioned earlier, the parameters are treated inside the function as local variables. And just like the local variables explicitly declared inside a function, 
+        they shadow the global variables of the same name (or more generally, variables from the outer scope). Let's go back for a moment to the example with adding numbers. 
+        The <b id="spePara">add</b> function has two parameters: <b id="spePara">first</b> and <b id="spePara">second</b>. At the same time, we will declare, 
+        out of the function, global variables named <b id="spePara">first</b>, <b id="spePara">second</b>, <b id="spePara">third</b>, and <b id="spePara">fourth</b>.
+        <br><br>
+        If inside the function, we refer to the variable:
+        <li id="list">
+            <b id="spePara">first</b>, it will be treated as the parameter with such a name that shadows the <b id="spePara">first</b> global variable 
+            (i.e. we will operate on the value passed as the first argument)
+        </li>
+        <li id="list">
+            <b id="spePara">second</b>, it will also be treated as the function parameter (the value passed as the second argument)
+        </li>
+        <li id="list">
+            <b id="spePara">third</b>, it will be treated as a global variable, because inside the function there is neither a 
+            local variable nor a parameter with that name that would shadow it;
+        </li>
+        <li id="list">
+            <b id="spePara">fourth</b>, it will be treated as global, the same as <b id="spePara">third</b>.
+        </li>
+        <p>
+            Of course, outside the function, each of these names will refer to global variables.
+            <pre>
+                <code>
+                    function add(first, second) {
+                        return first + second;
+                      }
+                      //
+                      let first = 10,
+                        second = 30,
+                        third = 50,
+                        fourth = 70;
+                      console.log(add(first, second)); //40
+                      console.log(add(second, third)); //80
+                      console.log(add(third, first)); //60
+                </code>
+            </pre>
+
+        </p>
+    </p>
 
     
 </body>
