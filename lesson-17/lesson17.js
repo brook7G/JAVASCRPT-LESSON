@@ -307,3 +307,20 @@ let day_2 = [
   21, 19, 18, 17, 16,
 ];
 console.log(`mean day2 : ${get_temp_mean_7(day_2)}`); // mean day2 : 18.083333333333332
+//
+//
+//
+console.log("");
+console.log("SHADOWING:");
+//
+function add(first, second) {
+  return first + second;
+}
+//
+let first = 10,
+  second = 30,
+  third = 50,
+  fourth = 70;
+console.log(add(first, second)); //40
+console.log(add(second, third)); //80
+console.log(add(third, first)); //60
