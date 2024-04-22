@@ -103,3 +103,17 @@ function add_1(a, b) {
 let myAdd_1 = add_1;
 console.log(myAdd_1(10, 20)); // 30
 console.log(add_1(10, 30)); // 40
+//
+//
+console.log("");
+console.log("another example");
+let myAdd_2 = function add2(a, b) {
+  return a + b;
+};
+//
+console.log(myAdd_2(40, 20)); //
+console.log(add2(80, 30)); //
+//
+console.log("")
+
+
