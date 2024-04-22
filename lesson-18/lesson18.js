@@ -39,3 +39,34 @@ function factorial_1(num_1) {
   return num_1 > 1 ? num_1 * factorial_1(num_1 - 1) : 1;
 }
 console.log(`factorial of num1: [${factorial_1(4)}]`); // factorial of num1: [24]
+//
+//
+//
+console.log("");
+console.log("FUNCTIONS: as first class member");
+//
+function showMessage(message) {
+  console.log(`Message: ${message}`);
+}
+//
+let sm = showMessage;
+
+/*
+We can store any function that is accessible in this scope in a variable and use a 
+function call operator () to execute it. We can check that the sm variable is now a 
+function by using the typeof operator.
+*/
+sm("THIS IS BULLSHIT"); // Message: THIS IS BULLSHIT
+console.log(typeof sm); // function
+
+//
+console.log("");
+function do_nothing() {
+  return undefined; //
+}
+//
+let a = do_nothing(); // assign result of function call
+let b = do_nothing; // assign function
+//
+console.log("type-of -a :", typeof a); // type-of -a : undefined
+console.log("type-of -b :", typeof b); // type-of -b : function
