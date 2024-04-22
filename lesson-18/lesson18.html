@@ -95,6 +95,61 @@
                 </code>
             </pre>
         </p>
+        <p>
+            In order to get a shorter, more compact code, instead of an if conditional instruction, we use the ternary conditional operator. 
+            In it, we check if the argument n is greater than 1. Depending on that, we return either the result of multiplying the number n by 
+            the result of the factorial(n – 1) call, or the value 1. The figure below shows a sequence of factorial function calls starting 
+            from a call for the value 6 (the arrows show where the value from the called function is returned)
+            <img src="/lesson-18/factorial.png" alt="">
+            Recursion is commonly used in programming. However, as with any solution, recursion must be handled with care. 
+            We shouldn't use it where we can't estimate the number of embedded calls.
+            <br><br>
+            We should also be very careful in formulating the condition that will interrupt the function sequence calls – 
+            errors can cause the program to suspend.
+        </p>
+    </p>
+    <h2 id="spePara">FUNCTIONS AS FIRST-CLASS MEMBERS</h2>
+    <p>
+        In JavaScript, functions are first-class members. This term means that functions can be treated as any data, 
+        which can be stored in variables or passed as arguments to other functions. For example, 
+        we can declare the showMessage function and then store it in the variable <b id="spePara">sm</b>.
+        <pre>
+            <code>
+                function showMessage(message) {
+                    console.log(`Message: ${message}`);
+                  }
+                  //
+                  let sm = showMessage;
+            </code>
+        </pre>
+        <p>
+            We can store any function that is accessible in this scope in a variable and use a 
+            function call operator () to execute it. We can check that the sm variable is now a function 
+            by using the typeof operator.
+            <pre>
+                <code id="spePara">
+                    sm("THIS IS BULLSHIT"); // Message: THIS IS BULLSHIT
+                    console.log(typeof sm); // function
+                </code>
+            </pre>
+        </p>
+        <p>
+            But it’s important to remember that when assigning a function to a variable, we don't use a function call operator, 
+            as this would execute the function and assign the result of the function to a variable, and not to the function itself.
+            <pre>
+                <code>
+                    function do_nothing() {
+                        return undefined; //
+                      }
+                      //
+                      let a = do_nothing(); // assign result of function call
+                      let b = do_nothing; // assign function
+                      //
+                      console.log("type-of -a :", typeof a); // type-of -a : undefined
+                      console.log("type-of -b :", typeof b); // type-of -b : function
+                </code>
+            </pre>
+        </p>
     </p>
 
 </body>
