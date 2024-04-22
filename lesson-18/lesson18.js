@@ -70,3 +70,23 @@ let b = do_nothing; // assign function
 //
 console.log("type-of -a :", typeof a); // type-of -a : undefined
 console.log("type-of -b :", typeof b); // type-of -b : function
+
+console.log("");
+//
+//
+function add(a, b) {
+  return a + b;
+}
+function multipy(a, b) {
+  return a * b;
+}
+function divide(a, b) {
+  return a / b;
+}
+function operation(func, first, second) {
+  return func(first, second);
+}
+
+console.log(operation(add, 10, 20)); // 30
+console.log(operation(multipy, 10, 20)); // 200
+console.log(operation(divide, 10, 20)); // 0.5
