@@ -11,5 +11,91 @@
 <body>
     <h1 id="speH1">LESSON-18: <span>FUNCTIONS</span></h1>
     <u id="speH1"><h2>PART-2</h2></u>
+    <h2 id="spePara">PARAMETERS VALIDATION</h2>
+    <p>
+        Remember how we said that we sometimes use the return keyword to interrupt functions in the case of errors? A good example is the validation of function parameters.
+        <br><br>
+        Let's go back to the example with the <b id="spePara">get_temp_mean_</b> function. The last version we wrote needs an array of numbers as an argument. Before starting the calculation, 
+        we can check if the value passed to it is actually an array.
+        <pre>
+            <code>
+                function get_temperature_mean_(temperatures) {
+                    if (!(temperatures instanceof Array)) {
+                      return NaN;
+                    }
+                    let sum_of_Temperatures_ = 0;
+                    for (let i = 0; i < temperatures.length; i++) {
+                      sum_of_Temperatures_ += temperatures[i];
+                    }
+                    return sum_of_Temperatures_ / temperatures.length;
+                  }
+                  //
+                  console.log(get_temperature_mean_(10)); //NaN
+                  console.log(get_temperature_mean_([10, 30])); // 20
+                  
+            </code>
+        </pre>
+    </p>
+    <h2 id="spePara">RECURSION</h2>
+    <p>
+        During your math lessons, you probably came across the concept of factorials. A factorial is a function, indicated by an exclamation mark in mathematical notation. 
+        We pass an integer to this function and its result is obtained by multiplying all integers from the number 1 to the number given as an argument. 
+        Formally, you define a factorial as follows:
+        <pre>
+            <code id="spePara">
+                n!=n∙(n-1)∙(n-2)∙... ∙2∙1
+
+                So, for example, the factorial of 6 is:
+
+                6!=6∙5∙4∙3 ∙2∙1=720
+            </code>
+        </pre>
+        <p>
+            Let's try to write a function that will calculate the factorial from the given number.
+            <br><br>
+            It will take the parameter n and return the calculated value.
+            <pre>
+                <code>
+                    function factorial(num) {
+                        let result = 1;
+                        while (num > 1) {
+                          result *= num;
+                          num--;
+                        }
+                        return result;
+                      }
+                      console.log(factorial(5)); // 120
+                </code>
+            </pre>
+            <p>
+                In this case, we use the iterative approach to calculate the factorial, in other words, we use a loop in which, 
+                during each iteration we multiply the previous result by another element of the sequence.
+                <br><br>
+                After the first iteration, the result is 6, after the second, 30, after the third, 120, and so on. 
+                The iterations are repeated to the last significant element of the 
+                sequence, that is, to the value 2 (hence the condition of ending the loop n > 1).
+            </p>
+        </p>
+        <p>
+            However, the definition of a factorial can be written in a slightly different way. 
+            It will be the factorial of the previous element <b id="noticed">n - 1</b> multiplied by <b id="">n</b>.
+            <br><br>
+            <b id="front">For example</b>, 6! is 5! multiplied by 6. Such a factorial definition uses the recursion, 
+            i.e. referring a function to itself (but with a different argument). 
+            A recursion is a mechanism that allows to simplify the formal notation of many mathematical functions and present them in an elegant form. 
+            We can also successfully use recursion in programming.
+            <br><br>
+            Let's declare the <b id="spePara">factorial</b> function again, this time using recursion.
+            <pre>
+                <code>
+                    function factorial_1(num_1) {
+                        return num_1 > 1 ? num_1 * factorial_1(num_1 - 1) : 1;
+                      }
+                      console.log(`factorial of num1: [${factorial_1(4)}]`); // factorial of num1: [24]
+                </code>
+            </pre>
+        </p>
+    </p>
+
 </body>
 </html>
