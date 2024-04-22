@@ -90,3 +90,16 @@ function operation(func, first, second) {
 console.log(operation(add, 10, 20)); // 30
 console.log(operation(multipy, 10, 20)); // 200
 console.log(operation(divide, 10, 20)); // 0.5
+//
+//
+//
+console.log("");
+console.log("FUNCTION EXPRESSION:");
+//
+function add_1(a, b) {
+  return a + b;
+}
+//
+let myAdd_1 = add_1;
+console.log(myAdd_1(10, 20)); // 30
+console.log(add_1(10, 30)); // 40
