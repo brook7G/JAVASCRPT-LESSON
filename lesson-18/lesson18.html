@@ -150,6 +150,38 @@
                 </code>
             </pre>
         </p>
+        <p>
+            In the example, the result of the doNothing function call (i.e. the undefined value returned by the function) is 
+            stored in the a variable, while the doNothing function itself is stored in the b variable (or more precisely, a 
+            reference to the function is stored in the b variable).
+            <br><br>
+            This property is especially useful when passing the function as a call parameter to other functions, 
+            which we will soon learn more about. For now, let's test that something like this is actually feasible.
+            <pre>
+                <code>
+                    function add(a, b) {
+                        return a + b;
+                      }
+                      function multipy(a, b) {
+                        return a * b;
+                      }
+                      function divide(a, b) {
+                        return a / b;
+                      }
+                      function operation(func, first, second) {
+                        return func(first, second);
+                      }
+                      
+                      console.log(operation(add, 10, 20)); // 30
+                      console.log(operation(multipy, 10, 20)); // 200
+                      console.log(operation(divide, 10, 20)); // 0.5
+                </code>
+            </pre>
+            <p>
+                The operation function takes as its first argument the function (parameter func) and 
+                calls it with the other two arguments passed (parameters first and second).
+            </p>
+        </p>
     </p>
 
 </body>
