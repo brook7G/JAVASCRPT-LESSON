@@ -329,9 +329,11 @@ console.log(add(third, first)); //60
 console.log("");
 console.log("SHADOWING: additional examples:");
 //
-let stud_1 = 100, stud_2 = 400, stud_3 = 300;
+let stud_1 = 100,
+  stud_2 = 400,
+  stud_3 = 300;
 //
-function best(stud_1){
+function best(stud_1) {
   let stud_2 = 100;
   console.log(stud_1); //undefined
   console.log(stud_2); //100
