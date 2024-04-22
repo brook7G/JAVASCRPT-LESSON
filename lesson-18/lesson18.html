@@ -183,6 +183,25 @@
             </p>
         </p>
     </p>
+    <h2 id="spePara">FUNCTIONS EXPRESSIONS</h2>
+    <p>
+        To store a function in a variable or pass it as an argument to call a function, 
+        you do not necessarily have to declare it previously and use its name.
+        <br><br>
+        Let's go back to our example with the add function:
+        <pre>
+            <code>
+                function add_1(a, b) {
+                    return a + b;
+                  }
+                  //
+                  let myAdd_1 = add_1;
+                  console.log(myAdd_1(10, 20)); // 30
+                  console.log(add_1(10, 30)); // 40
+                  
+            </code>
+        </pre>
+    </p>
 
 </body>
 </html>
