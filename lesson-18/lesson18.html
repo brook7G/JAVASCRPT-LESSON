@@ -414,11 +414,83 @@
         This time, the action is also performed with a delay, but periodically, so it is repeated at fixed intervals. In the meantime, the main program is executed, 
         and at every specified time, the callback given as an argument for a setInterval call is called.
         <br><br>
-        Interestingly, the setInterval function returns an identifier during the call, which can be used to remove the timer used in it 
+        Interestingly, the <b id="spePara">setInterval</b> function returns an identifier during the call, which can be used to remove the timer used in it 
         (and consequently to stop the cyclical callback function call). We will do this in the next example. 
-        First, we run setInterval, which will call the callback function (i.e. the inner function) in one-second intervals. 
-        Then we call setTimeout, which will turn off the timer associated with the previously called setInterval after 5.5 seconds. As a result, the inner function should be called five times. 
-        In the meantime, the rest of the program will be executed ...
+        First, we run <b id="spePara">setInterval</b>, which will call the callback function (i.e. the <b id="spePara">inner_2</b> function) in one-second intervals. 
+        Then we call <b id="spePara">setTimeout</b>, which will turn off the timer associated with the previously called <b id="spePara">setInterval</b> after 5.5 seconds. 
+        As a result, the <b id="spePara">inner</b> function should be called five times. In the meantime, the rest of the program will be executed ...
+        <pre>
+            <code>
+                let inner_3 = function () {
+                    console.log("inner 1");
+                  };
+                  //
+                  let outer_3 = function (callback) {
+                    console.log("outer 1");
+                    let timerId = setInterval(callback, 1000);
+                    console.log("outer 2");
+                    setTimeout(function () {
+                      clearInterval(timerId);
+                    }, 5500);
+                  };
+                  //
+                  console.log("test 1");
+                  
+                  outer_3(inner_3);
+                  
+                  console.log("test 2");
+            </code>
+            <u id="front">OUTPUT</u>
+            outer 1
+            outer 2
+            test 2
+            ...
+            inner 1
+            inner 1
+            inner 1
+            inner 1
+            inner 1
+        </pre>
+    </p>
+    <p>
+        Usually, however, asynchronous function calls are related to slightly different situations. They are determined by events not related to timers, 
+        but rather generated outside of the program. As we have said before, they can be, for example, actions performed by the user, 
+        such as a mouse click on an interface element on a page. Scenarios of this type will be discussed in detail in the next part of the course, 
+        devoted to the integration of client-side JavaScript with websites and the DOM (the Document Object Model).
+        <br><br>
+        However, we will try to analyze an example that will illustrate the situation in a somewhat simplified form.
+        <br><br>
+        If we run the JavaScript code on the client side, in the browser, it is always associated with the website. 
+        The window in which this page is located is represented in the client-side JavaScript by a global window variable.
+        <br><br>
+        The window object has a method (or its own function) named <b id="spePara">addEventListener</b>. 
+        This function allows you to register a certain action to be performed in response to a window-related event.
+        <br><br>
+        Such an event can be a "click", which is a single mouse click on any place on the 
+        page (there is a limited set of named events associated with a particular object, to which it can react).
+        <br><br>
+        The action to be taken is passed to the <b id="spePara">addEventListener</b> method as a callback function.
+        <pre>
+            <code>
+                window.addEventListener("click", function () {
+                    console.log("YOU'RE BROKE !!!!");
+                  });
+            </code>
+        </pre>
+        <p>
+            Try to execute the sample code. Nothing special should happen immediately after it is started.
+            <br><br>
+            Only when you click anywhere on the page should a message appear on the console: "YOU'RE BROKE !!!!!". 
+            Our function is not called until the "click" event occurs, which is absolutely asynchronous.
+            <br><br>
+            In the meantime, between subsequent clicks, the rest of the program could be executed, if we had a whim to write it.
+            <br><br>
+            In fact, it is not a very good idea to connect a click response to a window object. 
+            Most often, such actions are associated with specific elements of the interface (buttons, checkboxes, etc.) which allow for their differentiation.
+            <br><br>
+            However, as we have already said, we will come back to this topic in the next part of the course – this is only to 
+            demonstrate a function call with a user-generated event.
+        </p>
     </p>
 
     </p>
