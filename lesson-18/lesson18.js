@@ -107,13 +107,41 @@ console.log(add_1(10, 30)); // 40
 //
 console.log("");
 console.log("another example");
-let myAdd_2 = function add2(a, b) {
+//
+let myAdd_2 = function add_2(a, b) {
   return a + b;
 };
 //
-console.log(myAdd_2(40, 20)); //
-console.log(add2(80, 30)); //
+console.log(myAdd_2(40, 20)); //60
+// console.log(add_2(80, 20)); //100 /**this line may not work on your machine and cause an error*/
 //
-console.log("")
-
-
+console.log("");
+//
+let myAdd_3 = function (a, b) {
+  return a + b;
+};
+//
+console.log(myAdd_3(30, 50)); // 80
+//
+console.log("");
+//
+function operation_2(func, first, second) {
+  return func(first, second);
+}
+//
+let myAdd_4 = function (a, b) {
+  return a + b;
+};
+//
+//
+console.log(operation_2(myAdd_4, 20, 50)); // 70
+//
+console.log(
+  operation_2(
+    function (a, b) {
+      return a * b;
+    },
+    90,
+    10
+  )
+); // 900
