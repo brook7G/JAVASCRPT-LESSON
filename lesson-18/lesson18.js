@@ -239,8 +239,35 @@ let customer = (first_name, last_name) => {
   return first_name + " " + last_name;
 };
 //
-console.log(customer("Kesa", "lemi")); // kesa lemi 
+console.log(customer("Kesa", "lemi")); // kesa lemi
 //
 //
 
 console.log("");
+console.log("arrow function");
+// Simplified arrow function
+let customer_1 = (first_name, last_name) => first_name + " " + last_name;
+//
+console.log(customer_1("bilise", "kerasa")); //bilise kerasa
+//
+//
+console.log("");
+console.log("arrow function");
+
+//USING TO FIND FACTORIAL NUMBE
+function factorial(n) {
+  return n > 1 ? n * factorial(n - 1) : 1;
+}
+//
+console.log(factorial(5)); // 120
+//
+//
+console.log("");
+console.log("forEach");
+//
+let names = ["DURA", "BARI", "NUTIS", "ELA"];
+function showName(element) {
+  console.log(element);
+}
+//
+names.forEach(showName); // DURA, BARI, NUTIS, ELA
