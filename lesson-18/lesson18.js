@@ -141,7 +141,7 @@ console.log(
     function (a, b) {
       return a * b;
     },
-    90,
-    10
+    20,
+    50
   )
-); // 900
+); // 1000
