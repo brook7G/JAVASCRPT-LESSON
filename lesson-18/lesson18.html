@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,16 +9,21 @@
     <link rel="stylesheet" href="/lesson-16/lesson16.css">
     <img id="norImg" src="/JavaScript-logo.png" alt="">
 </head>
+
 <body>
     <h1 id="speH1">LESSON-18: <span>FUNCTIONS</span></h1>
-    <u id="speH1"><h2>PART-2</h2></u>
+    <u id="speH1">
+        <h2>PART-2</h2>
+    </u>
     <h2 id="spePara">PARAMETERS VALIDATION</h2>
     <p>
-        Remember how we said that we sometimes use the return keyword to interrupt functions in the case of errors? A good example is the validation of function parameters.
+        Remember how we said that we sometimes use the return keyword to interrupt functions in the case of errors? A
+        good example is the validation of function parameters.
         <br><br>
-        Let's go back to the example with the <b id="spePara">get_temp_mean_</b> function. The last version we wrote needs an array of numbers as an argument. Before starting the calculation, 
+        Let's go back to the example with the <b id="spePara">get_temp_mean_</b> function. The last version we wrote
+        needs an array of numbers as an argument. Before starting the calculation,
         we can check if the value passed to it is actually an array.
-        <pre>
+    <pre>
             <code>
                 function get_temperature_mean_(temperatures) {
                     if (!(temperatures instanceof Array)) {
@@ -38,10 +44,12 @@
     </p>
     <h2 id="spePara">RECURSION</h2>
     <p>
-        During your math lessons, you probably came across the concept of factorials. A factorial is a function, indicated by an exclamation mark in mathematical notation. 
-        We pass an integer to this function and its result is obtained by multiplying all integers from the number 1 to the number given as an argument. 
+        During your math lessons, you probably came across the concept of factorials. A factorial is a function,
+        indicated by an exclamation mark in mathematical notation.
+        We pass an integer to this function and its result is obtained by multiplying all integers from the number 1 to
+        the number given as an argument.
         Formally, you define a factorial as follows:
-        <pre>
+    <pre>
             <code id="spePara">
                 n!=n∙(n-1)∙(n-2)∙... ∙2∙1
 
@@ -50,11 +58,11 @@
                 6!=6∙5∙4∙3 ∙2∙1=720
             </code>
         </pre>
-        <p>
-            Let's try to write a function that will calculate the factorial from the given number.
-            <br><br>
-            It will take the parameter n and return the calculated value.
-            <pre>
+    <p>
+        Let's try to write a function that will calculate the factorial from the given number.
+        <br><br>
+        It will take the parameter n and return the calculated value.
+    <pre>
                 <code>
                     function factorial(num) {
                         let result = 1;
@@ -67,26 +75,27 @@
                       console.log(factorial(5)); // 120
                 </code>
             </pre>
-            <p>
-                In this case, we use the iterative approach to calculate the factorial, in other words, we use a loop in which, 
-                during each iteration we multiply the previous result by another element of the sequence.
-                <br><br>
-                After the first iteration, the result is 6, after the second, 30, after the third, 120, and so on. 
-                The iterations are repeated to the last significant element of the 
-                sequence, that is, to the value 2 (hence the condition of ending the loop n > 1).
-            </p>
-        </p>
-        <p>
-            However, the definition of a factorial can be written in a slightly different way. 
-            It will be the factorial of the previous element <b id="noticed">n - 1</b> multiplied by <b id="">n</b>.
-            <br><br>
-            <b id="front">For example</b>, 6! is 5! multiplied by 6. Such a factorial definition uses the recursion, 
-            i.e. referring a function to itself (but with a different argument). 
-            A recursion is a mechanism that allows to simplify the formal notation of many mathematical functions and present them in an elegant form. 
-            We can also successfully use recursion in programming.
-            <br><br>
-            Let's declare the <b id="spePara">factorial</b> function again, this time using recursion.
-            <pre>
+    <p>
+        In this case, we use the iterative approach to calculate the factorial, in other words, we use a loop in which,
+        during each iteration we multiply the previous result by another element of the sequence.
+        <br><br>
+        After the first iteration, the result is 6, after the second, 30, after the third, 120, and so on.
+        The iterations are repeated to the last significant element of the
+        sequence, that is, to the value 2 (hence the condition of ending the loop n > 1).
+    </p>
+    </p>
+    <p>
+        However, the definition of a factorial can be written in a slightly different way.
+        It will be the factorial of the previous element <b id="noticed">n - 1</b> multiplied by <b id="">n</b>.
+        <br><br>
+        <b id="front">For example</b>, 6! is 5! multiplied by 6. Such a factorial definition uses the recursion,
+        i.e. referring a function to itself (but with a different argument).
+        A recursion is a mechanism that allows to simplify the formal notation of many mathematical functions and
+        present them in an elegant form.
+        We can also successfully use recursion in programming.
+        <br><br>
+        Let's declare the <b id="spePara">factorial</b> function again, this time using recursion.
+    <pre>
                 <code>
                     function factorial_1(num_1) {
                         return num_1 > 1 ? num_1 * factorial_1(num_1 - 1) : 1;
@@ -94,26 +103,29 @@
                       console.log(`factorial of num1: [${factorial_1(4)}]`); // factorial of num1: [24]
                 </code>
             </pre>
-        </p>
-        <p>
-            In order to get a shorter, more compact code, instead of an if conditional instruction, we use the ternary conditional operator. 
-            In it, we check if the argument n is greater than 1. Depending on that, we return either the result of multiplying the number n by 
-            the result of the factorial(n – 1) call, or the value 1. The figure below shows a sequence of factorial function calls starting 
-            from a call for the value 6 (the arrows show where the value from the called function is returned)
-            <img src="/lesson-18/factorial.png" alt="">
-            Recursion is commonly used in programming. However, as with any solution, recursion must be handled with care. 
-            We shouldn't use it where we can't estimate the number of embedded calls.
-            <br><br>
-            We should also be very careful in formulating the condition that will interrupt the function sequence calls – 
-            errors can cause the program to suspend.
-        </p>
+    </p>
+    <p>
+        In order to get a shorter, more compact code, instead of an if conditional instruction, we use the ternary
+        conditional operator.
+        In it, we check if the argument n is greater than 1. Depending on that, we return either the result of
+        multiplying the number n by
+        the result of the factorial(n – 1) call, or the value 1. The figure below shows a sequence of factorial function
+        calls starting
+        from a call for the value 6 (the arrows show where the value from the called function is returned)
+        <img src="/lesson-18/factorial.png" alt="">
+        Recursion is commonly used in programming. However, as with any solution, recursion must be handled with care.
+        We shouldn't use it where we can't estimate the number of embedded calls.
+        <br><br>
+        We should also be very careful in formulating the condition that will interrupt the function sequence calls –
+        errors can cause the program to suspend.
+    </p>
     </p>
     <h2 id="spePara">FUNCTIONS AS FIRST-CLASS MEMBERS</h2>
     <p>
-        In JavaScript, functions are first-class members. This term means that functions can be treated as any data, 
-        which can be stored in variables or passed as arguments to other functions. For example, 
+        In JavaScript, functions are first-class members. This term means that functions can be treated as any data,
+        which can be stored in variables or passed as arguments to other functions. For example,
         we can declare the showMessage function and then store it in the variable <b id="spePara">sm</b>.
-        <pre>
+    <pre>
             <code>
                 function showMessage(message) {
                     console.log(`Message: ${message}`);
@@ -122,21 +134,23 @@
                   let sm = showMessage;
             </code>
         </pre>
-        <p>
-            We can store any function that is accessible in this scope in a variable and use a 
-            function call operator () to execute it. We can check that the sm variable is now a function 
-            by using the typeof operator.
-            <pre>
+    <p>
+        We can store any function that is accessible in this scope in a variable and use a
+        function call operator () to execute it. We can check that the sm variable is now a function
+        by using the typeof operator.
+    <pre>
                 <code id="spePara">
                     sm("THIS IS BULLSHIT"); // Message: THIS IS BULLSHIT
                     console.log(typeof sm); // function
                 </code>
             </pre>
-        </p>
-        <p>
-            But it’s important to remember that when assigning a function to a variable, we don't use a function call operator, 
-            as this would execute the function and assign the result of the function to a variable, and not to the function itself.
-            <pre>
+    </p>
+    <p>
+        But it’s important to remember that when assigning a function to a variable, we don't use a function call
+        operator,
+        as this would execute the function and assign the result of the function to a variable, and not to the function
+        itself.
+    <pre>
                 <code>
                     function do_nothing() {
                         return undefined; //
@@ -149,15 +163,15 @@
                       console.log("type-of -b :", typeof b); // type-of -b : function
                 </code>
             </pre>
-        </p>
-        <p>
-            In the example, the result of the doNothing function call (i.e. the undefined value returned by the function) is 
-            stored in the a variable, while the doNothing function itself is stored in the b variable (or more precisely, a 
-            reference to the function is stored in the b variable).
-            <br><br>
-            This property is especially useful when passing the function as a call parameter to other functions, 
-            which we will soon learn more about. For now, let's test that something like this is actually feasible.
-            <pre>
+    </p>
+    <p>
+        In the example, the result of the doNothing function call (i.e. the undefined value returned by the function) is
+        stored in the a variable, while the doNothing function itself is stored in the b variable (or more precisely, a
+        reference to the function is stored in the b variable).
+        <br><br>
+        This property is especially useful when passing the function as a call parameter to other functions,
+        which we will soon learn more about. For now, let's test that something like this is actually feasible.
+    <pre>
                 <code>
                     function add(a, b) {
                         return a + b;
@@ -177,19 +191,19 @@
                       console.log(operation(divide, 10, 20)); // 0.5
                 </code>
             </pre>
-            <p>
-                The operation function takes as its first argument the function (parameter func) and 
-                calls it with the other two arguments passed (parameters first and second).
-            </p>
-        </p>
+    <p>
+        The operation function takes as its first argument the function (parameter func) and
+        calls it with the other two arguments passed (parameters first and second).
+    </p>
+    </p>
     </p>
     <h2 id="spePara">FUNCTIONS EXPRESSIONS</h2>
     <p>
-        To store a function in a variable or pass it as an argument to call a function, 
+        To store a function in a variable or pass it as an argument to call a function,
         you do not necessarily have to declare it previously and use its name.
         <br><br>
         Let's go back to our example with the add function:
-        <pre>
+    <pre>
             <code>
                 function add_1(a, b) {
                     return a + b;
@@ -201,11 +215,11 @@
                   
             </code>
         </pre>
-        <p>
-            We first declare the add function, and then store it in the variable <b id="spePara">myAdd_1</b>. 
-            We can call the same function using both the name add and the variable <b id="spePara">myAdd_1</b>. 
-            We can shorten this notation and declare the function by storing it in a variable.
-            <pre>
+    <p>
+        We first declare the add function, and then store it in the variable <b id="spePara">myAdd_1</b>.
+        We can call the same function using both the name add and the variable <b id="spePara">myAdd_1</b>.
+        We can shorten this notation and declare the function by storing it in a variable.
+    <pre>
                 <code>
                     let myAdd_2 = function add2(a, b) {
                         return a + b;
@@ -215,14 +229,14 @@
                       console.log(add2(80, 20)); //100
                 </code>
             </pre>
-            <p>
-                In the example, we again declare the add function, and at the same time store it in the myAdd variable.
-                <br><br>
-                This form of defining a function is called function expression. In this case, it is specifically a named 
-                function expression, because the function has a name (add). If there is a named function expression, 
-                there will probably also be an unnamed, or precisely, an anonymous function expression. In fact, simply 
-                remove the name following the function keyword to change the function from named to anonymous.
-                <pre>
+    <p>
+        In the example, we again declare the add function, and at the same time store it in the myAdd variable.
+        <br><br>
+        This form of defining a function is called function expression. In this case, it is specifically a named
+        function expression, because the function has a name (add). If there is a named function expression,
+        there will probably also be an unnamed, or precisely, an anonymous function expression. In fact, simply
+        remove the name following the function keyword to change the function from named to anonymous.
+    <pre>
                     <code>
                         let myAdd_3 = function (a, b) {
                             return a + b;
@@ -231,16 +245,17 @@
                           console.log(myAdd_3(30, 50)); // 80
                     </code>
                 </pre>
-            </p>
-        </p>
-        <p>
-            Let's go back to the concept of anonymous functions. It may seem a little incomprehensible when you use a 
-            name (although it is a variable name) to refer to a function. In this case, it's about anonymity, 
-            i.e. the lack of a name, in the very definition of a function. This will be much more evident when passing a function as a 
-            call parameter to another function.
-            <br><br>
-            Let's look at the example:
-            <pre>
+    </p>
+    </p>
+    <p>
+        Let's go back to the concept of anonymous functions. It may seem a little incomprehensible when you use a
+        name (although it is a variable name) to refer to a function. In this case, it's about anonymity,
+        i.e. the lack of a name, in the very definition of a function. This will be much more evident when passing a
+        function as a
+        call parameter to another function.
+        <br><br>
+        Let's look at the example:
+    <pre>
                 <code>
                     function operation_2(func, first, second) {
                         return func(first, second);
@@ -264,14 +279,152 @@
                       ); // 1000
                 </code>
             </pre>
-            <p>
-                In the first step, we declare the function operation (it is a named function, and we use the function statement here, 
-                so we will refer to the function by its name). In the next step, we define an anonymous function, 
-                which we store in the <b id="spePara">myAdd_3</b>. variable (we use a function expression). We call the operation function, passing the <b id="spePara">myAdd_3</b>. 
-                function and values 20 and 50 as arguments.
-            </p>
-        </p>
+    <p>
+        In the first step, we declare the function operation (it is a named function, and we use the function statement
+        here,
+        so we will refer to the function by its name). In the next step, we define an anonymous function,
+        which we store in the <b id="spePara">myAdd_3</b>. variable (we use a function expression). We call the
+        operation function, passing the <b id="spePara">myAdd_3</b>.
+        function and values 20 and 50 as arguments.
+        <br><br>
+        The result is easy to predict. It only gets interesting when we call the <b id="spePara">operation</b> function
+        again. This time,
+        the first argument is the anonymous function (again the function expression), which is defined directly in an
+        operation call.
+        <br><br>
+        The result is a multiplication, although the name of the new function (or the variable in which it could be
+        placed) will not appear anywhere.
+        The function has been defined only to pass it once into the operation function. At first glance, it may look
+        like a completely useless mechanism,
+        but in the real world, it is used very often.
+    </p>
+    </p>
+    </p>
+    <h2 id="spePara">CALLBACKS</h2>
+    <p>
+        Functions that are passed as arguments to other functions may seem quite exotic and not very helpful, but in
+        fact, they are a very important part of programming.
+        So important that they even get their own name. They are callback functions. As we have seen in previous
+        examples,
+        a function that receives a callback as an argument can call it at any time.
+        Importantly, in our examples, the callback is run synchronously, that is, it is executed in a strictly defined
+        order resulting from where it is placed among the other instructions.
+
+    <h2 id="spePara">Synchronous callbacks</h2>
+    <p>
+        <b id="noticed">synchronous</b> execution is the most natural way to see how the program works. Subsequent
+        instructions are executed in the order in which they are placed in the code.
+        If you call a function, the instructions in it will be executed at the time of the call. If we pass another
+        function to this function as an argument,
+        and we call it inside an outer function as well, then all instructions will keep their natural order.
+    <pre>
+                <code>
+                    let inner = function () {
+                        console.log("inner 1");
+                      };
+                      //
+                      let outer = function (callback) {
+                        console.log("outer 1");
+                        callback();
+                        console.log("outer 2");
+                      };
+                      //
+                      //
+                      console.log("test 1");
+                      outer(inner);
+                      console.log("test 2");
+                      
+                </code>
+                <u id="front">OUTPUT</u>
+                test 1
+                outer 1
+                inner 1
+                outer 2
+                test 2
+            </pre>
+    <p>
+        Therefore, the order of actions resulting from the order of calling the commands and functions is maintained.
+        However, this order may be disturbed under certain special circumstances.
+    </p>
     </p>
 
+    <h2 id="spePara">ASYNCHRONOUS CALLBACKS</h2>
+    <p>
+        <b id="noticed">Asynchronous</b> operation of programs is a rather complex topic,
+        strongly dependent on a particular programming language, and often also on the environment.
+        <br><br>
+        In the case of client-side JavaScript running in a browser, it is limited to event-based programming, i.e. the
+        asynchronous
+        response to certain events.
+        An event can be a signal sent by a timer, a user action (e.g. pressing a key or clicking on a selected interface
+        element),
+        or information about receiving data from the server.
+        <br><br>
+        Using appropriate functions, we combine a specific type of event with a selected callback function, which will
+        be called when the event occurs.
+        <br><br>
+        One of the simplest cases when there is an asynchronous execution of instructions is the use of the <b
+            id="spePara">setTimeout</b> function.
+        This function takes another function (a callback) and the time expressed in milliseconds as arguments. The
+        callback function is executed after the specified time,
+        and meanwhile, the next program instruction (placed in the code after <b id="spePara">setTimeout</b>) will be
+        executed.
+        <br><br>
+        Thus, the moment the callback function is called is not determined by its order, but by an arbitrarily imposed
+        delay.
+        The delay only applies to the callback function given to <b id="spePara">setTimeout</b>, while the rest of the
+        code is still executed synchronously.
+        <br><br>
+        Let's modify the previous example a bit. In the outer function, we do not call <b id="spePara">callback()</b>
+        immediately,
+        but pass it to <b id="spePara">setTimeout</b>, which executes it with a delay of 1000 milliseconds (one second).
+    <pre>
+                <code>
+                    let inner_2 = function () {
+                        console.log("inner 1");
+                      };
+                      //
+                      let outer_2 = function (callback) {
+                        console.log("outer 1");
+                        setTimeout(callback, 1000);
+                        console.log("outer 2");
+                      };
+                      //
+                      console.log("test 1");
+                      outer_2(inner_2);
+                      console.log("test 2");
+                      
+                </code>
+                <u id="front">OUTPUT</u>
+                test 1
+                outer 1
+                outer 2
+                test 2
+                .....
+                inner 1
+            </pre>
+    </p>
+
+    <h2 id="spePara">
+        <span id="speTitle" style="font-size: 3.9vw;">setTimeout
+        </span>AND <span id="speTitle" style="font-size: 3.9vw;">setInterval</span> FUNCTIONS
+    </h2>
+    <p>
+        The <b id="spePara">setTimeout</b> function is used when you want to cause a delayed action. A similar function is <b id="spePara">setInterval</b>. 
+        This time, the action is also performed with a delay, but periodically, so it is repeated at fixed intervals. In the meantime, the main program is executed, 
+        and at every specified time, the callback given as an argument for a setInterval call is called.
+        <br><br>
+        Interestingly, the setInterval function returns an identifier during the call, which can be used to remove the timer used in it 
+        (and consequently to stop the cyclical callback function call). We will do this in the next example. 
+        First, we run setInterval, which will call the callback function (i.e. the inner function) in one-second intervals. 
+        Then we call setTimeout, which will turn off the timer associated with the previously called setInterval after 5.5 seconds. As a result, the inner function should be called five times. 
+        In the meantime, the rest of the program will be executed ...
+    </p>
+
+    </p>
+
+
+
 </body>
+
 </html>
