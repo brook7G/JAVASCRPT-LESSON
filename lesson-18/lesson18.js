@@ -145,3 +145,47 @@ console.log(
     50
   )
 ); // 1000
+//
+//
+console.log("");
+console.log("CALLBACKS");
+console.log("SYNCHRONOUS CALLBACKS");
+
+//
+let inner = function () {
+  console.log("inner 1");
+};
+//
+let outer = function (callback) {
+  console.log("outer 1");
+  callback();
+  console.log("outer 2");
+};
+//
+//
+console.log("test 1");
+outer(inner);
+console.log("test 2");
+//
+//
+//
+console.log("");
+console.log("ASYNCHRONOUS CALLBACKS");
+//
+let inner_2 = function () {
+  console.log("inner 1");
+};
+//
+let outer_2 = function (callback) {
+  console.log("outer 1");
+  setTimeout(callback, 1000);
+  console.log("outer 2");
+};
+//
+console.log("test 1");
+outer_2(inner_2);
+console.log("test 2");
+
+
+
+
