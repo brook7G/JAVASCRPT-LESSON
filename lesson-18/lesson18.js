@@ -218,5 +218,29 @@ console.log("EVENT-LISTENER");
 window.addEventListener("click", function () {
   console.log("YOU'RE BROKE !!!!");
 });
-//OPEN YOUR BROWSER THEN  (CTRL+SHIFT+I) 
-//YOU OPENED CONSOLE , CLICK THE SCREEN MULTIPLE TIMES THE YOU'LL SEE THE ABOVE CODE PRINTING THE MESSAGE HOW MANY TIME YOU'VE CLICKED 
+//OPEN YOUR BROWSER THEN  (CTRL+SHIFT+I)
+//YOU OPENED CONSOLE , CLICK THE SCREEN MULTIPLE TIMES THE YOU'LL SEE THE ABOVE CODE PRINTING THE MESSAGE HOW MANY TIME YOU'VE CLICKED
+//
+//
+//
+console.log("");
+console.log("ARROW FUNCTIONS:");
+//
+let user = function (first_name, last_name) {
+  return first_name + " " + last_name;
+};
+//
+console.log(user("biruk", "fekadu")); //biruk fekadu
+//
+//
+
+console.log("");
+let customer = (first_name, last_name) => {
+  return first_name + " " + last_name;
+};
+//
+console.log(customer("Kesa", "lemi")); // kesa lemi 
+//
+//
+
+console.log("");
