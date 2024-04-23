@@ -207,7 +207,61 @@
             We can shorten this notation and declare the function by storing it in a variable.
             <pre>
                 <code>
-
+                    let myAdd_2 = function add2(a, b) {
+                        return a + b;
+                      };
+                      //
+                      console.log(myAdd_2(40, 20)); //60
+                      console.log(add2(80, 20)); //100
+                </code>
+            </pre>
+            <p>
+                In the example, we again declare the add function, and at the same time store it in the myAdd variable.
+                <br><br>
+                This form of defining a function is called function expression. In this case, it is specifically a named 
+                function expression, because the function has a name (add). If there is a named function expression, 
+                there will probably also be an unnamed, or precisely, an anonymous function expression. In fact, simply 
+                remove the name following the function keyword to change the function from named to anonymous.
+                <pre>
+                    <code>
+                        let myAdd_3 = function (a, b) {
+                            return a + b;
+                          };
+                          //
+                          console.log(myAdd_3(30, 50)); // 80
+                    </code>
+                </pre>
+            </p>
+        </p>
+        <p>
+            Let's go back to the concept of anonymous functions. It may seem a little incomprehensible when you use a 
+            name (although it is a variable name) to refer to a function. In this case, it's about anonymity, 
+            i.e. the lack of a name, in the very definition of a function. This will be much more evident when passing a function as a 
+            call parameter to another function.
+            <br><br>
+            Let's look at the example:
+            <pre>
+                <code>
+                    function operation_2(func, first, second) {
+                        return func(first, second);
+                      }
+                      //
+                      let myAdd_4 = function (a, b) {
+                        return a + b;
+                      };
+                      //
+                      //
+                      console.log(operation_2(myAdd_4, 20, 50)); // 70
+                      //
+                      console.log(
+                        operation_2(
+                          function (a, b) {
+                            return a * b;
+                          },
+                          90,
+                          10
+                        )
+                      ); // 900
                 </code>
             </pre>
         </p>
