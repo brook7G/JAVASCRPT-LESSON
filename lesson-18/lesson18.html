@@ -492,7 +492,36 @@
             demonstrate a function call with a user-generated event.
         </p>
     </p>
-
+    </p>
+    <h2 id="spePara">ARROW FUNCTIONS</h2>
+    <p>
+        An <b id="spePara">arrow function</b> is a shorter form of a function expression. 
+        An arrow function expression is composed of: parentheses containing zero to multiple parameters (if exactly one parameter is present, the parentheses can be omitted); 
+        an arrow that looks like this <b id="spePara">"=>";</b> and the body of the function, which can be surrounded by curly brackets if the body is longer. 
+        If an arrow function has only one statement and returns its value, we can omit the <b id="spePara">return</b> keyword, as it will be implicitly added.
+        <br><br>
+        For example, the function add, which we already know:
+        <pre>
+            <code>
+                let user = function (first_name, last_name) {
+                    return first_name + " " + last_name;
+                  };
+                  //
+                  console.log(user("biruk", "fekadu")); //biruk fekadu
+            </code>
+        </pre>
+        <p>
+            can be written as follow:
+            <pre>
+                <code>
+                    let customer = (first_name, last_name) => {
+                        return first_name + " " + last_name;
+                      };
+                      //
+                      console.log(customer("Kesa", "lemi")); // kesa lemi
+                </code>
+            </pre>
+        </p>
     </p>
 
 
