@@ -521,6 +521,66 @@
                       console.log(customer("Kesa", "lemi")); // kesa lemi
                 </code>
             </pre>
+            <p>
+                or simplified even more (the function has only one statement, whose value returns):
+                <pre>
+                    <code>
+                        let customer_1 = (first_name, last_name) => first_name + " " + last_name;
+                        //
+                        console.log(customer_1("bilise", "kerasa")); //bilise kerasa
+                    </code>
+                </pre>
+            </p>
+        </p>
+        <p>
+            If the arrow function takes exactly one parameter, the parentheses may be omitted. 
+            Let's go back to the examples with the recursive <b id="spePara">factorial</b> function, which takes exactly one parameter, <b id="spePara">n</b>. 
+            In the previous example, we declared it using the function statement:
+            <pre>
+                <code>
+                    function factorial(n) {
+                        return n > 1 ? n * factorial(n - 1) : 1;
+                      }
+                      //
+                      console.log(factorial(5)); // 120
+                </code>
+            </pre>
+        </p>
+        <p>
+            Using the arrow function expression, we can write it in an even more compact form. Note that this time, 
+            the parameter is not given in parentheses (again,– if the arrow function takes exactly one parameter, the parentheses can be omitted). 
+            Since the function returns the result of exactly one statement, the <b id="spePara">return</b> keyword can also be omitted.
+            <br><br>
+            The arrow expression is mainly used for short functions, often anonymous, which can be presented as even more compact in this form. 
+            They differ from ordinary functions by one more thing apart from the form of notation, in other words, how the keyword <b id="spePara">this</b> is interpreted inside them. 
+            However, this is a topic related to more advanced object-oriented programming, which is far beyond the scope of this course. 
+            We can therefore assume that both ways of defining functions, i.e. function expression and arrow function expression, 
+            allow you to define identically working functions.
+            <br><br>
+            One typical example of using arrow functions is the <b id="spePara">forEach</b> method, available in <b id="spePara">Array</b> type data. 
+            We have learned several ways of passing through array elements, 
+            using different types of loops. The <b id="spePara">forEach</b> method is another, and frankly speaking, currently the most used one. This method takes as an argument ... a function.
+            <br><br>
+            This function will be called each time for each element of the array. We can create any function for this purpose. There is one condition, 
+            which is that it must have at least one parameter, which will be treated as a visited element of the array (the syntax of this function may be a bit more complex, 
+            but we will explain it in the next part of the course). Let's look at a simple example:
+            <pre>
+                <code>
+                    let names = ["DURA", "BARI", "NUTIS", "ELA"];
+                    function showName(element) {
+                    console.log(element);
+                    }
+                    //
+                    names.forEach(showName); // DURA, BARI, NUTIS, ELA
+                </code>
+            </pre>
+            <p>
+                The <b id="spePara">showName</b> function has been passed as a call argument to the <b id="spePara">forEach</b> method of the names array. 
+                Therefore, <b id="spePara">showName</b> will be called three times, 
+                for each element of the names array, and in each call its parameter will be equal to the successive name, i.e. in turn: 
+                <b id="spePara">DURA</b>, <b id="spePara">BARI</b>, <b id="spePara">NUTIS</b> and <b id="spePara">ELA</b>. 
+                The only thing <b id="spePara">showName</b> has to do is to display the received <b id="spePara">element</b> (name).
+            </p>
         </p>
     </p>
 
