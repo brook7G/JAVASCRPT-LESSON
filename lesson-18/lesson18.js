@@ -186,6 +186,37 @@ console.log("test 1");
 outer_2(inner_2);
 console.log("test 2");
 
+//
+//
+//ANOTHER EXAMPLE
+console.log("");
+console.log("another example");
 
+let inner_3 = function () {
+  console.log("inner 1");
+};
+//
+let outer_3 = function (callback) {
+  console.log("outer 1");
+  let timerId = setInterval(callback, 1000);
+  console.log("outer 2");
+  setTimeout(function () {
+    clearInterval(timerId);
+  }, 5500);
+};
+//
+console.log("test 1");
 
+outer_3(inner_3);
 
+console.log("test 2");
+//
+//
+console.log("");
+console.log("EVENT-LISTENER");
+//
+window.addEventListener("click", function () {
+  console.log("YOU'RE BROKE !!!!");
+});
+//OPEN YOUR BROWSER THEN  (CTRL+SHIFT+I) 
+//YOU OPENED CONSOLE , CLICK THE SCREEN MULTIPLE TIMES THE YOU'LL SEE THE ABOVE CODE PRINTING THE MESSAGE HOW MANY TIME YOU'VE CLICKED 
