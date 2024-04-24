@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Questions</title>
+    <link rel="stylesheet" href="/lesson-16/lesson16.css">
+    <script src="practice.js"></script>
+</head>
+<body>
+    <h1 id="speH1">PRACTICE for FUNCTIONS</h1>
+    <h2>SECTION PRACTICE</h2>
+    <p>
+        <b id="front">Exercise 1:</b> Arrays in JavaScript have a <b id="spePara">sort</b> method available which, as you might guess, allows you to sort its elements. 
+        This method takes as an argument a function that will compare two elements of the array. The function should return zero if we consider the arguments to be the same, 
+        a value less than zero if we consider the first one to be smaller than the second, and a value larger than zero otherwise. Take a look at the example:
+        <pre>
+            <code>
+                let numbers = [50, 10, 40, 30, 20];
+                function compare_numbers(a, b) {
+                let returnVal = 0;
+                if (a > b) {
+                    returnVal = 1;
+                } else if (a < b) {
+                    returnVal = -1;
+                }
+                return returnVal;
+                }
+                //
+                let sorted = numbers.sort(compare_numbers);
+                console.log(sorted);
+            </code>
+        </pre>
+    </p>
+    
+</body>
+</html>
