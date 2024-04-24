@@ -82,3 +82,28 @@ function sub(a, b) {
 //
 console.log(sub(10, 20000)); // -19990
 console.log(sub(10, false)); // NaN
+//
+//
+//
+console.log("");
+console.log("EXERCISE-3");
+//
+let add_num = (a, b) =>
+  !Number.isInteger(a) || !Number.isInteger(b) ? NaN : a + b;
+console.log(add_num(10, 20));
+console.log(add_num(10, "biruk"));
+//
+let sub_num = (a, b) =>
+  !Number.isInteger(a) || !Number.isInteger(b) ? NaN : a - b;
+console.log(sub_num(30, 10));
+console.log(sub_num(30, false));
+//
+let mul_num = (a, b) =>
+  !Number.isInteger(a) || !Number.isInteger(b) ? NaN : a * b;
+console.log(mul_num(10, 20));
+console.log(mul_num(30, "belachaw"));
+//
+let div_num = (a, b) =>
+  !Number.isInteger(a) || !Number.isInteger(b) ? NaN : a / b;
+console.log(div_num(10, 20));
+console.log(div_num(10, 0.5));
