@@ -107,3 +107,14 @@ let div_num = (a, b) =>
   !Number.isInteger(a) || !Number.isInteger(b) ? NaN : a / b;
 console.log(div_num(10, 20));
 console.log(div_num(10, 0.5));
+//
+//
+console.log("");
+console.log("EXERCISE-4:");
+//
+let action = (callback, a, b) => callback(a, b);
+//
+console.log(action(add, 90, 100));
+console.log(action(mul, 90, 100));
+console.log(action(div, 90, "biruk"));
+console.log(action(sub, 90, "60"));
