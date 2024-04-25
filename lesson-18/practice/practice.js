@@ -125,14 +125,14 @@ console.log("EXERCISE-5:"); // when you get here undo the comment and run it its
 // //
 let counter = 1;
 //
-let IntervalId = setInterval(function () {
-  console.log(counter++);
-}, 2000);
+// let IntervalId = setInterval(function () {
+//   console.log(counter++);
+// }, 2000);
 
-//
-setTimeout(function () {
-  clearInterval(IntervalId);
-}, 20000);
+// //
+// setTimeout(function () {
+//   clearInterval(IntervalId);
+// }, 20000);
 
 //
 //
@@ -153,3 +153,10 @@ let fibbRec = function (n) {
 };
 //
 console.log(fibbRec(6));
+//
+//
+console.log("");
+console.log("EXERCISE-7:");
+//
+let fibbRec_2 = (f) => f==0?0:(f==1?1:fibbRec_2(f-1)+fibbRec_2(f-2));
+console.log(fibbRec_2(6));
