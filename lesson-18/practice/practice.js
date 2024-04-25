@@ -121,14 +121,35 @@ console.log(action(sub, 90, "60"));
 //
 //
 console.log("");
-console.log("EXERCISE-5:");
-//
+console.log("EXERCISE-5:"); // when you get here undo the comment and run it its recommended if you comment the rest of exercises 
+// //
 let counter = 1;
 //
-let  IntervalId= setInterval(function() {
+let IntervalId = setInterval(function () {
   console.log(counter++);
 }, 2000);
+
 //
-setTimeout(function() {
+setTimeout(function () {
   clearInterval(IntervalId);
 }, 20000);
+
+//
+//
+console.log("");
+console.log("EXERCISE-6:");
+//
+
+let fibbRec = function (n) {
+  let returnValue = 0;
+  if (n != 0) {
+    if (n === 1) {
+      returnValue = 1;
+    } else {
+      returnValue = fibbRec(n - 1) + fibbRec(n - 2);
+    }
+  }
+  return returnValue;
+};
+//
+console.log(fibbRec(6));
