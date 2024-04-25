@@ -60,3 +60,8 @@ showAllContacts(contacts);
 
 // Add a new contact
 addNewContact(contacts, "John Doe", "1234567890", "john.doe@example.com");
+
+console.log("");
+console.log("LAB-1:");
+//
+//
