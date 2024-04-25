@@ -20,13 +20,135 @@
             <li id="list">Function basics (what are functions, declaring functions, calling functions, local variables, the return statement, function parameters, shadowing);</li>
             <li id="list">Functions as first-class members (function expressions, passing a function as a parameter, callbacks);</li>
             <li id="list">Arrow functions (declaring and calling);</li>
-            <li id="list">Recursion (basic idea).</li>
-        
-
-        
+            <li id="list">Recursion (basic idea).</li>   
     </p>
+    <h2 id="spePara">Scenario</h2>
+    <p>
+        Our program has grown quite a bit, making it a little hard to read. It is especially visible in the switch instruction, where most of the logic is enclosed. 
+        Try to organize your program code by using functions. Define and call three functions in the appropriate places:
+        <li id="list"><b id="spePara">showContact</b>: the function should take two arguments; the first is the list of contacts, 
+            and the second is the index number of the contact to display; inside the function, check if the correct arguments are passed, 
+            that is, if the contacts are an array (use the <b id="spePara">instanceofArray</b> construction for this);
+        </li>
+        <li id="list"><b id="spePara">showAllContacts</b>: the function should take one argument, the list of contacts; inside the function, check if the given argument is an array;</li>
+        <li id="list"><b id="spePara">addNewContact</b>: the function should take four arguments, a contact list and the data of the new contact, that is: name, phone, and number; 
+            before adding a new contact, check if the passed argument is an array and if the new contact data have any value.
+        </li>
+        <pre>
+            <code>
+                let contacts = [{
+                    name: "Maxwell Wright",
+                    phone: "(0191) 719 6495",
+                    email: "Curabitur.egestas.nunc@nonummyac.co.uk"
+                }, {
+                    name: "Raja Villarreal",
+                    phone: "0866 398 2895",
+                    email: "posuere.vulputate@sed.com"
+                }, {
+                    name: "Helen Richards",
+                    phone: "0800 1111",
+                    email: "libero@convallis.edu"
+                }];
+            </code>
+        </pre>
 
+    </p>
+    <br>
+    <h1 id="speH1"><span id="front">LAB</span> <span id="spePara">FUNCTIONS(part-2)</span></h1>
+    <h2 id="spePara">Estimated time</h2>
+    <p>30-60 minutes</p>
+    <h2 id="spePara">Level of difficulty</h2>
+    <p>Medium</p>
+    <h2 id="spePara">Objectives</h2>
+    <p>
+        Familiarize the student with:
+        
+            <li id="list">Function basics (what are functions, declaring functions, calling functions, local variables, the return statement, function parameters, shadowing);</li>
+            <li id="list">Functions as first-class members (function expressions, passing a function as a parameter, callbacks);</li>
+            <li id="list">Arrow functions (declaring and calling);</li>
+            <li id="list">Recursion (basic idea).</li>   
+    </p>
+    <h2 id="spePara">Scenario</h2>
+    <p>
+        We will use the functions to add one more item of functionality. Arrays have a sort method that allows us to <b id="spePara">sort</b> their elements. 
+        To this method, we pass a function which should compare two elements of the array and decide which one is smaller and which one is bigger. 
+        If the first element is smaller, the function returns a value less than zero, if they are equal it returns zero, and if the first is larger, it returns a value greater than zero. 
+        For example, the array:
+        <pre>
+            <code>
+                let numbers = [10, 50, 40, 20];
+            </code>
+        </pre>
+        <p>
+            can be sorted in ascending order with a call:
+            <pre>
+                <code>
+                    numbers.sort(function (a, b) {
+                        let retVal = 0;
+                        if (a > b) {
+                            retVal = 1;
+                        } else {
+                            retVal = -1;
+                        }
+                        return retVal;
+                   });                   
+                </code>
+            </pre>
+            <p>
+                or more simply:
+                <pre>
+                    <code>
+                        numbers.sort((a, b) => a - b);
+                    </code>
+                </pre>
 
+            </p>
+        </p>
+        <p>
+            Give the user the option to select a sort action from the list. When this option is selected, the user should be able to specify whether they want to sort the contacts by name, 
+            phone, or email.
+            <pre>
+                <code>
+                    let contacts = [{
+                        name: "Maxwell Wright",
+                        phone: "(0191) 719 6495",
+                        email: "Curabitur.egestas.nunc@nonummyac.co.uk"
+                    }, {
+                        name: "Raja Villarreal",
+                        phone: "0866 398 2895",
+                        email: "posuere.vulputate@sed.com"
+                    }, {
+                        name: "Helen Richards",
+                        phone: "0800 1111",
+                        email: "libero@convallis.edu"
+                    }];
+                    let showContact = function(contacts, i) {
+                        if (contacts instanceof Array && contacts[i]) {
+                            console.log(`${contacts[i].name} / ${contacts[i].phone} / ${contacts[i].email}`);
+                        }
+                    }
+                    
+                    let showAllContacts = function(contacts) {
+                        if (contacts instanceof Array) {
+                            for (contact of contacts) {
+                                console.log(`${contact.name} / ${contact.phone} / ${contact.email}`);
+                            }
+                        }
+                    }
+                    
+                    let addNewContact = function(contacts, name, phone, email) {
+                        if (contacts instanceof Array && name && phone && email) {
+                            contacts.push({
+                                name: name,
+                                phone: phone,
+                                email: email
+                            });
+                        }
+                    }
+                </code>
+            </pre>
+        </p>
+    </p>
 
 </body>
 </html>
