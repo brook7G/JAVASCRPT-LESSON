@@ -118,3 +118,17 @@ console.log(action(add, 90, 100));
 console.log(action(mul, 90, 100));
 console.log(action(div, 90, "biruk"));
 console.log(action(sub, 90, "60"));
+//
+//
+console.log("");
+console.log("EXERCISE-5:");
+//
+let counter = 1;
+//
+let  IntervalId= setInterval(function() {
+  console.log(counter++);
+}, 2000);
+//
+setTimeout(function() {
+  clearInterval(IntervalId);
+}, 20000);
