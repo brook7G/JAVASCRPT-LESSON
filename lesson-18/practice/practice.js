@@ -160,3 +160,19 @@ console.log("EXERCISE-7:");
 //
 let fibbRec_2 = (f) => f==0?0:(f==1?1:fibbRec_2(f-1)+fibbRec_2(f-2));
 console.log(fibbRec_2(6));
+//
+//
+console.log("");
+console.log("EXERCISE-8:");
+//
+function fibbIter(n) {
+  let a = 0, b = 1;
+  for (let i = 2; i <= n; i++) {
+      let c = a;
+      a = b;
+      b += c;        
+  }
+  return b;
+}
+//
+console.log(fibbIter(1));
