@@ -113,6 +113,61 @@
                 </code>
             </pre>
         </p>
+        <p>
+            This time, we have a typo in the name of the declared function: instead of multiply, we’ve written multipl. In the call, we use a multiply name, which does not exist. 
+            This is a semantic error, in this case easy to detect, because there is no function with this name. The execution of the program is interrupted at the line of the error. 
+            Pay attention to two things. First of all, the error messages displayed in the console quite precisely determine what and where something goes wrong – read this information carefully, 
+            as it will help to get rid of the error. The second thing is the beginning of the message – <b id="spePara">Uncaught ....</b> 
+            If an error can be uncaught, it can probably be caught. And indeed it is, as we will see in a moment.
+            <br><br>
+            First, however, let's correct the error and run the program again:
+            <pre>
+                <code>
+                    let multiply_ = (a, b) => a + b;
+                    let result_ = multiply_(10, 20);
+                    console.log(result_); // -> 30 ?
+
+                </code>
+            </pre>
+            <p>
+                Success, no mistakes have been made! But ... the result is slightly suspicious: 30 is certainly not the result of multiplying 10 by 20. Of course, the code is still not correct, 
+                as the function is supposed to be used for multiplication, but by mistake we have inserted an addition sign instead of multiplication. This is a typical logical error, 
+                impossible to detect automatically. From a formal point of view, everything is constructed correctly, but the logic of our function is incorrect 
+                (we’re making it do something different to what we intended). The JavaScript interpreter is not able to detect such errors, 
+                because it cannot know what we plan to achieve by writing such a function.
+                <br><br>
+                Let's correct it once again:
+                <pre>
+                    <code>
+                        let multiply = (a, b) => a * b;
+                        let result = multiply(10, 20);
+                        console.log(result); // -> 200
+
+                    </code>
+                </pre>
+            </p>
+        </p>
+        <p>
+            When JavaScript detects syntactic or semantic errors, it generates and <b id="spePara">throws</b> specific objects containing information about the encountered error. 
+            Usually, in such a situation, we say that an error has been thrown. In the case of syntax errors, the JavaScript engine does not allow us to run the program, and on the console, 
+            we receive information about what is incorrect.  Errors other than syntax errors (e.g. semantic errors) are generally called <b id="spePara">run-time</b> errors in JavaScript. 
+            They appear while the program is running. We can also call them <b id="spePara">exceptions</b>.By default, thrown exceptions interrupt program execution and cause the appropriate 
+            information to appear on the console (we observed this in our example with the <b id="spePara">multiply</b> function). Let's generate the erroneous situation again:
+            <pre>
+                <code>
+                    console.log('abc'); // -> abc
+                    conole.log('def'); // -> Uncaught ReferenceError: conole is not defined
+                    console.log('ghi');
+
+                </code>
+            </pre>
+            <p>
+                The typo in the word console is a semantic error, in JavaScript called a <b id="spePara">ReferenceError</b>. JavaScript does not know a word like conole. As you can see, the program will stop working 
+                only at the second line, and it will still be able to execute the first line correctly. It is possible to prevent the program from stopping in such a situation. 
+                This is called exception handling (or more generally, error handling). 
+                To handle exceptions generated in JavaScript (as in many other languages) we use the <b id="spePara">try...catch</b> statement.
+            </p>
+        </p>
     </p>
 </body>
 </html>
