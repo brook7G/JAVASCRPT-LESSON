@@ -24,7 +24,43 @@
         Unfortunately, bugs in the code causing errors are an integral part of programming.
         <br><br>
         This fact is best expressed by the words of one of the founders of modern computer science, 
-        Edsger W. Dijkstra:  "<b id="">If debugging is the process of removing software bugs, then programming must be the process of putting them in</b>".
+        Edsger W. Dijkstra:  "<b id="spePara">If debugging is the process of removing software bugs, then programming must be the process of putting them in</b>".
+        <br><br>
+        <b id="noticed">Natural Languages and Communication Errors</b>
+        <br><br>
+        Programming languages are not by chance called languages. Just like natural languages, languages we use to communicate with other people, 
+        programming languages are used to precisely formulate unambiguously interpretable sentences (instructions). And just like natural languages, 
+        they have their grammar and vocabulary.
+        <br><br>
+        Grammar, or formally, the syntax of a programming language, is a set of rules defining the structure of the instructions (that is, the sentences of natural language). 
+        These rules are usually very precise and specify, for example, the order in which we write certain keywords or operators.
+        <br><br>
+        Each language also has its own limited vocabulary, which is a list of words that can be used 
+        to build instructions (that is, again, the sentences of a natural language). This picture is quite simplified, 
+        but it should allow us to understand what errors can occur when using the language. To begin, 
+        we will try to present the difference between various categories of errors using natural language, in this case, written English.
+        <br><br>
+        <h2 id="spePara">Natural languages and communication errors</h2>
+        <p>
+            Imagine that you are organizing a party by the lake for your friends. As the organizer, you explain to everyone how to get there, but as always in such situations, 
+            someone gets lost. They’re almost there, but then they send a text message asking for additional tips. You send an answer, in which you tell them to turn right on 
+            the first path after leaving the forest, and then drive for another 500 meters. Since you are still on your way, you ask them to wait on the spot. 
+            The correct message could look like this: <br>
+            <b id="noticed" style="font-style: italic;">After leaving the forest, turn right into the first path, and drive 500m. Wait on the spot.</b>
+            <br><br>
+            This is a sentence that we can treat as an instruction, unambiguously describing a certain procedure. 
+            What would happen if we rushed when writing this information? Let's start with the missing punctuation marks: <br>
+            <b id="noticed" style="font-style: italic;">after leaving the forest turn right into the first path and drive 500m wait on the spot</b>
+            <br><br>
+            This is an example of a <b id="noticed">syntax error</b> (or more precisely, errors). In English, a declarative sentence should end with a period. 
+            Probably the person who receives this message will easily guess what it is about, but formally it will be incorrect and ambiguous. 
+            The interpreter (e.g. the JavaScript engine) or compiler cannot guess the meaning of what we have written. If such an error occurs, 
+            it will require us to correct it. Such errors are usually very easy to detect automatically, and always need to be corrected. 
+            They violate the language syntax rules. The program will not run if it contains a syntax error.
+            <br><br>
+            Let's restore the punctuation marks, but change one of the words, replacing “path” with the misspelled “pth”.
+            <br><br>
+        </p>
     </p>
     
 </body>
