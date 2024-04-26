@@ -40,4 +40,10 @@ try {
 } catch (error) {  
     console.log(error.message); // -> conole is not defined 
 }
+//
+//
+//
+console.log("");
+console.log("ERROR WITHOUT EXCEPTIONS ");
+//
 
