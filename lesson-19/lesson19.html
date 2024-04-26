@@ -60,6 +60,34 @@
             <br><br>
             Let's restore the punctuation marks, but change one of the words, replacing “path” with the misspelled “pth”.
             <br><br>
+            <b id="noticed" style="font-style: italic;">After leaving the forest, turn right into the first <b style="color: red;">path</b>, and drive 500m. Wait on the spot.</b>
+            <br><br>
+            Again, the recipient will probably guess what it is about, but the interpreter cannot afford to guess what the word “pth” may stand for, 
+            because it does not know the meaning of such a word. Such an error is also easy to detect, because the word “pth” is not in the vocabulary of our language. 
+            This is a <b id="noticed">semantic error</b>. In compiled programming languages, this type of error will not allow the compiling and running of the program. 
+            In JavaScript, the interpreter will start the program and stop its execution after reaching such an instruction. 
+            This specific type of semantic error in JavaScript is called a <b id="noticed">reference error</b>.
+            <br><br>
+            What happens if we replace a word by a typo with one that exists in our dictionary?
+            <br><br>
+            <b id="noticed" style="font-style: italic;">After leaving the forest, turn right into the <b style="color: red;">fist</b> path, and drive 500m. Wait on the spot.</b>
+            <br><br>
+            This time we’ve lost the letter “r” in the word “first” and got the word “fist”. If the sentence is analyzed by a person, 
+            they will feel that something is wrong and start looking for an error – the word “fist” absolutely does not match the sentence, and they will probably guess what to replace it with. 
+            This type of error will no longer be so easy to detect for an interpreter. The word is in the vocabulary, and the analysis has to be done in a broader context. It is also a semantic error.
+            <br><br>
+            The last category is logical errors. They are by far the hardest to find, because from a formal point of view, everything will look correct. We should tell our friend to turn right, 
+            but busy with something else we rush to write ... left.
+            <br><br>
+            <b id="noticed" style="font-style: italic;">After leaving the forest, turn <b style="color: red;">left</b> into the first path, and drive 500m. Wait on the spot.</b>
+            <br><br>
+            Formally, everything looks correct: syntax, vocabulary, context. The information is consistent and unambiguous. And obviously incorrect. 
+            The error will not be detected until someone tries to follow this instruction and disappears somewhere in the wilderness.
+            <br><br>
+            The last two errors may look quite similar at first glance, but they describe two completely different situations. 
+            A logical error makes it possible to execute the instruction, but it will give the wrong result. An instruction with a semantic error will make no sense, 
+            so most likely it will not be possible to execute it at all in this form.
+             
         </p>
     </p>
     
