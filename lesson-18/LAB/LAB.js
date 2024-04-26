@@ -1,5 +1,5 @@
 console.log("LAB-1:");
-//
+// //
 // Function to show a specific contact
 function showContact(contacts, index) {
     if (!Array.isArray(contacts)) {
@@ -65,3 +65,159 @@ console.log("");
 console.log("LAB-1:");
 //
 //
+
+
+//
+// function sortContacts(contacts, criterion) {
+//     if (criterion === 'name') {
+//         contacts.sort((a, b) => a.name.localeCompare(b.name));
+//     } else if (criterion === 'phone') {
+//         contacts.sort((a, b) => a.phone.localeCompare(b.phone));
+//     } else if (criterion === 'email') {
+//         contacts.sort((a, b) => a.email.localeCompare(b.email));
+//     } else {
+//         console.log("Invalid sorting criterion.");
+//     }
+// }
+// //
+// //
+// function selectSortAction(contacts) {
+//     console.log("Select a sort action:");
+//     console.log("1. Sort by name");
+//     console.log("2. Sort by phone");
+//     console.log("3. Sort by email");
+//     const choice = prompt("Enter your choice (1-3): ");
+//     let sortCriterion;
+//     if (choice === '1') {
+//         sortCriterion = 'name';
+//     } else if (choice === '2') {
+//         sortCriterion = 'phone';
+//     } else if (choice === '3') {
+//         sortCriterion = 'email';
+//     } else {
+//         console.log("Invalid choice.");
+//         return;
+//     }
+//     sortContacts(contacts, sortCriterion);
+//     console.log("Contacts sorted by", sortCriterion);
+// }
+// //
+// //
+// const contacts = [
+//     {
+//         name: "Maxwell Wright",
+//         phone: "(0191) 719 6495",
+//         email: "Curabitur.egestas.nunc@nonummyac.co.uk"
+//     },
+//     {
+//         name: "Raja Villarreal",
+//         phone: "0866 398 2895",
+//         email: "posuere.vulputate@sed.com"
+//     },
+//     {
+//         name: "Helen Richards",
+//         phone: "0800 1111",
+//         email: "libero@convallis.edu"
+//     }
+// ];
+
+// function helloWorld() {
+//     console.log('Hello, world!');
+// }
+
+// function sortContacts(contacts, criterion) {
+//     if (criterion === 'name') {
+//         contacts.sort((a, b) => a.name.localeCompare(b.name));
+//     } else if (criterion === 'phone') {
+//         contacts.sort((a, b) => a.phone.localeCompare(b.phone));
+//     } else if (criterion === 'email') {
+//         contacts.sort((a, b) => a.email.localeCompare(b.email));
+//     } else {
+//         console.log("Invalid sorting criterion.");
+//     }
+// }
+
+// function selectSortAction(contacts) {
+//     console.log("Select a sort action:");
+//     console.log("1. Sort by name");
+//     console.log("2. Sort by phone");
+//     console.log("3. Sort by email");
+//     const choice = prompt("Enter your choice (1-3): ");
+//     let sortCriterion;
+//     if (choice === '1') {
+//         sortCriterion = 'name';
+//     } else if (choice === '2') {
+//         sortCriterion = 'phone';
+//     } else if (choice === '3') {
+//         sortCriterion = 'email';
+//     } else {
+//         console.log("Invalid choice.");
+//         return;
+//     }
+//     sortContacts(contacts, sortCriterion);
+//     console.log("Contacts sorted by", sortCriterion);
+// }
+
+// helloWorld();
+// selectSortAction(contacts);
+
+
+
+
+const contacts = [
+    {
+        name: "Maxwell Wright",
+        phone: "(0191) 719 6495",
+        email: "Curabitur.egestas.nunc@nonummyac.co.uk"
+    },
+    {
+        name: "Raja Villarreal",
+        phone: "0866 398 2895",
+        email: "posuere.vulputate@sed.com"
+    },
+    {
+        name: "Helen Richards",
+        phone: "0800 1111",
+        email: "libero@convallis.edu"
+    }
+];
+
+function helloWorld() {
+    console.log('Hello, world!');
+}
+
+function sortContacts(contacts, criterion) {
+    if (criterion === 'name') {
+        contacts.sort((a, b) => a.name.localeCompare(b.name));
+    } else if (criterion === 'phone') {
+        contacts.sort((a, b) => a.phone.localeCompare(b.phone));
+    } else if (criterion === 'email') {
+        contacts.sort((a, b) => a.email.localeCompare(b.email));
+    } else {
+        console.log("Invalid sorting criterion.");
+    }
+}
+
+function selectSortAction(contacts) {
+    console.log("Select a sort action:");
+    console.log("1. Sort by name");
+    console.log("2. Sort by phone");
+    console.log("3. Sort by email");
+    const choice = prompt("Enter your choice (1-3): ");
+    let sortCriterion;
+    if (choice === '1') {
+        sortCriterion = 'name';
+    } else if (choice === '2') {
+        sortCriterion = 'phone';
+    } else if (choice === '3') {
+        sortCriterion = 'email';
+    } else {
+        console.log("Invalid choice.");
+        return;
+    }
+    sortContacts(contacts, sortCriterion);
+    console.log("Contacts sorted by", sortCriterion);
+}
+
+helloWorld();
+selectSortAction(contacts);
