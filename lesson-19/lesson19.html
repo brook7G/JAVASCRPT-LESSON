@@ -166,6 +166,21 @@
                 only at the second line, and it will still be able to execute the first line correctly. It is possible to prevent the program from stopping in such a situation. 
                 This is called exception handling (or more generally, error handling). 
                 To handle exceptions generated in JavaScript (as in many other languages) we use the <b id="spePara">try...catch</b> statement.
+                <pre>
+                    <code>
+                        try {
+                            console.log('abc'); // -> abc
+                            conole.log('abc');
+                        } catch (error) {  
+                            console.log(error.message); // -> conole is not defined 
+                        }
+                        
+                    </code>
+                </pre>
+                <p>
+                    If an exception is thrown in the code block after the try keyword, the program does not interrupt completely, but jumps to the part of the code after the catch keyword, 
+                    and continues from there. We'll take a closer look at this construction shortly.
+                </p>
             </p>
         </p>
     </p>
