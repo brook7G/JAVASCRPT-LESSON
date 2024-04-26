@@ -9,7 +9,7 @@
     <img id="norImg" src="/JavaScript-logo.png" alt="">
 </head>
 <body>
-    <h1 id="speH1">ERRORS AND EXCEPTIONS</h1>
+    <h1 id="speH1"><span id="spePara">ERROR</span> AND <span id="spePara">EXCEPTIONS</span></h1>
     <p>
         It is really important to brace yourself for this simple truth:
         <br><br>
@@ -86,10 +86,33 @@
             <br><br>
             The last two errors may look quite similar at first glance, but they describe two completely different situations. 
             A logical error makes it possible to execute the instruction, but it will give the wrong result. An instruction with a semantic error will make no sense, 
-            so most likely it will not be possible to execute it at all in this form.
-             
+            so most likely it will not be possible to execute it at all in this form. 
         </p>
     </p>
-    
+    <h2 id="speH1"><span id="spePara">ERRORS</span> AND <span id="spePara">EXCEPTIONS</span> in Javascript</h2>
+    <p>
+        Let's try to generate syntax, semantic, and logical errors in JavaScript, for tests in a controlled way. Let's say we want to write a simple arrow function called multiply, 
+        which will multiply the two provided arguments:
+        <pre>
+            <code>
+                let multiply = (a b) => a + b; // -> Uncaught SyntaxError: Unexpected identifier
+                let result = multiply(10, 20);
+                console.log(result);
+
+            </code>
+        </pre>
+        <p>
+            In the example, there is a typical syntax error: we’ve forgotten about the comma between the parameters of the multiply function. 
+            The error is detected by the JavaScript engine, which does not allow us to execute the program. We correct it, but we also make another error:
+            <pre>
+                <code>
+                    let multipl = (a, b) => a + b;
+                    let result = multiply(10, 20); // -> Uncaught ReferenceError: multiply is not defined
+                    console.log(result);
+
+                </code>
+            </pre>
+        </p>
+    </p>
 </body>
 </html>
