@@ -50,6 +50,45 @@
                     let a = b; // -> Uncaught ReferenceError: b is not defined
                 </code>
             </pre>
+            <p>
+                The attempt to declare variable a is unsuccessful because at the same time, we want to initialize it with the value of variable b. Variable b has not been declared anywhere before, 
+                so the JavaScript engine does not know this name.
+                <pre>
+                    <code>
+                        fun(); // -> Uncaught ReferenceError: fun is not defined
+                    </code>
+                </pre>
+            </p>
+            <p>
+                This time, we’ve tried to call the function fun. If we haven’t declared it before, and there is no function with this name among the standard JavaScript functions, the call ends in an error.
+            </p>
+        </p>
+
+        <h2 id="speH1"><span id="spePara">TypeError</span></h2>
+        <p>
+            This type of error occurs when a certain value is not of the expected type (i.e. you try to perform an operation on it that is not acceptable). Typical examples are changing the constant value 
+            or checking the length of a variable that is not a string. This error is particularly important when working with objects that are outside the scope of this course 
+            (we will talk about them in the next part of the course). This is a typical <b id="spePara">run-time error</b>, so the appropriate exception will be thrown while the program is running, 
+            after reaching the problematic instruction.
+            <pre>
+                <code>
+                    const someConstValue = 5;
+                    someConstValue = 7; // -> Uncaught TypeError: Assignment to constant variable.
+                </code>
+            </pre>
+            <p>
+                Trying to store the new value to the constant someConstValue has failed for obvious reasons, resulting in a TypeError.
+                <pre>
+                    <code>
+                        let someNumber = 10;
+                        someNumber.length(); // -> Uncaught TypeError: someNumber.length is not a function
+                    </code>
+                </pre>
+            </p>
+            <p>
+                This time, we’ve tried to treat the contents of the variable someNumber as a string, and check its length. 
+                The JavaScript engine notices that the variable stores a number, and such an operation is not allowed.
+            </p>
         </p>
     </p>
     
