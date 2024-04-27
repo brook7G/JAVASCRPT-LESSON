@@ -29,17 +29,17 @@ console.log(result); // -> 200
 
 console.log("Next.....");
 //
-console.log("abc"); // -> abc
-conole.log("def"); // -> Uncaught ReferenceError: conole is not defined
-console.log("ghi");
+// console.log("abc"); // -> abc
+// conole.log("def"); // -> Uncaught ReferenceError: conole is not defined
+// console.log("ghi");
 //
 //
-try {
-  console.log("abc"); // -> abc
-  conole.log("abc");
-} catch (error) {
-  console.log(error.message); // -> conole is not defined
-}
+// try {
+//   console.log("abc"); // -> abc
+//   conole.log("abc");
+// } catch (error) {
+//   console.log(error.message); // -> conole is not defined
+// }
 //
 //
 //
@@ -60,3 +60,21 @@ console.log("");
 console.log("Next ....");
 //
 console.log(Math.pow("abc", "def")); // -> NaN
+//
+//
+console.log("");    
+console.log("LIMITED CONFIDENCE");
+//
+//
+let sX = prompt("Enter the first number");
+let sY = prompt("Enter the second number");
+let x = Number(sX);
+let y = Number(sY);
+if (Number.isFinite(x) && Number.isFinite(y) && y !== 0) {
+    console.log(x / y);
+} else {
+    console.log("incorrect arguments");
+}
+//
+console.log("");
+console.log("this topics will be continued in lesson-20");
