@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson-20 with Biruk</title>
+    <link rel="stylesheet" href="/lesson-16/lesson16.css">
+    <script src="lesson20.js"></script>
+    <img id="norImg" src="/JavaScript-logo.png" alt="">
+</head>
+<body>
+    <h1 id="speH1"><span id="spePara">ERRORS</span> AND <span id="spePara">EXCEPTIONS</span> Part-2</h1>
+    <h2 id="spePara">A few more details about JavaScript errors and exceptions</h2>
+    <p>
+        Let's try to organize the information about errors and exceptions, and above all, their handling. This time, let's look at the problem from a strictly functional point of view. 
+        We will start with an overview of the most important types of errors detected by JavaScript, discuss in more detail the try... catch construction, and show that we can also 
+        directly throw exceptions.
+
+    </p>
+    <h2 id="spePara">Basic types of errors</h2>
+    <p>
+        There are a few underlying types of errors that JavaScript produces. Most often, especially at the beginning, you will encounter syntax and reference errors. 
+        We will also discuss type and range errors.
+        <h2 id="speH1"><span id="spePara">SyntaxError</span></h2>
+        <p>
+            As we previously said, a <b id="spePara">SyntaxError</b> appears when a code is ill-formed, when there are typos in the keywords, unmatching parentheses or brackets, etc. 
+            The code can’t even be executed, as JavaScript isn’t able to understand it. The corresponding error is therefore thrown before the program is started.
+            <pre>
+                <code>
+                    "use strict";
+                    iff (true) { //-> Uncaught SyntaxError: Unexpected token '{'
+                        console.log("true");
+                    }
+                </code>
+            </pre>
+            <p>
+                In the example above, we’ve made a typo in the keyword <b id="spePara">if</b>, adding an additional letter f. 
+                The JavaScript engine treats the unknown name as a function call (it finds the round brackets after iff) and 
+                is surprised by the presence of a curly bracket.
+            </p>
+        </p>
+
+        <h2 id="speH1"><span id="spePara">ReferenceError</span></h2>
+        <p>
+            We’ve seen this one already. It occurs when we try to access a function or a variable that doesn't exist. The JavaScript engine does not know the meaning of the given name, 
+            so it is an error that we will classify as a semantic error. The corresponding exception is thrown at the execution time of the program, when the wrong instruction is reached 
+            (i.e. in JavaScript, semantic errors are run-time errors).
+            <pre>
+                <code>
+                    let a = b; // -> Uncaught ReferenceError: b is not defined
+                </code>
+            </pre>
+        </p>
+    </p>
+    
+</body>
+</html>
