@@ -57,6 +57,11 @@ try {
     console.log("Caught " + error); // -> Caught ReferenceError: b is not defined
 }
 console.log("We handled the exception!"); // -> we handled the exception!
+//
+//
+//
+console.log("");
+console.log("CONDITIONAL EXCEPTION HANDLING");
 
 
 
