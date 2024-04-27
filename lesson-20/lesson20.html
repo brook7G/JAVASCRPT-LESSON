@@ -86,8 +86,68 @@
                 </pre>
             </p>
             <p>
-                This time, we’ve tried to treat the contents of the variable someNumber as a string, and check its length. 
+                This time, we’ve tried to treat the contents of the variable <b id="spePara">someNumber</b> as a string, and check its length. 
                 The JavaScript engine notices that the variable stores a number, and such an operation is not allowed.
+            </p>
+        </p>
+
+        <h2 id="speH1"><span id="spePara">RangeError</span></h2>
+        <p>
+            This type of error is generated when you pass a value to a function that is outside its acceptable range.
+            <br><br>
+            Again, it is a <b id="noticed">run-time error</b>, and the exception is thrown while the program is running, after reaching the wrong instruction. In fact, this exception is more useful when writing your own 
+            functions and handling errors. You can then throw an exception in certain situations.
+            <pre>
+                <code>
+                    let testArray1 = Array(10);
+                    console.log(testArray1.length); // -> 10
+                    let testArray2 = Array(-1); // -> Uncaught RangeError: Invalid array length
+                    console.log(testArray2.length);
+
+                </code>
+            </pre>
+            <p>
+                In the example, we’ve attempted to create two arrays, using the constructor (i.e. de facto function) <b id="spePara">Array</b>. If we pass one argument to this function, it will be treated as the size of the newly created array. 
+                The first array (<b id="spePara">testArray1</b>) is created without any problem. As you can guess, creating a <b id="spePara">testArray2</b> array with a negative length fails.
+            </p>
+        </p>
+
+        <h2 id="speH1"><span id="spePara">OTHER ERRORS</span></h2>
+        <p>
+            There are a few more error types: <b id="spePara">EvalError</b>, <b id="spePara">InternalError</b>, and <b id="spePara">URIError</b>, but they’re rather rare, and we’ll come back to them if needed.
+        </p>
+
+        <h2 id="speH1">THE <span id="spePara">try ... catch</span> STATEMENTS</h2>
+        <p>
+            As we said before, exceptions interrupt the program execution. The <b id="spePara">try...catch</b> construction, which we also mentioned before, allows you to change this default action. The program will interrupt 
+            what it is currently doing, but it will not terminate automatically. The syntax for <b id="spePara">try...catch</b> looks like this:
+            <pre>
+                <code>
+                    try {
+                        // code to try
+                    } catch (error) {
+                        // code to run in case of an error, which throw an exception
+                    }                    
+                </code>
+            </pre>
+            <p>
+                The basic premise is simple: if we have a piece of code that can possibly go wrong, we can enclose it in the <b id="spePara">try</b> clause. JavaScript will try to execute this code, and if any error occurs and an exception is thrown, 
+                the code inside the <b id="spePara">catch</b> block will be executed; if the <b id="spePara">try</b> code is executed without errors, then the <b id="spePara">catch</b> block is ignored. After executing the commands from the <b id="spePara">catch</b> block, 
+                the program will continue to run from the first instruction outside the <b id="spePara">try...catch</b> statement.
+                <br><br>
+                Note that the <b id="spePara">catch</b> keyword is followed by parentheses containing the parameter error. This is a variable name that will hold information about the error that was caught, and it can have any valid name, 
+                but the names <b id="spePara">error</b>, <b id="spePara">err</b>, or just <b id="spePara">e</b>, are commonly used. In the case of an exception thrown by JavaScript, the error object will contain information about 
+                the error type, and is converted to a string to be logged or processed in any way the developer needs.
+                <pre>
+                    <code>
+                        try {
+                            let a = b;
+                        } catch (error) {
+                            console.log("Caught " + error); // -> Caught ReferenceError: b is not defined
+                        }
+                        console.log("We handled the exception!"); // -> we handled the exception!                        
+                    </code>
+                </pre>
             </p>
         </p>
     </p>
