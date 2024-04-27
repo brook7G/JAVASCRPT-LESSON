@@ -138,6 +138,8 @@
                 Note that the <b id="spePara">catch</b> keyword is followed by parentheses containing the parameter error. This is a variable name that will hold information about the error that was caught, and it can have any valid name, 
                 but the names <b id="spePara">error</b>, <b id="spePara">err</b>, or just <b id="spePara">e</b>, are commonly used. In the case of an exception thrown by JavaScript, the error object will contain information about 
                 the error type, and is converted to a string to be logged or processed in any way the developer needs.
+                <br><br>
+                So let's modify the code that we saw earlier, and which we know for sure throws errors:
                 <pre>
                     <code>
                         try {
@@ -149,7 +151,17 @@
                     </code>
                 </pre>
             </p>
+            <p>
+                The statement that produces <b id="spePara">ReferenceError</b> is now inside the <b id="spePara">try</b> block. The result is that our code is no longer stopped by errors. And we can react to it in the catch block. In this example, we log a message about the error. 
+                The first error that is thrown in the <b id="spePara">try</b> block will always be caught, execution will jump to the <b id="spePara">catch</b> block, and no further errors in the <b id="spePara">try</b> block will be caught. What's important is that after leaving the <b id="spePara">catch</b> block, 
+                the program will continue to work normally (in our case it will write “We handled the exception!” on the console).
+                <br><br>
+                Note that <b id="spePara">try...catch</b> will not work on a <b id="spePara">SyntaxError</b>. This should not come as a surprise to you. As we have said several times before, if the JavaScript engine detects a syntax error, it will not allow you to run the program. 
+                If the program has not been run, it is rather hard to imagine that it could react somehow to what has happened.
+            </p>
         </p>
+
+        <h2 id="speH1"><span id="spePara">TASK</span></h2>
     </p>
     
 </body>
