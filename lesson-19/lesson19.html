@@ -189,6 +189,9 @@
         In JavaScript, not all erroneous situations throw exceptions. Many of them are handled in a slightly different way. The best example are <b>arithmetic errors</b>.
         <pre>
             <code>
+                console.log(100 / 0); // -> Infinity
+                console.log(100 * "2"); // -> 200
+                console.log(100 * "abc"); // -> NaN
 
             </code>
         </pre>
@@ -201,6 +204,7 @@
             Let's look at one more example:
             <pre>
                 <code>
+                    console.log(Math.pow("abc", "def")); // -> NaN
 
                 </code>
             </pre>
@@ -216,6 +220,41 @@
             provided values really are numbers (remember the <b id="spePara">typeof</b> operator?).
         </p>
     </p>
+    <h2 id="speH1"><span id="spePara">LIMITED CONFIDENCE</span></h2>
+    <p>
+        Programs are not run in a vacuum. Usually during their execution, there are interactions with users (e.g. entering data needed to calculate certain values) or 
+        other programs or systems (e.g. downloading data from the server). The behavior of both users and other systems should be treated with caution, 
+        and we cannot assume that the user will provide data in the format we require, or that the data server will always work. Such unexpected situations will also be sources of errors 
+        in our program. And although they are not directly dependent on us, it is our responsibility to anticipate potentially dangerous situations. <br><br> 
+        If, for example, we write a calculator to which the user enters their values, then we should probably check if the divisor is not a zero before we do the division. 
+        Theoretically, the user should know that we do not divide by zero, but we are responsible for the stability of the program. Do not believe the user or other systems. 
+        Predict what may go wrong, and check the data received before you use it in your program.
+        <br><br>
+        Let's write a piece of code that will ask you to enter two numbers. We then want to display the result of dividing the first number by the second:
+        <pre>
+            <code>
+                let sX = prompt("Enter the first number");
+                let sY = prompt("Enter the second number");
+                let x = Number(sX);
+                let y = Number(sY);
+                if (Number.isFinite(x) && Number.isFinite(y) && y !== 0) {
+                    console.log(x / y);
+                } else {
+                    console.log("incorrect arguments");
+                }
+            </code>
+        </pre>
+        <p>
+            You probably remember the <b id="spePara">prompt</b> function, which displays a dialog box into which we can enter a value. <b id="spePara">Prompt</b> will return the entered value, 
+            always as a string (even if the user enters a number, e.g. they enter 1024, but we get the string "1024"). We are explicitly converting such a string into a number 
+            using the <b id="spePara">Number</b> constructor (this will be discussed in detail in the next course). Since we disbelieve the user, we predict that instead of a number, 
+            they could have given a string such as "abcd", or a second value equal to "0". Therefore, before we perform the division, we check whether we can accept the converted values. 
+            We use the <b id="spePara">Number.isFinite</b> method for this purpose. It returns <b id="spePara">true</b> if the argument is a correct number, and <b id="spePara">false</b> if it is,
+            for example <b id="spePara">Infinity</b> or <b id="spePara">NaN</b>. Additionally, we check if the divisor is not zero.
+        </p>
+    </p>
+    <h2 id="speH1"><span id="spePara">ERRORS</span> AND <span id="spePara">EXCEPTIONS</span> IN JS Part-2</h2>
+    <h3 id="speH1">will be continued in <span id="spePara">Lesson-20</span></h3>
 
 
 </body>
