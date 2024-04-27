@@ -162,6 +162,30 @@
         </p>
 
         <h2 id="speH1"><span id="spePara">TASK</span></h2>
+        <p id="front">
+            Rewrite all examples from this chapter in such a way, that the errors will be caught by a <b id="spePara">try...catch</b> statement.
+        </p>
+    </p>
+
+    <h2 id="speH1"><span id="spePara">CONDITIONAL EXCEPTION HANDLING</span></h2>
+    <p>
+        Sometimes we want to be able to react differently to specific types of errors inside the <b id="spePara">catch</b> block. We can do this by using the operator <b id="spePara">instanceof</b>. We’ll discuss the operator itself further down the road, because it’s a rather complicated topic. For now, it’s enough to know how we can use it when handling errors.
+        <br><br>
+        The syntax for the <b id="spePara">instanceof</b> operator looks like this:
+        <pre>
+            <code>
+                variable instanceof type
+            </code>
+        </pre>
+        <p>
+            If, for example, we receive an error in the <b id="spePara">catch</b> block (passed as an error argument), we can check whether it is of the <b id="spePara">ReferenceError</b> type as follows:
+            <pre>
+                <code>
+                    let result = error instanceof ReferenceError;
+
+                </code>
+            </pre>
+        </p>
     </p>
     
 </body>
