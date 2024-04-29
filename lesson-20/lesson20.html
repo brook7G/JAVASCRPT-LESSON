@@ -233,7 +233,55 @@
     <h2 id="speH1">THE <span id="spePara">finally</span> STATEMENTS</h2>
     <p>
         The last optional block of the <b id="spePara">try</b> statement is the <b id="spePara">finally</b> block. It can be used with or without the <b id="spePara">catch</b> block, 
-        and it’s always executed after <b id="spePara">try</b> and <b id="spePara">catch</b> blocks, regardless of whether any errors are thrown. The syntax for <b>try...finally</b> looks like this:
+        and it’s always executed after <b id="spePara">try</b> and <b id="spePara">catch</b> blocks, regardless of whether any errors are thrown. 
+        The syntax for <b id="spePara">try...finally</b> looks like this:
+        <pre>
+            <code>
+                try {
+                    // code to try
+                } catch (error) {
+                    // code to run in case of an error, which throw an exception
+                } finally {
+                    // code to run, regardless of the result of try...catch
+                }
+            </code>
+        </pre>
+        <p>
+            Let's do a little experiment. We will make a correct substitution to the variable a inside the <b id="spePara">try</b> block.
+        </p>
+        <pre>
+            <code>
+                let a3 = 10;
+                try {
+                a3 = 5;
+                } finally {
+                console.log(a3); //-----> 5
+                }
+                console.log(a3); //----->5
+            </code>
+        </pre>
+        <p>
+            The new value has been stored, without calling an error, in variable a. Then the content of the <b id="spePara">finally</b> block is executed, i.e. the new value of our variable is 
+            displayed on the console. The program continues after leaving the <b id="spePara">finally</b> block, displaying our variable again. Nothing surprising, everything simple and predictable.
+            <br><br>
+            Let's break down our example by trying to refer to a non-existent variable, b. As you can guess, this will generate a ReferenceError error:
+            <pre>
+                <code>
+                    let a = 10;
+                    try {
+                        a = b;  // ReferenceError
+                    } finally {
+                        console.log(a); // -> 10
+                    }
+                    console.log(a);
+
+                </code>
+            </pre>
+            <p>
+                What’s happening this time? The exception (<b id="spePara">ReferenceError</b>) interrupts the program in the <b id="spePara">try</b> block. Because the JavaScript engine cannot find the catch block, 
+                it immediately jumps to the finally block, executing its contents and ending its work.
+            </p>
+        </p>
     </p>
     
 </body>
