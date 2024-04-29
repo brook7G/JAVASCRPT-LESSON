@@ -1,5 +1,5 @@
 "use strict";
-//before running the whole script please comment the other lines/Programs 
+//before running the whole script please comment the other lines/Programs
 console.log("ERRORS AND EXCEPTIONS : PART-2");
 //
 console.log("");
@@ -15,7 +15,7 @@ console.log("SyntaxError");
 console.log("");
 console.log("ReferenceError");
 //
-let a = b; // -> Uncaught ReferenceError: b is not defined 
+let a = b; // -> Uncaught ReferenceError: b is not defined
 //
 fun(); // -> Uncaught ReferenceError: fun is not defined
 
@@ -54,9 +54,9 @@ console.log("THE try ... catch STATEMENT");
 //
 //
 try {
-    let a = b;
+  let a = b;
 } catch (error) {
-    console.log("Caught " + error); // -> Caught ReferenceError: b is not defined
+  console.log("Caught " + error); // -> Caught ReferenceError: b is not defined
 }
 console.log("We handled the exception!"); // -> we handled the exception!
 //
@@ -70,21 +70,45 @@ let result = error instanceof ReferenceError;
 console.log("");
 let a2 = -2;
 try {
-    a2 = b;
+  a2 = b;
 } catch (error) {
-    if (error instanceof ReferenceError) {
-        console.log("Reference error, reset a to -2"); // -> Reference error, reset a to -2
-        a2 = -2;
-    } else {
-        console.log("Other error - " + error);
-    }
+  if (error instanceof ReferenceError) {
+    console.log("Reference error, reset a to -2"); // -> Reference error, reset a to -2
+    a2 = -2;
+  } else {
+    console.log("Other error - " + error);
+  }
 }
 console.log(a2); // -> -2
-
-
-
-
-
-
-
-
+//
+//
+console.log("");
+console.log("THE ..finally.. STATEMENT");
+//
+//THE SYNTAX
+// try {
+//     // code to try
+// } finally {
+//     // this will be always executed
+// }
+//
+let a3 = 10;
+try {
+  a3 = 5;
+} finally {
+  console.log(a3); //---> 5
+}
+console.log(a3); //---->5
+//
+//
+console.log("");
+//
+let a4 = 10;
+try {
+    a4 = b;  // ReferenceError
+} finally {
+    console.log(a4); // -> 10
+}
+console.log(a4);
+//
+//
