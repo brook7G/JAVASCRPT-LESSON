@@ -5,10 +5,12 @@ console.log("ERRORS AND EXCEPTIONS : PART-2");
 console.log("");
 console.log("SyntaxError");
 //
-"use strict";
-iff (true) { //-> Uncaught SyntaxError: Unexpected token '{'
-    console.log("true");
-}
+//uncomment this / each section and test each example by itself
+// iff (true) { //-> Uncaught SyntaxError: Unexpected token '{'
+//     console.log("true");
+// }
+//
+//
 //
 console.log("");
 console.log("ReferenceError");
