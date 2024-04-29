@@ -112,3 +112,44 @@ try {
 console.log(a4);
 //
 //
+console.log("");
+//
+let a5 = 10;
+try {
+    a5 = b;  // ReferenceError
+} catch (error) {
+    console.log("An Error!"); // -> An Error!
+} finally {
+    console.log("Finally!"); // -> Finally!
+}
+console.log(a5); // -> 10
+//
+//
+console.log("");
+console.log("why should we use a ...finally... block?"); // -> Why should we use a finally block
+//
+//
+let a6 = 10;
+try {
+    a6 = b;  // ReferenceError
+} catch (error) {
+    console.log("An Error!");
+}
+console.log("Finally!");
+//
+//
+console.log("");
+//
+let a7 = 10;
+try {
+    a7 = b;  // First ReferenceError
+} catch (error) {
+    console.log(b7); // Second ReferenceError
+ 
+}
+console.log("Finally!");
+//
+//
+console.log("");
+//
+
