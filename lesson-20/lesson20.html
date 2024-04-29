@@ -280,6 +280,75 @@
             <p>
                 What’s happening this time? The exception (<b id="spePara">ReferenceError</b>) interrupts the program in the <b id="spePara">try</b> block. Because the JavaScript engine cannot find the catch block, 
                 it immediately jumps to the finally block, executing its contents and ending its work.
+                <br><br>
+                The <b id="spePara">finally</b> block can also be used together with the <b id="spePara">catch</b> block, as both of them are optional, but at least one of them is required by the <b id="spePara">try</b> statement, 
+                and if none of them is present, a <b id="spePara">SyntaxError</b> is thrown.
+                <pre>
+                    <code>
+                        let a = 10;
+                        try {
+                            a = b;  // ReferenceError
+                        } catch (error) {
+                            console.log("An Error!"); // -> An Error!
+                        } finally {
+                            console.log("Finally!"); // -> Finally!
+                        }
+                        console.log(a); // -> 10
+                    </code>
+                </pre>
+                <p>
+                    In this case, the exception causes a jump to the catch block, then to the finally block. The program then continues to work outside of the <b>try...catch</b>try...catch statement.
+                </p>
+            </p>
+        </p>
+    </p>
+
+    <h2 id="speH1">Why should we use a <span id="spePara">finally</span> block?</h2>
+    <p>
+        This is a good question, especially since we can achieve almost the same result just by writing the code right outside the <b id="spePara">try...catch</b> statement, like this:
+        <pre>
+            <code>
+                let a = 10;
+                try {
+                    a = b;  // ReferenceError
+                } catch (error) {
+                    console.log("An Error!");
+                }
+                console.log("Finally!");
+            </code>
+        </pre>
+        <p>
+            This code will have a similar result as the previous example: it will log <b id="spePara">An Error!</b> and then <b id="spePara">Finally!</b>. 
+            It’s true that in this simple example, both <b id="spePara">scripts</b> will behave the same, but there are slight differences, and the most important is that the finally block will be executed 
+            even when an error is thrown from the <b id="spePara">catch</b> block.
+            <pre>
+                <code>
+                    let a = 10;
+                    try {
+                        a = b;  // First ReferenceError
+                    } catch (error) {
+                        console.log(b); // Second ReferenceError
+                    
+                    }
+                    console.log("Finally!");
+                </code>
+            </pre>
+            <p>
+                Now the last <b id="spePara">console.log</b> call will never be executed, as another (this time uncaught) error is thrown in the <b id="spePara">catch</b> block. 
+                This won’t happen if we use the <b id="spePara">finally</b> block like this:
+                <pre>
+                    <code>
+                        let a = 10;
+                        try {
+                            a = b;  // First ReferenceError
+                        } catch (error) {
+                            console.log(b); // Second ReferenceError
+                        
+                        } finally {
+                            console.log("Finally!");
+                        }
+                    </code>
+                </pre>
             </p>
         </p>
     </p>
