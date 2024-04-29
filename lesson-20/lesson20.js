@@ -64,6 +64,23 @@ console.log("We handled the exception!"); // -> we handled the exception!
 //
 console.log("");
 console.log("CONDITIONAL EXCEPTION HANDLING");
+//
+let result = error instanceof ReferenceError;
+//
+console.log("");
+let a2 = -2;
+try {
+    a2 = b;
+} catch (error) {
+    if (error instanceof ReferenceError) {
+        console.log("Reference error, reset a to -2"); // -> Reference error, reset a to -2
+        a2 = -2;
+    } else {
+        console.log("Other error - " + error);
+    }
+}
+console.log(a2); // -> -2
+
 
 
 

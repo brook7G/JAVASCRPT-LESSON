@@ -107,19 +107,22 @@
                 </code>
             </pre>
             <p>
-                In the example, we’ve attempted to create two arrays, using the constructor (i.e. de facto function) <b id="spePara">Array</b>. If we pass one argument to this function, it will be treated as the size of the newly created array. 
+                In the example, we’ve attempted to create two arrays, using the constructor (i.e. de facto function) <b id="spePara">Array</b>. If we pass one argument to this function, 
+                it will be treated as the size of the newly created array. 
                 The first array (<b id="spePara">testArray1</b>) is created without any problem. As you can guess, creating a <b id="spePara">testArray2</b> array with a negative length fails.
             </p>
         </p>
 
         <h2 id="speH1"><span id="spePara">OTHER ERRORS</span></h2>
         <p>
-            There are a few more error types: <b id="spePara">EvalError</b>, <b id="spePara">InternalError</b>, and <b id="spePara">URIError</b>, but they’re rather rare, and we’ll come back to them if needed.
+            There are a few more error types: <b id="spePara">EvalError</b>, <b id="spePara">InternalError</b>, and <b id="spePara">URIError</b>, but they’re rather rare, and 
+            we’ll come back to them if needed.
         </p>
 
         <h2 id="speH1">THE <span id="spePara">try ... catch</span> STATEMENTS</h2>
         <p>
-            As we said before, exceptions interrupt the program execution. The <b id="spePara">try...catch</b> construction, which we also mentioned before, allows you to change this default action. The program will interrupt 
+            As we said before, exceptions interrupt the program execution. The <b id="spePara">try...catch</b> construction, which we also mentioned before, 
+            allows you to change this default action. The program will interrupt 
             what it is currently doing, but it will not terminate automatically. The syntax for <b id="spePara">try...catch</b> looks like this:
             <pre>
                 <code>
@@ -131,12 +134,16 @@
                 </code>
             </pre>
             <p>
-                The basic premise is simple: if we have a piece of code that can possibly go wrong, we can enclose it in the <b id="spePara">try</b> clause. JavaScript will try to execute this code, and if any error occurs and an exception is thrown, 
-                the code inside the <b id="spePara">catch</b> block will be executed; if the <b id="spePara">try</b> code is executed without errors, then the <b id="spePara">catch</b> block is ignored. After executing the commands from the <b id="spePara">catch</b> block, 
+                The basic premise is simple: if we have a piece of code that can possibly go wrong, we can enclose it in the <b id="spePara">try</b> clause. 
+                JavaScript will try to execute this code, and if any error occurs and an exception is thrown, 
+                the code inside the <b id="spePara">catch</b> block will be executed; if the <b id="spePara">try</b> code is executed without errors, 
+                then the <b id="spePara">catch</b> block is ignored. After executing the commands from the <b id="spePara">catch</b> block, 
                 the program will continue to run from the first instruction outside the <b id="spePara">try...catch</b> statement.
                 <br><br>
-                Note that the <b id="spePara">catch</b> keyword is followed by parentheses containing the parameter error. This is a variable name that will hold information about the error that was caught, and it can have any valid name, 
-                but the names <b id="spePara">error</b>, <b id="spePara">err</b>, or just <b id="spePara">e</b>, are commonly used. In the case of an exception thrown by JavaScript, the error object will contain information about 
+                Note that the <b id="spePara">catch</b> keyword is followed by parentheses containing the parameter error. This is a variable name that will hold information about the error 
+                that was caught, and it can have any valid name, 
+                but the names <b id="spePara">error</b>, <b id="spePara">err</b>, or just <b id="spePara">e</b>, are commonly used. In the case of an exception thrown by JavaScript, 
+                the error object will contain information about 
                 the error type, and is converted to a string to be logged or processed in any way the developer needs.
                 <br><br>
                 So let's modify the code that we saw earlier, and which we know for sure throws errors:
@@ -152,11 +159,14 @@
                 </pre>
             </p>
             <p>
-                The statement that produces <b id="spePara">ReferenceError</b> is now inside the <b id="spePara">try</b> block. The result is that our code is no longer stopped by errors. And we can react to it in the catch block. In this example, we log a message about the error. 
-                The first error that is thrown in the <b id="spePara">try</b> block will always be caught, execution will jump to the <b id="spePara">catch</b> block, and no further errors in the <b id="spePara">try</b> block will be caught. What's important is that after leaving the <b id="spePara">catch</b> block, 
+                The statement that produces <b id="spePara">ReferenceError</b> is now inside the <b id="spePara">try</b> block. The result is that our code is no longer stopped by errors. 
+                And we can react to it in the catch block. In this example, we log a message about the error. 
+                The first error that is thrown in the <b id="spePara">try</b> block will always be caught, execution will jump to the <b id="spePara">catch</b> block, 
+                and no further errors in the <b id="spePara">try</b> block will be caught. What's important is that after leaving the <b id="spePara">catch</b> block, 
                 the program will continue to work normally (in our case it will write “We handled the exception!” on the console).
                 <br><br>
-                Note that <b id="spePara">try...catch</b> will not work on a <b id="spePara">SyntaxError</b>. This should not come as a surprise to you. As we have said several times before, if the JavaScript engine detects a syntax error, it will not allow you to run the program. 
+                Note that <b id="spePara">try...catch</b> will not work on a <b id="spePara">SyntaxError</b>. This should not come as a surprise to you. As we have said several times before, 
+                if the JavaScript engine detects a syntax error, it will not allow you to run the program. 
                 If the program has not been run, it is rather hard to imagine that it could react somehow to what has happened.
             </p>
         </p>
@@ -169,7 +179,9 @@
 
     <h2 id="speH1"><span id="spePara">CONDITIONAL EXCEPTION HANDLING</span></h2>
     <p>
-        Sometimes we want to be able to react differently to specific types of errors inside the <b id="spePara">catch</b> block. We can do this by using the operator <b id="spePara">instanceof</b>. We’ll discuss the operator itself further down the road, because it’s a rather complicated topic. For now, it’s enough to know how we can use it when handling errors.
+        Sometimes we want to be able to react differently to specific types of errors inside the <b id="spePara">catch</b> block. We can do this by using the operator 
+        <b id="spePara">instanceof</b>. We’ll discuss the operator itself further down the road, because it’s a rather complicated topic. For now, it’s enough to know 
+        how we can use it when handling errors.
         <br><br>
         The syntax for the <b id="spePara">instanceof</b> operator looks like this:
         <pre>
@@ -178,19 +190,50 @@
             </code>
         </pre>
         <p>
-            If, for example, we receive an error in the <b id="spePara">catch</b> block (passed as an error argument), we can check whether it is of the <b id="spePara">ReferenceError</b> type as follows:
+            If, for example, we receive an error in the <b id="spePara">catch</b> block (passed as an error argument), we can check whether it is of the <b id="spePara">ReferenceError</b> 
+            type as follows:
             <pre>
-                <code>
+                <co>
                     let result = error instanceof ReferenceError;
 
                 </code>
             </pre>
             <p>
-                The operator <b id="spePara">instanceof</b> returns a boolean, so this expression will return <b id="spePara">true</b> if the error variable does indeed hold a type <b id="spePara">ReferenceError</b>, and false if it doesn’t. We can use if...else or switch statements to then execute different code in the case of different errors if needed.
+                The operator <b id="spePara">instanceof</b> returns a boolean, so this expression will return <b id="spePara">true</b> if the error variable does indeed hold a type 
+                <b id="spePara">ReferenceError</b>, and <b id="spePara">false</b> if it doesn’t. We can use <b id="spePara">if...else</b> or switch statements to then execute different 
+                code in the case of different errors if needed.
                 <br><br>
-                The operator instanceof returns a boolean, so this expression will return true if the error variable does indeed hold a type ReferenceError, and false if it doesn’t. We can use if...else or switch statements to then execute different code in the case of different errors if needed.
+                In this example, we can see how we can react in a specific way only to the selected type of error:
+                <pre>
+                    <code>
+                        let a2 = -2;
+                        try {
+                            a2 = b;
+                        } catch (error) {
+                            if (error instanceof ReferenceError) {
+                                console.log("Reference error, reset a to -2"); // -> Reference error, reset a to -2
+                                a2 = -2;
+                            } else {
+                                console.log("Other error - " + error);
+                            }
+                        }
+                        console.log(a2); // -> -2
+                    </code>
+                </pre> 
             </p>
         </p>
+        <p>
+            It’s important to know that any variable that gets declared using the <b id="spePara">let</b> keyword inside a <b id="spePara">try</b> block is not accessible 
+            in the <b id="spePara">catch</b> block (nor in the <b id="spePara">finally</b> block, 
+            which will be discussed in a moment). If you are not sure why this is the case, go back for a moment to the chapter on variable declarations and their scope of visibility 
+            (the block scope topic).
+        </p>
+    </p>
+
+    <h2 id="speH1">THE <span id="spePara">finally</span> STATEMENTS</h2>
+    <p>
+        The last optional block of the <b id="spePara">try</b> statement is the <b id="spePara">finally</b> block. It can be used with or without the <b id="spePara">catch</b> block, 
+        and it’s always executed after <b id="spePara">try</b> and <b id="spePara">catch</b> blocks, regardless of whether any errors are thrown. The syntax for <b>try...finally</b> looks like this:
     </p>
     
 </body>
