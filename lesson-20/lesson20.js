@@ -1,3 +1,4 @@
+
 "use strict";
 //before running the whole script please comment the other lines/Programs
 console.log("ERRORS AND EXCEPTIONS : PART-2");
@@ -150,7 +151,7 @@ try {
 console.log("Finally!");
 //
 //
-console.log("welx");
 console.log("");
+//
 //
 
