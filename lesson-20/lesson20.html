@@ -354,7 +354,27 @@
                 Now the <b id="spePara">console.log</b> call from the finally block will be executed, although this doesn't change the fact that program execution will be stopped 
                 at this second <b id="spePara">ReferenceError</b>, as it isn’t caught.
                 <br><br>
-                
+                <b id="spePara">Try...catch...finally</b> blocks can be nested, so we can use a whole <b id="spePara">try...catch</b> block inside another <b id="spePara">try...catch</b> block. 
+                This is useful when we expect multiple errors to occur and need to handle them all.
+                <pre>
+                    <code>
+                        let a9 = 10;
+                        try {
+                        a9 = b; // First ReferenceError
+                        } catch (error) {
+                        try {
+                            console.log(b); // Second ReferenceError
+                        } catch {
+                            console.log("Second catch!"); // -> Second catch!
+                        }
+                        } finally {
+                        console.log("Finally!"); // -> Finally!
+                        }
+                    </code>
+                </pre>
+                <p>
+                    In this example, we catch the exception inside the <b id="spePara">catch</b> block by placing the code inside another <b id="spePara">try...catch</b> statement.
+                </p>
             </p>
         </p>
     </p>
