@@ -397,6 +397,49 @@
                 console.log("end");
             </code>
         </pre>
+        <p>
+            An unsupported exception (if the number 100 can be called an exception) causes the program to stop. The second console.log instruction is never executed.
+            <br><br>
+            Let's close the throw instruction inside the <b id="spePara">try</b> block:
+            <pre>
+                <code>
+                    console.log("start"); // -> start
+                    try {
+                        throw 100;
+                    } catch (error) {
+                        console.log(error); // -> 100
+                    }
+                    console.log("end"); // -> end
+                </code>
+            </pre>
+            <p>
+                This time, our exception is caught and handled in the <b id="spePara">catch</b> block, and doesn’t interrupt further execution.
+            </p>
+        </p>
+        <p>
+            Let's try to write something a little more sensible.
+            <br><br>
+            We dream of a function that will allow us to count factorials (hopefully you still remember what a factorial is from your math lessons; 
+            if in doubt, take a quick look at Wikipedia for an example). We will write it in an iterative version, that is, using a loop. 
+            It will be neither the most elegant, nor the most optimal solution, but simple and legible.
+            <pre>
+                <code>
+                    function factorial(n) {
+                        let result = 1;
+                        for (; n > 1; n--) {
+                            result = result * n;
+                        }
+                        return result;
+                    }
+                     
+                    console.log(factorial(3)); // -> 6
+                    console.log(factorial(5)); // -> 120
+                    console.log(factorial(8)); // -> 40320
+                    console.log(factorial(20)); // -> 2432902008176640000
+                    console.log(factorial(1000)); // -> Infinity                    
+                </code>
+            </pre>
+        </p>
     </p>
     
 </body>
