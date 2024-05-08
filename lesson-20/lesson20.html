@@ -439,6 +439,40 @@
                     console.log(factorial(1000)); // -> Infinity                    
                 </code>
             </pre>
+            <p>
+                Let's say that we are a little scared by the large numbers returned by our function, especially the <b id="spePara">Infinity</b> value, 
+                so we decide to limit the maximum range of supported values. We will not accept arguments larger than 20.
+                <pre>
+                    <code>
+                        Function factorial(n) {
+                            if (n > 20) {
+                                throw new RangeError("Max value 20");
+                            }
+                            let result = 1;
+                            for (; n > 1; n--) {
+                                result = result * n;
+                            }
+                            return result;
+                        }
+                         
+                        console.log(factorial(20)); // -> 2432902008176640000
+                        console.log(factorial(1000)); // -> Uncaught RangeError: Max value 20                        
+                    </code>
+                </pre>
+            </p>
+            <p>
+                The presence of a conditional instruction inside our function is rather obvious. 
+                So is the use of the throw instruction. The construction new <b id="spePara">RangeError</b>("<b id="spePara">Max value 20</b>") 
+                definitely needs an explanation. It is a bit out of the scope of this part of the course, 
+                so we will try to explain it in the simplest possible way, focusing only on its functional side.
+                <br><br>
+                As we mentioned earlier, the <b id="spePara">throw</b> instruction can take any value. Previously, we used a simple number, 
+                but this time we’re reaching for something more complex. It is an object, which is a composite data type. 
+                You can create a new object in many ways, including by using the operator new. 
+                Using this operator, we create a <b id="spePara">RangeError</b> class object, which is a predefined error that we discussed a while ago. 
+                The new object is initiated by the Max value 20 string. And such a new object, of the <b id="spePara">RangeError</b> type, containing, 
+                among other things, the string we provided, will be thrown if the n parameter exceeds the allowed value.
+            </p>
         </p>
     </p>
     
