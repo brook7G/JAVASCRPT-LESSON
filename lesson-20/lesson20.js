@@ -175,3 +175,12 @@ try {
 } finally {
   console.log("Finally!"); // -> Finally!
 }
+//
+//
+//
+console.log("");
+console.log("The throw statement and custom errors");
+//
+console.log("start"); // -> start
+throw 100; // -> Uncaught 100
+console.log("end");
