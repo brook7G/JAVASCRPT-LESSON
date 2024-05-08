@@ -378,6 +378,26 @@
             </p>
         </p>
     </p>
+
+    <h2 id="speH1">The <span id="spePara">throw</span> statement and custom errors</h2>
+    <p>
+        There are several reasons why you generate your own exceptions. Most of them are quite complex and not very useful at this stage of learning. 
+        The easiest situation to imagine is when you write a function of your own, which should signal the incorrect data that has been passed to it.
+        <br><br>
+        To throw an exception, we use the throw instruction. It is followed by any value that will be treated as an exception. 
+        It can be, for example, a number, or one of the ready-made error objects (e.g. <b id="spePara">RangeError</b>).
+        <br><br>
+        An exception that we throw will cause the program to react in the same way as the original JavaScript exceptions (i.e. it will stop its execution). 
+        That is, unless we throw it inside the try block to handle it. Let's look at a simple example, without trying to find any special meaning in it. 
+        This is just an illustration of the use of the <b id="spePara">throw</b> instruction:
+        <pre>
+            <code>
+                console.log("start"); // -> start
+                throw 100; // -> Uncaught 100
+                console.log("end");
+            </code>
+        </pre>
+    </p>
     
 </body>
 </html>
