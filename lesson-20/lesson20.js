@@ -1,4 +1,3 @@
-
 "use strict";
 //before running the whole script please comment the other lines/Programs
 console.log("ERRORS AND EXCEPTIONS : PART-2");
@@ -106,9 +105,9 @@ console.log("");
 //
 let a4 = 10;
 try {
-    a4 = b;  // ReferenceError
+  a4 = b; // ReferenceError
 } finally {
-    console.log(a4); // -> 10
+  console.log(a4); // -> 10
 }
 console.log(a4);
 //
@@ -117,11 +116,11 @@ console.log("");
 //
 let a5 = 10;
 try {
-    a5 = b;  // ReferenceError
+  a5 = b; // ReferenceError
 } catch (error) {
-    console.log("An Error!"); // -> An Error!
+  console.log("An Error!"); // -> An Error!
 } finally {
-    console.log("Finally!"); // -> Finally!
+  console.log("Finally!"); // -> Finally!
 }
 console.log(a5); // -> 10
 //
@@ -132,9 +131,9 @@ console.log("why should we use a ...finally... block?"); // -> Why should we use
 //
 let a6 = 10;
 try {
-    a6 = b;  // ReferenceError
+  a6 = b; // ReferenceError
 } catch (error) {
-    console.log("An Error!");
+  console.log("An Error!");
 }
 console.log("Finally!");
 //
@@ -143,10 +142,9 @@ console.log("");
 //
 let a7 = 10;
 try {
-    a7 = b;  // First ReferenceError
+  a7 = b; // First ReferenceError
 } catch (error) {
-    console.log(b7); // Second ReferenceError
- 
+  console.log(b7); // Second ReferenceError
 }
 console.log("Finally!");
 //
@@ -154,14 +152,26 @@ console.log("Finally!");
 console.log("");
 let a8 = 10;
 try {
-    a8 = b;  // First ReferenceError
+  a8 = b; // First ReferenceError
 } catch (error) {
-    console.log(b); // Second ReferenceError
- 
+  console.log(b); // Second ReferenceError
 } finally {
-    console.log("Finally!");
+  console.log("Finally!");
 }
 
 //
 //
-
+console.log("");
+//
+let a9 = 10;
+try {
+  a9 = b; // First ReferenceError
+} catch (error) {
+  try {
+    console.log(b); // Second ReferenceError
+  } catch {
+    console.log("Second catch!"); // -> Second catch!
+  }
+} finally {
+  console.log("Finally!"); // -> Finally!
+}
