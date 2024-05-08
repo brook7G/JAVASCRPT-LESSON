@@ -152,6 +152,16 @@ console.log("Finally!");
 //
 //
 console.log("");
+let a8 = 10;
+try {
+    a8 = b;  // First ReferenceError
+} catch (error) {
+    console.log(b); // Second ReferenceError
+ 
+} finally {
+    console.log("Finally!");
+}
+
 //
 //
 
