@@ -26,3 +26,19 @@ function div(a, b){
 };
 console.log(div(10,5));
 console.log(div(10,0));
+//
+//
+console.log("");
+console.log("EXERCISE:-2");
+//
+//
+let numbers =[10, 40, 0, 20, 50]
+for(let i=0; i<numbers.length; i++) {
+    let result;
+    try{
+        result =div(1000, numbers[i]);
+    }catch(e){
+       result= e.message;
+    }
+    console.log(result);
+}
