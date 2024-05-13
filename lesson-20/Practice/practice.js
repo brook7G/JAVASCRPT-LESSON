@@ -1,23 +1,6 @@
 console.log("PRACTICE-QUESTIONS");
 console.log("EXERCISE:-1");
-//
-// function div(a, b) {
-//     if (b === 0) {
-//         throw new RangeError("Division by zero is not allowed.");
-//     }
-//     return a / b;
-// }
 
-// // Test call for valid division
-// console.log(div(10, 2)); // Expected output: 5
-
-// // Test call for division by zero
-// try {
-//     console.log(div(10, 0));
-// } catch (error) {
-//     console.error(error.message); // Expected output: Division by zero is not allowed.
-// }
-//
 function division(arg1, arg2){
     if(arg2===0){
         throw new Error("Division by zero is not allowed.");
@@ -32,3 +15,14 @@ try{
 catch{
     console.error(error.message)
 }
+
+// OR comment the above program and run the below one
+function div(a, b){
+    if(b===0){
+        throw new RangeError("are you dumb or smthingg")
+    }
+
+    return a/b;
+};
+console.log(div(10,5));
+console.log(div(10,0));
