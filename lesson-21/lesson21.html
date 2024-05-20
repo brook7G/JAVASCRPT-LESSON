@@ -77,8 +77,21 @@
             </pre>
         </p>
         <p>
-            We see a function that should return the largest of three numbers. The idea of how to solve this problem is simple: when variable <b id="spePara">a</b> is bigger than <b id="spePara">b</b> and <b id="spePara">c</b>, <b id="spePara">a</b> is the largest number. If this is not the case, 
-            then if <b id="spePara">b</b> is bigger than <b id="spePara">a</b> and <b id="spePara">c</b>, <b id="spePara">b</b> is the largest number. If neither is true, that means that <b id="spePara">c</b> is the largest number.
+            We see a function that should return the largest of three numbers. The idea of how to solve this problem is simple: when variable <b id="spePara">a</b> is bigger than 
+            <b id="spePara">b</b> and <b id="spePara">c</b>, <b id="spePara">a</b> is the largest number. If this is not the case, 
+            then if <b id="spePara">b</b> is bigger than <b id="spePara">a</b> and <b id="spePara">c</b>, <b id="spePara">b</b> is the largest number. 
+            If neither is true, that means that <b id="spePara">c</b> is the largest number.
+            <br><br>
+            Take some time and try to spot the flaw in this logic. As a hint, try to call the largest function with these sets of parameters:
+            <pre>
+                <code>
+                    console.log(largest(1, 1, 2)); // -> 2
+                    console.log(largest(1, 2, 3)); // -> 3
+                    console.log(largest(3, 2, 1)); // -> 3
+                    console.log(largest(2, 2, 1)); // -> 1
+
+                </code>
+            </pre>
         </p>
     </p>
 </body>
