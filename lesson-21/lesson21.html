@@ -92,6 +92,13 @@
 
                 </code>
             </pre>
+            <p>
+                Can you now spot the error based on when it occurs?
+                <br><br>
+                If the first and second numbers are equal, the function incorrectly returns the third value. This is due to the fact that when a and b are equal, 
+                both <b id="spePara">a > b</b> and <b id="spePara">b > a</b> are not true. This error is much harder to find, as this code does what it should most of the time, and only in specific cases does it return incorrect values.
+                When found, the problem is rather easy to fix, as we only need to change the greater than operator to a greater than or equal to operator inside our <b id="spePara">if</b> statement.
+            </p>
         </p>
     </p>
 </body>
