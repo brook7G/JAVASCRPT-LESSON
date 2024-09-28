@@ -164,7 +164,7 @@ console.log("LAB-1:");
 
 
 
-const contacts = [
+const contact = [
     {
         name: "Maxwell Wright",
         phone: "(0191) 719 6495",
