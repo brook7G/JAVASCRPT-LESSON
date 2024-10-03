@@ -27,6 +27,30 @@
                     < /html>
             </code>
         </pre>
+        <p>
+            Save the file to your local drive, preferably in a newly-created, empty directory. In the same directory, 
+            save the <b id="spePara">main.js</b> file (which, as you may have noticed, is referenced in the <b id="spePara">index.html</b> code),
+            placing the following code inside it:
+            <pre>
+                <code>
+                    function outer() {
+                        let name = "outer";
+                        let str = inner();
+                        return str;
+                    }
+                     
+                    function inner() {
+                        let name = "inner";
+                        return "Hello !";
+                    }
+                     
+                    console.log("before outer() call");
+                    console.log(outer());
+                    console.log("after outer() call");
+                    
+                </code>
+            </pre>
+        </p>
     </p>  
     
 </body>
