@@ -33,9 +33,31 @@
         <pre>
             <code>
                 <b id="spePara">OUTPUT</b>
-
+                before outer() call
+                Hello !
             </code>
         </pre>
+    </p>
+    <p>
+        <span id="spepara1">Chrome: </span><br>
+        <img src="chromeDebugger.png" alt="">
+        <span id="spepara1">Firefox: </span><br>
+        <img src="firefoxDebugger.png" alt="">
+        <br>
+        Only by clicking Resume again will the program execute to completion, and the console will show:
+        <pre>
+            <code>
+                <b id="spePara">OUTPUT</b>
+                before outer() call
+                Hello !
+                after outer() call           
+            </code>
+        </pre>
+    </p>
+    <p>
+        To be honest, when debugging code, we rarely use the debugger statement. 
+        Most often, at the place where the program should stop, we just indicate it using breakpoints set directly in the Developer
+        Tools. Before further work, remove the breakpoints (by clicking on the appropriate line numbers).
     </p>
 </body>
 </html>
