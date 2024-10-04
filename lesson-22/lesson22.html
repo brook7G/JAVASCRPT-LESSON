@@ -71,7 +71,33 @@
                 </code>
             </pre>
         </p>
+        <p>
+            This is the result of the <b id="spePara">console.log</b> methods from the program written in the <b id="spePara">main.js</b> file. 
+            If everything has worked so far, we are ready to start playing with debugging.
+        </p>
     </p>  
+    <h1 id="speH1">USE OF THE <span id="spePara">debugger</span> STATEMENT</h1>
+    <p>
+        Let's try the <b id="spePara">debugger</b> statement in practice. Place it in the <b id="spePara">main.js</b> code before calling the 
+        function outer. So the last lines of the <b id="spePara">main.js</b> file should now look like this:
+    </p>
+    <p>
+        Do not forget to save the modified file. Go back to your browser and reload the page. What has happened? First of all, in the Developer Tools, 
+        the selected tab has changed: in Chrome, it will be to Sources, in Firefox to Debugger. <br><br>The debugger statement causes the program 
+        to stop its execution on the line where we put it and wait for our decision. In the tab, among other information, 
+        you should see the code of our program, with the line on which the execution has stopped clearly highlighted.
+        <br><br>
+        In Sources / Debugger view, we also have the option to use the console (we don't have to switch to the Console tab). 
+        Try pressing the Esc key several times. Notice that the console will appear and disappear at the bottom of the tab. 
+        For further work, leave it visible. Since only one <b id="spePara">console.log</b> is executed before the program stops, you should only 
+        see the following in the console:
+        <pre>
+            <code>
+                <b id="spePara">OUTPUT</b>
+                before outer() call
+            </code>
+        </pre>
+    </p>
     
 </body>
 </html>
