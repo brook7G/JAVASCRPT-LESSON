@@ -22,6 +22,6 @@ console.log("after inner() call ");
  console.log("Use of the debugger statement");
  //
  console.log("before outer() call");
-debugger;
+// debugger; uncomment this portion to check how it works
 console.log(outer());
 console.log("after outer() call");
